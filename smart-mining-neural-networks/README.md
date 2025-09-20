@@ -1,4 +1,4 @@
-# Neural Network Enhanced Blockchain Mining
+# Neural Network Enhanced Blockchain Mining - Fiza Shaikh
 
 This project demonstrates how neural networks can improve the efficiency of blockchain mining in a Proof of Work (PoW) consensus mechanism.
 
