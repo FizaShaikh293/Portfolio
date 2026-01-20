@@ -8,7 +8,7 @@ The project simulates a blockchain environment with three miners:
 - Two traditional miners using standard computational methods
 - One neural-enhanced miner that leverages a pre-trained neural network to speed up calculations
 
-The neural network is trained to predict results of modular arithmetic problems (a^b mod m), which serves as our Proof of Work challenge. By using a neural network to approximate solutions, the enhanced miner can find valid blocks faster than traditional miners.
+The neural network is trained to predict results of modular arithmetic problems (a^b mod m), which serves as our POW challenge. By using a neural network to approximate solutions, the enhanced miner can find valid blocks faster than traditional miners.
 
 ## Features
 
