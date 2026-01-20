@@ -1,0 +1,58 @@
+# =========================
+# Unity Generated Folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# =========================
+# Visual Studio / IDE
+# =========================
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# Unity Cache & Crash Files
+# =========================
+sysinfo.txt
+crashlytics-build.properties
+
+# =========================
+# Builds / Executables
+# =========================
+*.apk
+*.aab
+*.exe
+*.unitypackage
+
+# =========================
+# Memory / Backup Files
+# =========================
+*.bak
+*.tmp
+*.log
+
+# =========================
+# Optional: Addressables
+# =========================
+[Aa]ssets/[Aa]ddressableAssetsData/*/*.bin*
