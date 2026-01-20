@@ -1,0 +1,4 @@
+Unity Editor 2020 or later
+C# (.NET Framework compatible with Unity)
+Windows 64-bit Operating System
+Visual Studio (for C# scripting)
