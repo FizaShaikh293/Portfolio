@@ -11,14 +11,27 @@ software development, blockchain systems, and applied research projects.
 
 ## 🛠️ Technologies & Tools
 
-- Python
-- HTML, CSS, JavaScript
-- Burp Suite
-- Metasploit Framework
-- Nmap
-- Unity 3D
-- Blockchain & Smart Contracts
-- Git & GitHub
+### Programming & Scripting
+Python  
+PHP  
+HTML, CSS, JavaScript  
+
+### Cybersecurity & Networking
+Burp Suite  
+Metasploit Framework  
+Nmap  
+
+### Blockchain & Web3
+Blockchain Fundamentals  
+Smart Contracts  
+
+### Development & Version Control
+Git  
+GitHub  
+
+### Game & Interactive Development
+Unity 3D  
+
 
 
 ---
