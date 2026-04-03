@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { label: 'About', href: '#about' },
+  { label: 'Education', href: '#education' },
   { label: 'Certs', href: '#certs' },
   { label: 'Projects', href: '#projects' },
-  { label: 'GitHub', href: '#github' },
   { label: 'Connect', href: '#socials' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -34,7 +36,19 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+        <button className="md:hidden text-muted-foreground hover:text-primary transition-colors" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+      {menuOpen && (
+        <div className="md:hidden glass-panel mx-4 mb-2 p-4 flex flex-col gap-3 animate-fade-in">
+          {links.map(({ label, href }) => (
+            <a key={label} href={href} onClick={() => setMenuOpen(false)} className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

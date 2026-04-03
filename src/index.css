@@ -113,3 +113,61 @@
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Pac-Man character */
+.pacman-character {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: hsl(51 100% 50%);
+  position: relative;
+  box-shadow: 0 0 12px hsl(51 100% 50% / 0.6), 0 0 24px hsl(51 100% 50% / 0.3);
+  animation: pacman-chomp 0.4s ease-in-out infinite;
+}
+
+.pacman-character::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: hsl(240 6% 4%);
+}
+
+@keyframes pacman-chomp {
+  0%, 100% {
+    clip-path: polygon(100% 0%, 100% 100%, 50% 50%, 0% 100%, 0% 0%);
+  }
+  50% {
+    clip-path: polygon(100% 0%, 100% 100%, 50% 75%, 0% 100%, 0% 0%);
+  }
+}
+
+/* Hide default cursor globally when cursor-none is active */
+.cursor-none,
+.cursor-none * {
+  cursor: none !important;
+}
+
+/* Scroll-triggered section animations */
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
