@@ -5,7 +5,12 @@ const techStack = [
   '.NET', 'Hadoop', 'Hive', 'NPM', 'Streamlit', 'Web3.js', 'MongoDB', 'Firebase',
   'Canva', 'Figma', 'Framer', 'Keras', 'Matplotlib', 'scikit-learn', 'NumPy',
   'Pandas', 'Plotly', 'PyTorch', 'TensorFlow', 'GitHub', 'Arduino', 'Cisco',
-  'Raspberry Pi', 'Unity', 'C++',
+  'Raspberry Pi', 'Unity', 'C++', 'C#', 'Java', 'XML', 'R', 'MATLAB',
+  'ASP.NET', 'MySQL', 'Android Studio', 'Proteus', 'LaTeX',
+  'Burp Suite', 'Docker', 'Linux', 'Wireshark', 'Packet Tracer',
+  'Flask', 'FastAPI', 'TensorFlow Lite', 'React', 'Pygame',
+  'ESP8266', 'ARIMA', 'Fuzzy Logic Toolbox', 'GlassFish Server', 'NetBeans',
+  'Visual Studio', 'JDBC',
 ];
 
 export default function HeroSection() {
@@ -17,16 +22,14 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
       <div className={`text-center transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <p className="font-mono text-sm text-primary mb-4 tracking-[0.3em] uppercase">
-          // cybersecurity &amp; blockchain
-        </p>
-        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-accent neon-glow-yellow leading-tight mb-6">
-          Despite everything,
-          <br />
-          it's still you
+        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-accent neon-glow-yellow leading-tight mb-4">
+          FIZA SHAIKH
         </h1>
+        <p className="font-mono text-sm md:text-base text-muted-foreground mb-4 italic">
+          "Despite everything, it's still you"
+        </p>
         <p className="font-mono text-muted-foreground text-sm md:text-base max-w-lg mx-auto">
-          Security researcher · Blockchain builder · Eternal learner
+          Security Researcher · Blockchain Builder · Eternal Learner
         </p>
       </div>
 
