@@ -6,7 +6,7 @@ import CertificationsSection from '@/components/CertificationsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SocialsSection from '@/components/SocialsSection';
 import GitHubStats from '@/components/GitHubStats';
-import FooterTicker from '@/components/FooterTicker';
+
 
 const Index = () => {
   return (
