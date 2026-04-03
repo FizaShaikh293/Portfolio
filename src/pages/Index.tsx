@@ -2,26 +2,26 @@ import Background3D from '@/components/Background3D';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import EducationTimeline from '@/components/EducationTimeline';
 import CertificationsSection from '@/components/CertificationsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SocialsSection from '@/components/SocialsSection';
-import GitHubStats from '@/components/GitHubStats';
-
+import CustomCursor from '@/components/CustomCursor';
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen cursor-none">
+      <CustomCursor />
       <Background3D />
       <Navbar />
       <main className="relative z-10 pb-12">
         <HeroSection />
         <AboutSection />
+        <EducationTimeline />
         <CertificationsSection />
         <ProjectsSection />
-        <GitHubStats />
         <SocialsSection />
       </main>
-      
     </div>
   );
 };
