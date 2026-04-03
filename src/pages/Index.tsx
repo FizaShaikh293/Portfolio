@@ -21,7 +21,7 @@ const Index = () => {
         <GitHubStats />
         <SocialsSection />
       </main>
-      <FooterTicker />
+      
     </div>
   );
 };
