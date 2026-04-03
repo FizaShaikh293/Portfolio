@@ -7,11 +7,13 @@ import CertificationsSection from '@/components/CertificationsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SocialsSection from '@/components/SocialsSection';
 import CustomCursor from '@/components/CustomCursor';
+import PacmanCompanion from '@/components/PacmanCompanion';
 
 const Index = () => {
   return (
     <div className="relative min-h-screen cursor-none">
       <CustomCursor />
+      <PacmanCompanion />
       <Background3D />
       <Navbar />
       <main className="relative z-10 pb-12">
