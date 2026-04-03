@@ -1,5 +1,4 @@
 import { Instagram, Linkedin, Mail, Github } from 'lucide-react';
-import credlyLogo from '@/assets/credly-logo.png';
 
 const socials = [
   { icon: Instagram, label: 'Instagram', href: 'https://instagram.com', color: 'hover:neon-box-purple hover:text-secondary' },
@@ -25,14 +24,12 @@ export default function SocialsSection() {
             className={`glass-panel p-6 flex flex-col items-center gap-3 transition-all duration-300 hover:scale-110 group ${color}`}
           >
             {isCredly ? (
-              <img
-                src={credlyLogo}
-                alt="Credly"
-                className="w-8 h-8 rounded transition-transform group-hover:scale-110 group-hover:animate-pulse-glow"
-                style={{ filter: 'grayscale(0.6) brightness(0.8)', transition: 'filter 0.3s' }}
-                onMouseEnter={(e) => { (e.target as HTMLImageElement).style.filter = 'grayscale(0) brightness(1) drop-shadow(0 0 8px hsl(51 100% 50% / 0.6))'; }}
-                onMouseLeave={(e) => { (e.target as HTMLImageElement).style.filter = 'grayscale(0.6) brightness(0.8)'; }}
-              />
+              <svg className="w-8 h-8 text-muted-foreground group-hover:text-accent group-hover:animate-pulse-glow transition-colors" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M7 13.5C7 13.5 8.5 8 12 8C15.5 8 17 13.5 17 13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <circle cx="12" cy="14" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M9.5 14L7 16.5M14.5 14L17 16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
             ) : Icon ? (
               <Icon className="w-8 h-8 text-muted-foreground group-hover:animate-pulse-glow transition-colors" />
             ) : null}

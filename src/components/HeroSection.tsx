@@ -25,7 +25,7 @@ export default function HeroSection() {
         <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-accent neon-glow-yellow leading-tight mb-4">
           FIZA SHAIKH
         </h1>
-        <p className="font-mono text-sm md:text-base text-muted-foreground mb-4 italic">
+        <p className="font-mono text-sm md:text-base text-primary neon-glow-cyan mb-4 italic">
           "Despite everything, it's still you"
         </p>
         <p className="font-mono text-muted-foreground text-sm md:text-base max-w-lg mx-auto">

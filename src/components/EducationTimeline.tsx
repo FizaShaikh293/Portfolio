@@ -3,32 +3,30 @@ import { GraduationCap } from 'lucide-react';
 
 const education = [
   {
-    year: '2017 – 2019',
-    degree: 'High School (HSC)',
-    institution: 'Junior College',
-    description: 'Completed higher secondary education with a focus on Science and Mathematics.',
+    year: 'Jan 2025 – Apr 2026',
+    degree: 'MSc in Blockchain Technologies and Application',
+    institution: 'Atlantic Technological University',
+    description: 'Grade: First Class Honours (1:1)',
     color: 'neon-cyan',
   },
   {
-    year: '2019 – 2022',
-    degree: "Bachelor's in Computer Science",
-    institution: 'University',
-    description: 'Studied core CS fundamentals including data structures, algorithms, networking, and software engineering.',
+    year: '2020 – 2023',
+    degree: 'Bachelor of Science in Information Technology',
+    institution: 'Jai Hind College, Mumbai',
+    description: '',
     color: 'neon-purple',
   },
   {
-    year: '2022 – 2023',
-    degree: "Master's in Cybersecurity",
-    institution: 'University',
-    description: 'Specialized in network security, cryptography, blockchain security, and ethical hacking.',
+    year: '',
+    degree: 'HSC, Business/Commerce, General',
+    institution: 'Thakur College of Science & Commerce',
+    description: '',
     color: 'neon-yellow',
   },
 ];
 
 export default function EducationTimeline() {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const [pacmanPos, setPacmanPos] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -38,11 +36,7 @@ export default function EducationTimeline() {
           if (entry.isIntersecting) {
             const idx = Number(entry.target.getAttribute('data-index'));
             setVisibleItems((prev) => {
-              if (!prev.includes(idx)) {
-                const next = [...prev, idx].sort((a, b) => a - b);
-                setPacmanPos(idx);
-                return next;
-              }
+              if (!prev.includes(idx)) return [...prev, idx].sort((a, b) => a - b);
               return prev;
             });
           }
@@ -50,18 +44,14 @@ export default function EducationTimeline() {
       },
       { threshold: 0.4 }
     );
-
-    itemRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
+    itemRefs.current.forEach((ref) => { if (ref) observer.observe(ref); });
     return () => observer.disconnect();
   }, []);
 
   const dotColors = ['bg-primary', 'bg-secondary', 'bg-accent'];
 
   return (
-    <section id="education" ref={sectionRef} className="py-24 px-4 max-w-4xl mx-auto">
+    <section id="education" className="py-24 px-4 max-w-4xl mx-auto">
       <h2 className="font-display text-2xl md:text-3xl font-bold text-primary neon-glow-cyan mb-16 text-center">
         {'>'} Education
       </h2>
@@ -70,17 +60,7 @@ export default function EducationTimeline() {
         {/* Vertical line */}
         <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 md:-translate-x-px" />
 
-        {/* Pac-Man character on the line */}
-        <div
-          className="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 transition-all duration-700 ease-in-out"
-          style={{ top: `${pacmanPos * 280 + 20}px` }}
-        >
-          <div className="relative w-10 h-10">
-            <div className="pacman-character" />
-          </div>
-        </div>
-
-        {/* Dots along the line (pac-man food) */}
+        {/* Dots along the line */}
         {education.map((_, i) => (
           <div
             key={`dot-${i}`}
@@ -104,7 +84,6 @@ export default function EducationTimeline() {
               className="relative mb-20"
               style={{ minHeight: '200px' }}
             >
-              {/* Connector dot */}
               <div
                 className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 z-10 transition-all duration-500 ${
                   isVisible
@@ -118,7 +97,6 @@ export default function EducationTimeline() {
                 }`} />
               </div>
 
-              {/* Card */}
               <div
                 className={`ml-16 md:ml-0 md:w-5/12 ${
                   isLeft ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
@@ -131,16 +109,20 @@ export default function EducationTimeline() {
                 <div className={`glass-panel p-6 ${
                   item.color === 'neon-cyan' ? 'neon-box-cyan' : item.color === 'neon-purple' ? 'neon-box-purple' : 'neon-box-yellow'
                 } hover:scale-[1.03] transition-transform duration-300 group`}>
-                  <span className={`text-xs font-mono ${
-                    item.color === 'neon-cyan' ? 'text-primary' : item.color === 'neon-purple' ? 'text-secondary' : 'text-accent'
-                  } mb-2 block`}>
-                    {item.year}
-                  </span>
+                  {item.year && (
+                    <span className={`text-xs font-mono ${
+                      item.color === 'neon-cyan' ? 'text-primary' : item.color === 'neon-purple' ? 'text-secondary' : 'text-accent'
+                    } mb-2 block`}>
+                      {item.year}
+                    </span>
+                  )}
                   <h3 className="font-display text-lg font-bold text-foreground mb-1">
                     {item.degree}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-2 italic">{item.institution}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  {item.description && (
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  )}
                 </div>
               </div>
             </div>
