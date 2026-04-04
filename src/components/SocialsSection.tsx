@@ -1,7 +1,6 @@
-import { Instagram, Linkedin, Mail, Github } from 'lucide-react';
+import { Linkedin, Mail, Github } from 'lucide-react';
 
 const socials = [
-  { icon: Instagram, label: 'Instagram', href: 'https://instagram.com', color: 'hover:neon-box-purple hover:text-secondary' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/fizashaikh293', color: 'hover:neon-box-cyan hover:text-primary' },
   { icon: Mail, label: 'Email', href: 'mailto:fiza.sk293@gmail.com', color: 'hover:neon-box-yellow hover:text-accent' },
   { icon: Github, label: 'GitHub', href: 'https://github.com/FizaShaikh293/Portfolio', color: 'hover:neon-box-cyan hover:text-primary' },
@@ -14,7 +13,7 @@ export default function SocialsSection() {
       <h2 className="font-display text-2xl md:text-3xl font-bold text-primary neon-glow-cyan mb-10 text-center">
         {'>'} Connect
       </h2>
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-4 mb-16">
         {socials.map(({ icon: Icon, label, href, color, isCredly }) => (
           <a
             key={label}
@@ -36,6 +35,16 @@ export default function SocialsSection() {
             <span className="text-xs font-mono text-muted-foreground group-hover:text-foreground transition-colors">{label}</span>
           </a>
         ))}
+      </div>
+
+      {/* Thank you message */}
+      <div className="text-center">
+        <p className="font-display text-2xl md:text-4xl font-bold text-accent neon-glow-yellow mb-3">
+          Thank You!
+        </p>
+        <p className="font-mono text-sm text-muted-foreground">
+          Thanks for scrolling through my world ✨
+        </p>
       </div>
     </section>
   );

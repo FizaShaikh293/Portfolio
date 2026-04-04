@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 const links = [
   { label: 'About', href: '#about' },
   { label: 'Education', href: '#education' },
+  { label: 'Tech Stack', href: '#techstack' },
   { label: 'Certs', href: '#certs' },
   { label: 'Projects', href: '#projects' },
   { label: 'Connect', href: '#socials' },
@@ -23,7 +24,7 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-md border-b border-primary/10' : ''}`}>
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <span className="font-display text-sm font-bold text-accent neon-glow-yellow">
-          {'<My Portfolio />'}
+          My Portfolio
         </span>
         <div className="hidden md:flex items-center gap-6">
           {links.map(({ label, href }) => (
