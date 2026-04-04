@@ -1,50 +1,53 @@
 import { useEffect, useState } from 'react';
 
-const techStack = [
-  'HTML', 'JavaScript', 'Python', 'Rust', 'Solidity', 'PHP', 'AWS', 'Google Cloud',
-  '.NET', 'Hadoop', 'Hive', 'NPM', 'Streamlit', 'Web3.js', 'MongoDB', 'Firebase',
-  'Canva', 'Figma', 'Framer', 'Keras', 'Matplotlib', 'scikit-learn', 'NumPy',
-  'Pandas', 'Plotly', 'PyTorch', 'TensorFlow', 'GitHub', 'Arduino', 'Cisco',
-  'Raspberry Pi', 'Unity', 'C++', 'C#', 'Java', 'XML', 'R', 'MATLAB',
-  'ASP.NET', 'MySQL', 'Android Studio', 'Proteus', 'LaTeX',
-  'Burp Suite', 'Docker', 'Linux', 'Wireshark', 'Packet Tracer',
-  'Flask', 'FastAPI', 'TensorFlow Lite', 'React', 'Pygame',
-  'ESP8266', 'ARIMA', 'Fuzzy Logic Toolbox', 'GlassFish Server', 'NetBeans',
-  'Visual Studio', 'JDBC',
-];
-
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
-  useEffect(() => { setVisible(true); }, []);
+  const [neonOn, setNeonOn] = useState(false);
+  const [flickerCount, setFlickerCount] = useState(0);
 
-  const doubled = [...techStack, ...techStack];
+  useEffect(() => {
+    setVisible(true);
+    // Neon sign flicker effect - blinks a few times then stays on
+    const flickerSequence = [300, 200, 150, 100, 200, 150, 100];
+    let timeout: ReturnType<typeof setTimeout>;
+    let i = 0;
+    const flicker = () => {
+      if (i < flickerSequence.length) {
+        setNeonOn((prev) => !prev);
+        setFlickerCount(i);
+        timeout = setTimeout(() => { i++; flicker(); }, flickerSequence[i]);
+      } else {
+        setNeonOn(true);
+      }
+    };
+    timeout = setTimeout(flicker, 800);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
       <div className={`text-center transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-accent neon-glow-yellow leading-tight mb-4">
+        <h1
+          className={`font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4 transition-all duration-100 ${
+            neonOn
+              ? 'text-accent neon-glow-yellow'
+              : 'text-accent/20'
+          }`}
+        >
           FIZA SHAIKH
         </h1>
-        <p className="font-mono text-sm md:text-base text-primary neon-glow-cyan mb-4 italic">
+        <p
+          className={`font-mono text-sm md:text-base mb-4 italic transition-all duration-100 ${
+            neonOn
+              ? 'text-primary neon-glow-cyan'
+              : 'text-primary/20'
+          }`}
+        >
           "Despite everything, it's still you"
         </p>
-        <p className="font-mono text-muted-foreground text-sm md:text-base max-w-lg mx-auto">
+        <p className="font-mono text-muted-foreground text-xs sm:text-sm md:text-base whitespace-nowrap">
           Security Researcher · Blockchain Builder · Eternal Learner
         </p>
-      </div>
-
-      {/* Tech Stack Ticker */}
-      <div className="absolute bottom-12 left-0 right-0 overflow-hidden">
-        <div className="glass-panel mx-4 py-3 overflow-hidden">
-          <div className="flex ticker-scroll whitespace-nowrap">
-            {doubled.map((tech, i) => (
-              <span key={i} className="inline-flex items-center mx-4 text-xs font-mono">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 animate-pulse-glow" />
-                <span className="text-primary">{tech}</span>
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

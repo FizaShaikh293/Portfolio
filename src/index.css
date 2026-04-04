@@ -125,6 +125,27 @@
   animation: pacman-chomp 0.4s ease-in-out infinite;
 }
 
+.pacman-character-nav {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: hsl(51 100% 50%);
+  position: relative;
+  box-shadow: 0 0 10px hsl(51 100% 50% / 0.6), 0 0 20px hsl(51 100% 50% / 0.3);
+  animation: pacman-chomp-down 0.4s ease-in-out infinite;
+}
+
+.pacman-character-nav::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: hsl(240 6% 4%);
+}
+
 .pacman-character::before {
   content: '';
   position: absolute;
@@ -143,6 +164,79 @@
   50% {
     clip-path: polygon(100% 0%, 100% 100%, 50% 75%, 0% 100%, 0% 0%);
   }
+}
+
+@keyframes pacman-chomp-down {
+  0%, 100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 50%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 75% 50%, 0% 100%);
+  }
+}
+
+/* Ghost characters */
+.ghost-character {
+  width: 18px;
+  height: 20px;
+  background: var(--ghost-color);
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  box-shadow: 0 0 8px var(--ghost-color);
+  animation: ghost-float 2s ease-in-out infinite;
+}
+
+.ghost-character::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--ghost-color);
+  clip-path: polygon(0% 0%, 33% 100%, 66% 0%, 100% 100%, 100% 0%);
+}
+
+.ghost-eyes {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.ghost-eye {
+  width: 4px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ghost-eye::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: hsl(240 6% 10%);
+  border-radius: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes ghost-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Tech item floating */
+.tech-item-float:hover {
+  animation: tech-float 1s ease-in-out infinite;
+}
+
+@keyframes tech-float {
+  0%, 100% { transform: translateY(0) scale(1.1); }
+  50% { transform: translateY(-3px) scale(1.1); }
 }
 
 /* Hide default cursor globally when cursor-none is active */

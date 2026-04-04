@@ -1,25 +1,21 @@
-const headlines = [
-  '🏆 Completed Certified Ethical Hacker certification',
-  '🔐 Published Monero privacy research dissertation',
-  '🤖 EdgePaw LLM deployed on Raspberry Pi',
-  '⚡ 42-day GitHub contribution streak',
-  '🛡️ Smart contract audit completed for DeFi protocol',
-  '🎮 AI Car Game achieved 99.2% track completion',
-  '📡 Built enterprise network simulation with 50+ nodes',
-  '💛 Always learning, always building',
+const techStack = [
+  'Python', 'JavaScript', 'Solidity', 'Rust', 'Java', 'C++', 'C#', 'PHP',
+  'React', 'Web3.js', 'TensorFlow', 'Docker', 'AWS', 'Linux',
+  'Burp Suite', 'Wireshark', 'Arduino', 'MongoDB', 'MySQL', 'Flask',
+  'Unity', 'MATLAB', 'Hadoop', 'Firebase', 'Figma', 'R',
 ];
 
 export default function FooterTicker() {
-  const doubled = [...headlines, ...headlines];
+  const doubled = [...techStack, ...techStack];
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-t border-primary/10">
       <div className="overflow-hidden py-2">
-        <div className="flex ticker-scroll-slow whitespace-nowrap">
-          {doubled.map((headline, i) => (
-            <span key={i} className="inline-flex items-center mx-8 text-xs font-mono text-muted-foreground">
-              <span className="text-accent mr-2">▸</span>
-              {headline}
+        <div className="flex ticker-scroll whitespace-nowrap">
+          {doubled.map((tech, i) => (
+            <span key={i} className="inline-flex items-center mx-6 text-xs font-mono text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 animate-pulse-glow" />
+              {tech}
             </span>
           ))}
         </div>
