@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Cpu, Heart, FolderSearch, TrafficCone, Network, Bot, Hotel, Smartphone, Server, BookOpen, Leaf, Shield, Radio, BarChart3, Clock } from 'lucide-react';
+import { Cpu, Heart, FolderSearch, TrafficCone, Network, Hotel, Smartphone, BookOpen, Bot, Radio } from 'lucide-react';
 
 const projects = [
   {
@@ -24,17 +24,17 @@ const projects = [
     glow: 'neon-box-yellow',
   },
   {
+    title: 'Smart Mining with Neural Networks',
+    icon: Bot,
+    desc: 'Applied neural network models to optimize smart mining operations, leveraging deep learning for predictive analysis and resource optimization.',
+    tech: ['Python', 'TensorFlow', 'Neural Networks'],
+    glow: 'neon-box-cyan',
+  },
+  {
     title: 'Quiz App',
     icon: Smartphone,
     desc: 'Dynamic Android app with user authentication, interactive quizzes, real-time scoring, animated FABs, and personalized feedback through pop-up messages.',
     tech: ['Java', 'XML', 'Android Studio'],
-    glow: 'neon-box-cyan',
-  },
-  {
-    title: 'Servlet Quiz Management System',
-    icon: Server,
-    desc: 'Web-based Quiz Management System using Java Servlets and MySQL with real-time feedback, JDBC integration, deployed on GlassFish Server.',
-    tech: ['Java', 'Servlets', 'MySQL', 'JDBC', 'GlassFish'],
     glow: 'neon-box-purple',
   },
   {
@@ -45,25 +45,11 @@ const projects = [
     glow: 'neon-box-yellow',
   },
   {
-    title: 'Office Network Simulation',
+    title: 'Simulation of Office Network',
     icon: Network,
     desc: 'Designed and simulated a small office network using Cisco Packet Tracer with VLANs, routing protocols (RIP/OSPF), wireless security, NAT, and access control.',
     tech: ['Cisco', 'Packet Tracer', 'VLANs', 'OSPF'],
-    glow: 'neon-box-purple',
-  },
-  {
-    title: 'Online Food Ordering System',
-    icon: Clock,
-    desc: 'Web-based ordering system using ASP.NET with admin panel for managing food items, tracking orders, payment reports, and customer memberships.',
-    tech: ['ASP.NET', 'C#', 'Visual Studio', 'SQL'],
     glow: 'neon-box-cyan',
-  },
-  {
-    title: 'Curve Fitting & Time Series Forecasting',
-    icon: BarChart3,
-    desc: 'Modeling and analyzing data using polynomial regression and ARIMA time series forecasting in R Studio. Assessed fitting accuracy using adjusted R-squared values.',
-    tech: ['R', 'ARIMA', 'Statistics', 'Forecasting'],
-    glow: 'neon-box-yellow',
   },
   {
     title: 'Fuzzy Logic Traffic Lights',
@@ -77,42 +63,14 @@ const projects = [
     icon: BookOpen,
     desc: 'Web-based application for managing employee leave requests with role-based access (employee, manager, admin), leave tracking, and MongoDB storage.',
     tech: ['MongoDB', 'JavaScript', 'Node.js', 'Web'],
-    glow: 'neon-box-cyan',
-  },
-  {
-    title: 'Apache Tez vs MapReduce Research',
-    icon: Server,
-    desc: 'Case study comparing Apache Tez and MapReduce on a Hadoop multinode cluster. Highlighted how Tez\'s DAG-based model improves execution efficiency over MapReduce.',
-    tech: ['Hadoop', 'Apache Tez', 'MapReduce', 'Big Data'],
     glow: 'neon-box-yellow',
-  },
-  {
-    title: 'Energy Consumption Optimized Service Hosting',
-    icon: Leaf,
-    desc: 'Research paper on Green Computing approach to reduce energy use in data centers by dynamically consolidating services onto fewer servers using intelligent algorithms.',
-    tech: ['Green Computing', 'Algorithms', 'Research'],
-    glow: 'neon-box-purple',
-  },
-  {
-    title: 'Zero-Day Attack Detection in IoT Honeypots',
-    icon: Shield,
-    desc: 'Research on detecting zero-day attacks through static analysis within high-interaction IoT honeypot environments. Improves early threat detection and reduces false positives.',
-    tech: ['IoT', 'Static Analysis', 'Honeypots', 'Cybersecurity'],
-    glow: 'neon-box-cyan',
   },
   {
     title: 'Serial Communication Between Microcontrollers',
     icon: Radio,
     desc: 'UART-based serial communication between two AT90S8535 microcontrollers, simulated in Proteus 8. Sender transmits values; receiver activates corresponding LED patterns.',
     tech: ['Proteus', 'UART', 'Microcontrollers', 'C'],
-    glow: 'neon-box-yellow',
-  },
-  {
-    title: 'EdgePaw LLM',
-    icon: Bot,
-    desc: 'Edge-deployed LLM for pet health diagnostics, optimized for Raspberry Pi inference.',
-    tech: ['Python', 'TensorFlow Lite', 'Raspberry Pi', 'FastAPI'],
-    glow: 'neon-box-purple',
+    glow: 'neon-box-cyan',
   },
 ];
 

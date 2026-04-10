@@ -1,9 +1,9 @@
 import { Linkedin, Mail, Github } from 'lucide-react';
 
 const socials = [
-  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/fizashaikh293', color: 'hover:neon-box-cyan hover:text-primary' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/fizashaikh293/', color: 'hover:neon-box-cyan hover:text-primary' },
   { icon: Mail, label: 'Email', href: 'mailto:fiza.sk293@gmail.com', color: 'hover:neon-box-yellow hover:text-accent' },
-  { icon: Github, label: 'GitHub', href: 'https://github.com/FizaShaikh293/Portfolio', color: 'hover:neon-box-cyan hover:text-primary' },
+  { icon: Github, label: 'GitHub', href: 'https://github.com/FizaShaikh293', color: 'hover:neon-box-cyan hover:text-primary' },
   { icon: null, label: 'Credly', href: 'https://www.credly.com/users/fizashaikh293', color: 'hover:neon-box-yellow hover:text-accent', isCredly: true },
 ];
 
@@ -37,7 +37,6 @@ export default function SocialsSection() {
         ))}
       </div>
 
-      {/* Thank you message */}
       <div className="text-center">
         <p className="font-display text-2xl md:text-4xl font-bold text-accent neon-glow-yellow mb-3">
           Thank You!

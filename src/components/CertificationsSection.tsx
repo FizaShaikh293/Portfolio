@@ -2,6 +2,7 @@ import { Award } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const certs = [
+  { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco', year: '2026' },
   { name: 'Introduction to Digital Forensics', issuer: 'Security Blue Team', year: '2026' },
   { name: 'Encryption and Cryptography Essentials', issuer: 'IBM', year: '2025' },
   { name: 'Introduction to Cybersecurity Essentials', issuer: 'IBM', year: '2025' },
