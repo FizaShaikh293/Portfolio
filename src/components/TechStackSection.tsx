@@ -17,28 +17,18 @@ const techCategories = [
     items: ['Web3.js', 'Ethereum', 'Smart Contracts', 'DeFi', 'Hardhat', 'Truffle'],
   },
   {
-    title: 'Cloud & DevOps',
-    color: 'primary',
-    items: ['AWS', 'Google Cloud', 'Docker', 'Linux', 'Firebase', 'GlassFish Server'],
-  },
-  {
-    title: 'Data & AI',
-    color: 'secondary',
-    items: ['TensorFlow', 'PyTorch', 'Keras', 'scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'ARIMA', 'MATLAB'],
-  },
-  {
     title: 'Frameworks & Tools',
-    color: 'accent',
+    color: 'primary',
     items: ['React', 'Flask', 'FastAPI', 'ASP.NET', '.NET', 'Streamlit', 'MongoDB', 'MySQL', 'Hadoop', 'Hive'],
   },
   {
     title: 'Hardware & IoT',
-    color: 'primary',
+    color: 'secondary',
     items: ['Arduino', 'Raspberry Pi', 'ESP8266', 'Cisco', 'Packet Tracer', 'Proteus'],
   },
   {
     title: 'Design & Other',
-    color: 'secondary',
+    color: 'accent',
     items: ['Unity', 'Figma', 'Canva', 'Framer', 'LaTeX', 'Android Studio', 'Visual Studio', 'NetBeans'],
   },
 ];
@@ -72,10 +62,10 @@ export default function TechStackSection() {
   return (
     <section id="techstack" className="py-24 px-4 max-w-6xl mx-auto">
       <h2 className="font-display text-2xl md:text-3xl font-bold text-secondary neon-glow-purple mb-16 text-center">
-        {'>'} Tech Arsenal
+        {'>'} Tech Stack
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {techCategories.map((cat, catIdx) => {
           const c = colorMap[cat.color];
           const isVisible = visibleCats.includes(catIdx);
