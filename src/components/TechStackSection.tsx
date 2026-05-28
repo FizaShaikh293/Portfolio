@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import SectionHeading from './SectionHeading';
 
 const techCategories = [
   {
@@ -61,9 +62,7 @@ export default function TechStackSection() {
 
   return (
     <section id="techstack" className="py-24 px-4 max-w-6xl mx-auto">
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-secondary neon-glow-purple mb-16 text-center">
-        {'>'} Tech Stack
-      </h2>
+      <SectionHeading label="Toolbox" title="Tech Stack" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {techCategories.map((cat, catIdx) => {

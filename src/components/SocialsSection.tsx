@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Github } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const socials = [
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/fizashaikh293/', color: 'hover:neon-box-cyan hover:text-primary' },
@@ -10,9 +11,7 @@ const socials = [
 export default function SocialsSection() {
   return (
     <section id="socials" className="py-24 px-4 max-w-3xl mx-auto">
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-primary neon-glow-cyan mb-10 text-center">
-        {'>'} Connect
-      </h2>
+      <SectionHeading label="Get In Touch" title="Connect" />
       <div className="flex flex-wrap justify-center gap-4 mb-16">
         {socials.map(({ icon: Icon, label, href, color, isCredly }) => (
           <a
