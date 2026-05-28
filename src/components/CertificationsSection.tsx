@@ -1,5 +1,6 @@
 import { Award } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import SectionHeading from './SectionHeading';
 
 const certs = [
   { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco', year: '2026' },
@@ -42,9 +43,7 @@ export default function CertificationsSection() {
 
   return (
     <section id="certs" className="py-24 px-4 max-w-6xl mx-auto">
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-secondary neon-glow-purple mb-10 text-center">
-        {'>'} Certifications
-      </h2>
+      <SectionHeading label="Credentials" title="Certifications" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {certs.map((cert, i) => {
           const isVisible = visibleItems.includes(i);
@@ -70,13 +69,13 @@ export default function CertificationsSection() {
             >
               <div className="flex items-start gap-3">
                 <Award className={`w-6 h-6 shrink-0 transition-all duration-300 ${
-                  isHovered ? 'text-accent scale-125 drop-shadow-[0_0_8px_hsl(51,100%,50%)]' : 'text-accent/60'
+                  isHovered ? 'text-primary scale-125 drop-shadow-[0_0_10px_hsl(var(--primary)/0.7)]' : 'text-muted-foreground'
                 }`} />
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                  <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                     {cert.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground mt-1 font-mono">
+                  <p className="text-xs text-muted-foreground mt-1">
                     {cert.issuer}{cert.year ? ` · ${cert.year}` : ''}
                   </p>
                 </div>

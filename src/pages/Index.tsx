@@ -10,10 +10,12 @@ import ProjectsSection from '@/components/ProjectsSection';
 import SocialsSection from '@/components/SocialsSection';
 import CustomCursor from '@/components/CustomCursor';
 import PacmanNavigation from '@/components/PacmanNavigation';
+import Loader from '@/components/Loader';
 
 const Index = () => {
   return (
     <div className="relative min-h-screen cursor-none">
+      <Loader />
       <CustomCursor />
       <PacmanNavigation />
       <Background3D />

@@ -49,16 +49,16 @@ export default function CustomCursor() {
     <>
       {/* Main cursor dot */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
-          transform: `translate(${pos.x - 6}px, ${pos.y - 6}px) scale(${clicking ? 0.6 : hovering ? 1.8 : 1})`,
+          transform: `translate(${pos.x - 4}px, ${pos.y - 4}px) scale(${clicking ? 0.6 : hovering ? 1.6 : 1})`,
           transition: 'transform 0.15s ease-out',
         }}
       >
         <div
-          className="w-3 h-3 rounded-full bg-accent"
+          className="w-2 h-2 rounded-full bg-primary"
           style={{
-            boxShadow: '0 0 10px hsl(51 100% 50% / 0.8), 0 0 20px hsl(51 100% 50% / 0.4)',
+            boxShadow: '0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.4)',
           }}
         />
       </div>
@@ -67,14 +67,16 @@ export default function CustomCursor() {
       <div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         style={{
-          transform: `translate(${trail.x - 20}px, ${trail.y - 20}px) scale(${clicking ? 0.7 : hovering ? 1.5 : 1})`,
+          transform: `translate(${trail.x - 18}px, ${trail.y - 18}px) scale(${clicking ? 0.7 : hovering ? 1.6 : 1})`,
           transition: 'transform 0.2s ease-out',
         }}
       >
         <div
-          className="w-10 h-10 rounded-full border border-primary/50"
+          className="w-9 h-9 rounded-full border"
           style={{
-            boxShadow: '0 0 15px hsl(183 100% 50% / 0.2)',
+            borderColor: hovering ? 'hsl(var(--primary) / 0.7)' : 'hsl(var(--silver) / 0.4)',
+            boxShadow: '0 0 18px hsl(var(--primary) / 0.15)',
+            transition: 'border-color 0.2s ease-out',
           }}
         />
       </div>

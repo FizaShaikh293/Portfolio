@@ -10,11 +10,11 @@ const sections = [
   { id: 'socials', label: 'Connect' },
 ];
 
-// Ghost colors
+// Ghost colors (luxury palette)
 const ghosts = [
-  { color: '#FF0000', name: 'Blinky', offset: -60 },
-  { color: '#FFB8FF', name: 'Pinky', offset: -110 },
-  { color: '#00FFFF', name: 'Inky', offset: -160 },
+  { color: '#5b9dff', name: 'Blinky', offset: -60 },
+  { color: '#a78bfa', name: 'Pinky', offset: -110 },
+  { color: '#cbd5e1', name: 'Inky', offset: -160 },
 ];
 
 export default function PacmanNavigation() {
@@ -112,18 +112,19 @@ export default function PacmanNavigation() {
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   isEaten
                     ? isActive
-                      ? 'bg-accent scale-125 shadow-[0_0_12px_hsl(51,100%,50%)]'
-                      : 'bg-accent/30 scale-75'
-                    : 'bg-accent/60 animate-pulse-glow'
+                      ? 'bg-primary scale-125 shadow-[0_0_12px_hsl(var(--primary))]'
+                      : 'bg-silver/40 scale-75'
+                    : 'bg-primary/50 animate-pulse-glow'
                 }`}
               />
               <span
-                className={`absolute right-6 text-[10px] font-mono whitespace-nowrap transition-all duration-200 ${
-                  isActive ? 'text-accent opacity-100' : 'text-muted-foreground opacity-0 group-hover:opacity-100'
+                className={`absolute right-6 text-[10px] font-medium tracking-wide whitespace-nowrap transition-all duration-200 ${
+                  isActive ? 'text-primary opacity-100' : 'text-muted-foreground opacity-0 group-hover:opacity-100'
                 }`}
               >
                 {section.label}
               </span>
+
             </button>
           );
         })}

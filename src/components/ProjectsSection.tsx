@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Cpu, Heart, FolderSearch, TrafficCone, Network, Hotel, Smartphone, BookOpen, Bot, Radio } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const projects = [
   {
@@ -79,9 +80,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-accent neon-glow-yellow mb-10 text-center">
-        {'>'} Projects
-      </h2>
+      <SectionHeading label="Selected Work" title="Projects" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {projects.map((project, i) => {
           const Icon = project.icon;

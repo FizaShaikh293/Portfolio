@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Briefcase, Shield, GraduationCap } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const experiences = [
   {
@@ -59,9 +60,7 @@ export default function WorkExperience() {
 
   return (
     <section id="experience" className="py-24 px-4 max-w-4xl mx-auto">
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-accent neon-glow-yellow mb-16 text-center">
-        {'>'} Work Experience
-      </h2>
+      <SectionHeading label="Career" title="Work Experience" />
 
       <div className="relative">
         {/* Timeline line */}

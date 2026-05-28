@@ -1,54 +1,92 @@
 import { useEffect, useState } from 'react';
+import { Download, ArrowDown } from 'lucide-react';
+import { CV_URL } from './Navbar';
 
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
-  const [neonOn, setNeonOn] = useState(false);
-  const [flickerCount, setFlickerCount] = useState(0);
 
   useEffect(() => {
-    setVisible(true);
-    // Neon sign flicker effect - blinks a few times then stays on
-    const flickerSequence = [300, 200, 150, 100, 200, 150, 100];
-    let timeout: ReturnType<typeof setTimeout>;
-    let i = 0;
-    const flicker = () => {
-      if (i < flickerSequence.length) {
-        setNeonOn((prev) => !prev);
-        setFlickerCount(i);
-        timeout = setTimeout(() => { i++; flicker(); }, flickerSequence[i]);
-      } else {
-        setNeonOn(true);
-      }
-    };
-    timeout = setTimeout(flicker, 800);
-    return () => clearTimeout(timeout);
+    const t = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(t);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
-      <div className={`text-center transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      {/* Soft gradient glow backdrop */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ background: 'var(--gradient-glow)' }}
+      />
+      <div
+        className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-40"
+        style={{ background: 'radial-gradient(circle, hsl(var(--primary)/0.3), transparent 70%)' }}
+      />
+
+      <div className="relative z-10 text-center max-w-3xl">
+        <span
+          className={`inline-block mb-6 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase text-muted-foreground backdrop-blur-md transition-all duration-700 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
+          Cybersecurity · Blockchain · AI
+        </span>
+
         <h1
-          className={`font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4 transition-all duration-100 ${
-            neonOn
-              ? 'text-accent neon-glow-yellow'
-              : 'text-accent/20'
+          className={`font-display text-5xl sm:text-6xl md:text-8xl font-bold leading-[0.95] mb-6 text-gradient transition-all duration-700 delay-100 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
           FIZA SHAIKH
         </h1>
+
         <p
-          className={`font-mono text-sm md:text-base mb-4 italic transition-all duration-100 ${
-            neonOn
-              ? 'text-primary neon-glow-cyan'
-              : 'text-primary/20'
+          className={`text-base md:text-lg mb-3 italic text-foreground/80 transition-all duration-700 delay-200 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
           "Despite everything, it's still you"
         </p>
-        <p className="font-mono text-muted-foreground text-xs sm:text-sm md:text-base whitespace-nowrap">
+
+        <p
+          className={`text-sm md:text-base text-muted-foreground mb-10 transition-all duration-700 delay-300 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           Security Researcher · Blockchain Builder · Eternal Learner
         </p>
+
+        <div
+          className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-500 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
+          <a
+            href={CV_URL}
+            download
+            className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-primary-foreground bg-gradient-to-r from-primary to-secondary shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)] transition-all duration-300 hover:shadow-[0_14px_40px_-6px_hsl(var(--primary)/0.85)] hover:-translate-y-0.5"
+          >
+            <Download className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+            Download CV
+          </a>
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-foreground border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 hover:-translate-y-0.5"
+          >
+            View My Work
+          </a>
+        </div>
       </div>
+
+      {/* Scroll indicator */}
+      <a
+        href="#about"
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground transition-all duration-1000 delay-700 ${
+          visible ? 'opacity-100' : 'opacity-0'
+        }`}
+        aria-label="Scroll down"
+      >
+        <ArrowDown className="w-5 h-5 animate-bounce" />
+      </a>
     </section>
   );
 }

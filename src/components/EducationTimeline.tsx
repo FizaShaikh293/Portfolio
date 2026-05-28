@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { GraduationCap } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const education = [
   {
@@ -52,9 +53,7 @@ export default function EducationTimeline() {
 
   return (
     <section id="education" className="py-24 px-4 max-w-4xl mx-auto">
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-primary neon-glow-cyan mb-16 text-center">
-        {'>'} Education
-      </h2>
+      <SectionHeading label="Academic Journey" title="Education" />
 
       <div className="relative">
         {/* Vertical line */}
