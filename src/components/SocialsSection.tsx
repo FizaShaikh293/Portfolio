@@ -37,10 +37,10 @@ export default function SocialsSection() {
       </div>
 
       <div className="text-center">
-        <p className="font-display text-2xl md:text-4xl font-bold text-accent neon-glow-yellow mb-3">
+        <p className="font-display text-3xl md:text-5xl font-bold text-gradient mb-3">
           Thank You!
         </p>
-        <p className="font-mono text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           Thanks for scrolling through my world ✨
         </p>
       </div>

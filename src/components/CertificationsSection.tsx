@@ -69,16 +69,17 @@ export default function CertificationsSection() {
             >
               <div className="flex items-start gap-3">
                 <Award className={`w-6 h-6 shrink-0 transition-all duration-300 ${
-                  isHovered ? 'text-accent scale-125 drop-shadow-[0_0_8px_hsl(51,100%,50%)]' : 'text-accent/60'
+                  isHovered ? 'text-primary scale-125 drop-shadow-[0_0_10px_hsl(var(--primary)/0.7)]' : 'text-muted-foreground'
                 }`} />
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                  <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                     {cert.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground mt-1 font-mono">
+                  <p className="text-xs text-muted-foreground mt-1">
                     {cert.issuer}{cert.year ? ` · ${cert.year}` : ''}
                   </p>
                 </div>
+              </div>
               </div>
             </div>
           );
