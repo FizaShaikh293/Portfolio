@@ -80,7 +80,6 @@ export default function CertificationsSection() {
                   </p>
                 </div>
               </div>
-              </div>
             </div>
           );
         })}
