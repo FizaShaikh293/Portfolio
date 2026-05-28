@@ -10,11 +10,11 @@ const sections = [
   { id: 'socials', label: 'Connect' },
 ];
 
-// Ghost colors
+// Ghost colors (luxury palette)
 const ghosts = [
-  { color: '#FF0000', name: 'Blinky', offset: -60 },
-  { color: '#FFB8FF', name: 'Pinky', offset: -110 },
-  { color: '#00FFFF', name: 'Inky', offset: -160 },
+  { color: '#5b9dff', name: 'Blinky', offset: -60 },
+  { color: '#a78bfa', name: 'Pinky', offset: -110 },
+  { color: '#cbd5e1', name: 'Inky', offset: -160 },
 ];
 
 export default function PacmanNavigation() {
