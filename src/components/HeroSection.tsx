@@ -32,7 +32,7 @@ export default function HeroSection() {
         </span>
 
         <h1
-          className={`font-display text-5xl sm:text-6xl md:text-8xl font-bold leading-[0.95] mb-6 text-gradient transition-all duration-700 delay-100 ${
+          className={`font-display text-5xl sm:text-6xl md:text-8xl font-bold leading-[0.95] mb-6 text-gradient hover-text-pop cursor-default transition-all duration-700 delay-100 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -40,7 +40,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className={`text-sm md:text-base text-muted-foreground mb-10 mt-4 transition-all duration-700 delay-300 ${
+          className={`text-sm md:text-base text-muted-foreground hover-text-glow mb-10 mt-4 cursor-default transition-all duration-700 delay-300 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >

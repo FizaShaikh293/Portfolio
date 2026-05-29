@@ -76,7 +76,7 @@ export default function WorkExperience() {
                   <div className="flex items-start gap-3 mb-3">
                     <Icon className={`w-6 h-6 shrink-0 ${c.text}`} />
                     <div>
-                      <h3 className="font-display text-base font-bold text-foreground">{exp.title}</h3>
+                      <h3 className="font-display text-base font-bold text-foreground hover-text-pop cursor-default">{exp.title}</h3>
                       <p className={`text-sm font-mono ${c.text}`}>{exp.company} | {exp.location}</p>
                       <p className="text-xs text-muted-foreground font-mono mt-1">{exp.period}</p>
                     </div>

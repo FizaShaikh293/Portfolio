@@ -79,7 +79,7 @@ export default function TechStackSection() {
               }`}
               style={{ transitionDelay: isVisible ? `${catIdx * 100}ms` : '0ms' }}
             >
-              <h3 className={`font-display text-xs font-bold ${c.text} mb-4 tracking-wider uppercase`}>
+              <h3 className={`font-display text-xs font-bold ${c.text} hover-text-pop cursor-default mb-4 tracking-wider uppercase`}>
                 {cat.title}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -87,7 +87,7 @@ export default function TechStackSection() {
                   <span
                     key={item}
                     className={`text-[10px] font-mono px-2 py-1 rounded border ${c.border} ${c.bg} text-foreground/80 
-                      hover:scale-110 hover:${c.text} transition-all duration-300 cursor-default
+                      hover:scale-110 hover:${c.text} hover-text-glow transition-all duration-300 cursor-default
                       tech-item-float`}
                     style={{
                       animationDelay: `${itemIdx * 0.15}s`,

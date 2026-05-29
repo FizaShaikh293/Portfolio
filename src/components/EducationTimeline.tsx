@@ -115,7 +115,7 @@ export default function EducationTimeline() {
                       {item.year}
                     </span>
                   )}
-                  <h3 className="font-display text-lg font-bold text-foreground mb-1">
+                  <h3 className="font-display text-lg font-bold text-foreground hover-text-pop cursor-default mb-1">
                     {item.degree}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-2 italic">{item.institution}</p>

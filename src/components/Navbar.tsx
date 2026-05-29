@@ -32,16 +32,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-display text-base font-semibold tracking-tight text-gradient">
+        <a href="#hero" className="font-display text-base font-semibold tracking-tight text-gradient hover-text-pop">
           Fiza Shaikh
         </a>
 
         <div className="hidden md:flex items-center gap-7">
           {links.map(({ label, href }) => (
-            <a
+          <a
               key={label}
               href={href}
-              className="relative text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-[13px] font-medium text-muted-foreground hover:text-foreground hover-text-glow transition-all duration-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {label}
             </a>

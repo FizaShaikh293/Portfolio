@@ -31,13 +31,13 @@ export default function SocialsSection() {
             ) : Icon ? (
               <Icon className="w-8 h-8 text-muted-foreground group-hover:animate-pulse-glow transition-colors" />
             ) : null}
-            <span className="text-xs font-mono text-muted-foreground group-hover:text-foreground transition-colors">{label}</span>
+            <span className="text-xs font-mono text-muted-foreground group-hover:text-foreground hover-text-glow transition-colors">{label}</span>
           </a>
         ))}
       </div>
 
       <div className="text-center">
-        <p className="font-display text-3xl md:text-5xl font-bold text-gradient mb-3">
+        <p className="font-display text-3xl md:text-5xl font-bold text-gradient hover-text-pop cursor-default mb-3">
           Thank You!
         </p>
         <p className="text-sm text-muted-foreground">
