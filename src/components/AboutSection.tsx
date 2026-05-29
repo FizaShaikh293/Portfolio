@@ -3,7 +3,7 @@ import SectionHeading from './SectionHeading';
 import { Shield, Cpu, Boxes } from 'lucide-react';
 
 const focus = [
-  { icon: Shield, label: 'Security Research' },
+  { icon: Shield, label: 'Security Expert' },
   { icon: Boxes, label: 'Blockchain & Web3' },
   { icon: Cpu, label: 'AI & Machine Learning' },
 ];
@@ -31,10 +31,14 @@ export default function AboutSection() {
 
           <div className="flex-1">
             <p className="text-foreground/90 text-base md:text-lg leading-relaxed mb-6">
-              Hi! I'm a cybersecurity &amp; blockchain enthusiast with a passion for breaking things (ethically)
-              and building them back stronger. I love diving deep into smart contract security, network defense,
-              and decentralized systems. I'm also deeply interested in AI and Machine Learning, exploring how
-              intelligent systems can enhance security and solve complex problems.
+              Hi! I'm Fiza, a girl who couldn't pick between cybersecurity or blockchain so I did both.
+              I started with a Bachelors in IT, then worked for more than a year as an IT Security Analyst,
+              and eventually landed in Ireland, where I completed my MSc in Blockchain Technologies at ATU Donegal.
+              I love diving deep into smart contract security, network defense, and decentralized systems.
+              I'm also deeply interested in AI and Machine Learning, exploring how intelligent systems can
+              enhance security and solve complex problems.
+              <br /><br />
+              Currently based in Donegal, open to roles across Ireland.
             </p>
 
             <div className="flex flex-wrap gap-3">

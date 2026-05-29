@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from 'react';
 const sections = [
   { id: 'hero', label: 'Home', y: 0 },
   { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Work' },
   { id: 'education', label: 'Edu' },
   { id: 'techstack', label: 'Tech' },
   { id: 'certs', label: 'Certs' },
@@ -10,11 +11,12 @@ const sections = [
   { id: 'socials', label: 'Connect' },
 ];
 
-// Ghost colors (luxury palette)
+// Classic Pac-Man ghost colors
 const ghosts = [
-  { color: '#5b9dff', name: 'Blinky', offset: -60 },
-  { color: '#a78bfa', name: 'Pinky', offset: -110 },
-  { color: '#cbd5e1', name: 'Inky', offset: -160 },
+  { color: '#FF0000', name: 'Blinky', offset: -60 },
+  { color: '#FFB8FF', name: 'Pinky', offset: -110 },
+  { color: '#00FFFF', name: 'Inky', offset: -160 },
+  { color: '#FFB852', name: 'Clyde', offset: -210 },
 ];
 
 export default function PacmanNavigation() {

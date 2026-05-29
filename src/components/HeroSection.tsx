@@ -40,19 +40,11 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className={`text-base md:text-lg mb-3 italic text-foreground/80 transition-all duration-700 delay-200 ${
+          className={`text-sm md:text-base text-muted-foreground mb-10 mt-4 transition-all duration-700 delay-300 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          "Despite everything, it's still you"
-        </p>
-
-        <p
-          className={`text-sm md:text-base text-muted-foreground mb-10 transition-all duration-700 delay-300 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
-          Security Researcher · Blockchain Builder · Eternal Learner
+          Security Expert · Blockchain Builder · Problem Solver
         </p>
 
         <div
