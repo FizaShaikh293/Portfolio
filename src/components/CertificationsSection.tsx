@@ -3,19 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 import SectionHeading from './SectionHeading';
 
 const certs = [
-  { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco', year: '2026' },
-  { name: 'Introduction to Digital Forensics', issuer: 'Security Blue Team', year: '2026' },
-  { name: 'Encryption and Cryptography Essentials', issuer: 'IBM', year: '2025' },
-  { name: 'Introduction to Cybersecurity Essentials', issuer: 'IBM', year: '2025' },
-  { name: 'Cybersecurity Professional', issuer: 'Google', year: '2025' },
-  { name: 'Solidity Advanced: Secure Smart Contracts & DApp Development', issuer: 'Packt', year: '' },
-  { name: 'Information Security Fundamentals', issuer: 'EC-Council', year: '' },
-  { name: 'Decentralized Finance (DeFi) Infrastructure', issuer: 'Duke University', year: '' },
-  { name: 'Web3 and Blockchain Fundamentals', issuer: 'INSEAD', year: '' },
+  { name: 'Google Cybersecurity Professional Certificate', issuer: 'Google', year: 'Jul 2025' },
+  { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco Networking Academy', year: 'Mar 2026' },
+  { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', year: 'Apr 2026' },
+  { name: 'Introduction to Digital Forensics', issuer: 'Security Blue Team', year: 'Feb 2026' },
+  { name: 'Encryption & Cryptography Essentials', issuer: 'IBM', year: 'Jul 2025' },
+  { name: 'Ethical Hacking Essentials', issuer: 'EC-Council', year: 'Apr 2023' },
   { name: 'Blockchain Security', issuer: 'Infosec', year: '' },
-  { name: 'Blockchain Basics', issuer: 'Coursera', year: '' },
+  { name: 'Solidity Advanced: Secure Smart Contracts & DApp Development', issuer: 'Packt', year: '' },
   { name: 'Introduction to Cloud Identity', issuer: 'Google Cloud Security', year: '' },
-  { name: 'Ethical Hacking Essentials', issuer: 'EC-Council', year: '2023' },
 ];
 
 const colors = ['neon-box-cyan', 'neon-box-purple', 'neon-box-yellow'];

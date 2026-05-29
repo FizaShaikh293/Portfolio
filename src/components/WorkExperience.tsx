@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Briefcase, Shield, GraduationCap } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const experiences = [
@@ -7,28 +7,15 @@ const experiences = [
     title: 'IT Security Support Analyst',
     company: 'Teleperformance',
     location: 'Mumbai, India',
-    period: 'Jul 2023 – Sep 2024',
+    period: 'Jul 2023 – Aug 2024',
     icon: Shield,
     color: 'primary',
     highlights: [
-      'Triaged 30+ security-related support escalations per week, identifying phishing attempts and social engineering incidents targeting enterprise customers across North America.',
-      'Conducted first-line email threat analysis using Wireshark and manual header inspection, flagging ~15% of escalated cases as confirmed phishing or suspicious activity.',
-      'Reduced average incident resolution time by 20% by developing structured triage checklists and escalation workflows aligned with SOC best practices.',
-      'Documented 100+ security incidents end-to-end using ticketing systems, contributing to knowledge base articles that improved team response consistency.',
-      'Supervised and mentored a team of 8 associates, monitoring KPIs and enforcing quality and security standards, maintaining CSAT scores above 92%.',
-      'Used Burp Suite for basic web request inspection during escalated cases involving suspected session hijacking or credential theft.',
-    ],
-  },
-  {
-    title: 'Afterschool Educator',
-    company: 'Cara Children\'s Center',
-    location: 'Letterkenny, Ireland',
-    period: 'May 2025 – Present',
-    icon: GraduationCap,
-    color: 'accent',
-    highlights: [
-      'Designed and delivered structured educational programs while maintaining compliance with child protection policies.',
-      'Demonstrated adaptability and clear communication with parents and multidisciplinary staff.',
+      "Monitored live security events across the enterprise using SIEM tooling, resolving an average of 30+ alerts per shift and reducing the team's open queue by 40% within the first quarter through consistent triage and accurate severity classification.",
+      'Identified a recurring pattern of failed authentication attempts across 3 client accounts that manual review had missed; escalated as a coordinated credential stuffing attempt which was blocked before any data was accessed.',
+      'Ran monthly vulnerability scans across client infrastructure, documented findings in structured reports and tracked remediation progress, bringing the critical patch compliance rate from 67% to 91% over 6 months in collaboration with the infrastructure team.',
+      'Built internal documentation covering 12 common incident types, cutting average analyst resolution time for those scenarios by approximately 20 minutes per ticket by giving junior team members a reliable reference rather than escalating every edge case.',
+      'Skills applied: Threat & Vulnerability Management, Incident Response, SIEM, Security Monitoring and Log Analysis.',
     ],
   },
 ];
