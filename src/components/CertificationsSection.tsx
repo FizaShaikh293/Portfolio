@@ -68,7 +68,7 @@ export default function CertificationsSection() {
                   isHovered ? 'text-primary scale-125 drop-shadow-[0_0_10px_hsl(var(--primary)/0.7)]' : 'text-muted-foreground'
                 }`} />
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-display text-sm font-semibold text-foreground hover-text-pop cursor-default group-hover:text-primary transition-colors">
                     {cert.name}
                   </h3>
                   <p className="text-xs text-muted-foreground mt-1">

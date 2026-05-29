@@ -45,7 +45,7 @@ export default function AboutSection() {
               {focus.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground/80 transition-all duration-300 hover:border-primary/40 hover:text-foreground"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground/80 transition-all duration-300 hover:border-primary/40 hover:text-foreground hover-text-glow cursor-default"
                 >
                   <Icon className="w-4 h-4 text-primary" />
                   {label}
