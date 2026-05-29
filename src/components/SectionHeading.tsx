@@ -12,7 +12,7 @@ export default function SectionHeading({ label, title, className = '' }: Section
           {label}
         </span>
       )}
-      <h2 className="font-display text-3xl md:text-4xl font-bold text-gradient">
+      <h2 className="font-display text-3xl md:text-4xl font-bold text-gradient hover-text-pop cursor-default">
         {title}
       </h2>
     </div>

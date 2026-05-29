@@ -50,7 +50,7 @@ export default function ProjectsSection() {
               className={`glass-panel p-5 cursor-pointer transition-all duration-500 hover:scale-[1.02] ${isExpanded ? project.glow : ''}`}
             >
               <Icon className={`w-8 h-8 mb-3 ${i % 3 === 0 ? 'text-primary' : i % 3 === 1 ? 'text-secondary' : 'text-accent'}`} />
-              <h3 className="font-display text-sm font-semibold text-foreground mb-1">{project.title}</h3>
+              <h3 className="font-display text-sm font-semibold text-foreground hover-text-pop cursor-default mb-1">{project.title}</h3>
               <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
                 <p className="text-xs text-muted-foreground leading-relaxed mb-3">{project.desc}</p>
                 <div className="flex flex-wrap gap-1.5">
@@ -79,7 +79,7 @@ export default function ProjectsSection() {
             <ShieldCheck className="w-8 h-8 text-secondary" />
             <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
           </div>
-          <h3 className="font-display text-sm font-semibold text-foreground mb-1">
+          <h3 className="font-display text-sm font-semibold text-foreground hover-text-pop cursor-default mb-1">
             TryHackMe Writeups
           </h3>
           <p className="text-xs text-muted-foreground leading-relaxed mt-2">
