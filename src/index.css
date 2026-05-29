@@ -136,6 +136,24 @@
     transform: translateY(-6px);
   }
 
+  /* Hover text zoom + glow */
+  .hover-text-pop {
+    display: inline-block;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.35s ease, color 0.35s ease;
+  }
+  .hover-text-pop:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 24px hsl(var(--primary) / 0.55), 0 0 48px hsl(var(--primary) / 0.25);
+  }
+
+  .hover-text-glow {
+    transition: text-shadow 0.35s ease, color 0.35s ease;
+  }
+  .hover-text-glow:hover {
+    text-shadow: 0 0 18px hsl(var(--primary) / 0.5), 0 0 36px hsl(var(--secondary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
   .ticker-scroll {
     animation: ticker-scroll 30s linear infinite;
   }
