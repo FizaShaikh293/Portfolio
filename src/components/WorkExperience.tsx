@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Briefcase, Shield, GraduationCap } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const experiences = [

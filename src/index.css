@@ -182,9 +182,9 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: hsl(var(--primary));
+  background: #FFD700;
   position: relative;
-  box-shadow: 0 0 12px hsl(var(--primary) / 0.7), 0 0 24px hsl(var(--primary) / 0.35);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.75), 0 0 24px rgba(255, 215, 0, 0.4);
   animation: pacman-chomp-down 0.4s ease-in-out infinite;
 }
 
@@ -196,7 +196,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: hsl(var(--background));
+  background: #1a1a1a;
 }
 
 .pacman-character::before {
