@@ -22,7 +22,7 @@ export default function HeroSection() {
         style={{ background: 'radial-gradient(circle, hsl(var(--primary)/0.3), transparent 70%)' }}
       />
 
-      <div className="relative z-10 text-center max-w-3xl">
+      <div className="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col items-center">
         <span
           className={`inline-block mb-6 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase text-muted-foreground backdrop-blur-md transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -32,7 +32,7 @@ export default function HeroSection() {
         </span>
 
         <h1
-          className={`font-display text-5xl sm:text-6xl md:text-8xl font-bold leading-[0.95] mb-6 text-gradient hover-text-pop cursor-default transition-all duration-700 delay-100 ${
+          className={`font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6 text-gradient hover-text-pop cursor-default transition-all duration-700 delay-100 break-words ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
