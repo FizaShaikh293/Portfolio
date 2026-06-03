@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { GraduationCap } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
@@ -8,125 +7,55 @@ const education = [
     degree: 'MSc in Blockchain Technologies and Application',
     institution: 'Atlantic Technological University',
     description: 'Grade: First Class Honours (1:1)',
-    color: 'neon-cyan',
+    color: 'primary',
   },
   {
     year: '2020 – 2023',
     degree: 'Bachelor of Science in Information Technology',
     institution: 'Jai Hind College, Mumbai',
     description: '',
-    color: 'neon-purple',
+    color: 'secondary',
   },
   {
     year: '',
     degree: 'HSC, Business/Commerce, General',
     institution: 'Thakur College of Science & Commerce',
     description: '',
-    color: 'neon-yellow',
+    color: 'accent',
   },
 ];
 
 export default function EducationTimeline() {
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.getAttribute('data-index'));
-            setVisibleItems((prev) => {
-              if (!prev.includes(idx)) return [...prev, idx].sort((a, b) => a - b);
-              return prev;
-            });
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    itemRefs.current.forEach((ref) => { if (ref) observer.observe(ref); });
-    return () => observer.disconnect();
-  }, []);
-
-  const dotColors = ['bg-primary', 'bg-secondary', 'bg-accent'];
-
   return (
     <section id="education" className="py-24 px-4 max-w-4xl mx-auto">
       <SectionHeading label="Academic Journey" title="Education" />
 
       <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 md:-translate-x-px" />
+        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent" />
 
-        {/* Dots along the line */}
-        {education.map((_, i) => (
-          <div
-            key={`dot-${i}`}
-            className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full transition-all duration-500 ${
-              visibleItems.includes(i) ? 'opacity-0 scale-0' : `${dotColors[i]} opacity-80 animate-pulse-glow`
-            }`}
-            style={{ top: `${i * 280 + 28}px` }}
-          />
-        ))}
-
-        {/* Timeline items */}
-        {education.map((item, i) => {
-          const isLeft = i % 2 === 0;
-          const isVisible = visibleItems.includes(i);
-
-          return (
-            <div
-              key={i}
-              ref={(el) => { itemRefs.current[i] = el; }}
-              data-index={i}
-              className="relative mb-20"
-              style={{ minHeight: '200px' }}
-            >
-              <div
-                className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 z-10 transition-all duration-500 ${
-                  isVisible
-                    ? `border-${item.color === 'neon-cyan' ? 'primary' : item.color === 'neon-purple' ? 'secondary' : 'accent'} bg-background scale-100`
-                    : 'border-muted bg-background scale-75 opacity-50'
-                }`}
-                style={{ top: '24px' }}
-              >
-                <GraduationCap className={`w-3 h-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
-                  item.color === 'neon-cyan' ? 'text-primary' : item.color === 'neon-purple' ? 'text-secondary' : 'text-accent'
-                }`} />
-              </div>
-
-              <div
-                className={`ml-16 md:ml-0 md:w-5/12 ${
-                  isLeft ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
-                } transition-all duration-700 ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : `opacity-0 ${isLeft ? '-translate-x-8' : 'translate-x-8'} translate-y-4`
-                }`}
-              >
-                <div className={`glass-panel p-6 ${
-                  item.color === 'neon-cyan' ? 'neon-box-cyan' : item.color === 'neon-purple' ? 'neon-box-purple' : 'neon-box-yellow'
-                } hover:scale-[1.03] transition-transform duration-300 group`}>
+        <div className="space-y-8">
+          {education.map((item, i) => {
+            const colorText = item.color === 'primary' ? 'text-primary' : item.color === 'secondary' ? 'text-secondary' : 'text-accent';
+            const glow = item.color === 'primary' ? 'neon-box-cyan' : item.color === 'secondary' ? 'neon-box-purple' : 'neon-box-yellow';
+            return (
+              <div key={i} className="relative pl-16 animate-fade-up" style={{ animationDelay: `${i * 120}ms` }}>
+                <div className={`absolute left-3 top-2 w-6 h-6 rounded-full border-2 ${item.color === 'primary' ? 'border-primary' : item.color === 'secondary' ? 'border-secondary' : 'border-accent'} bg-background flex items-center justify-center z-10`}>
+                  <GraduationCap className={`w-3 h-3 ${colorText}`} />
+                </div>
+                <div className={`glass-panel p-6 ${glow} hover:scale-[1.02] transition-transform duration-300`}>
                   {item.year && (
-                    <span className={`text-xs font-mono ${
-                      item.color === 'neon-cyan' ? 'text-primary' : item.color === 'neon-purple' ? 'text-secondary' : 'text-accent'
-                    } mb-2 block`}>
-                      {item.year}
-                    </span>
+                    <span className={`text-xs font-mono ${colorText} mb-2 block`}>{item.year}</span>
                   )}
-                  <h3 className="font-display text-lg font-bold text-foreground hover-text-pop cursor-default mb-1">
-                    {item.degree}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-2 italic">{item.institution}</p>
+                  <h3 className="font-display text-lg font-bold text-foreground hover-text-pop cursor-default mb-1">{item.degree}</h3>
+                  <p className="text-sm text-muted-foreground italic">{item.institution}</p>
                   {item.description && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-2">{item.description}</p>
                   )}
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

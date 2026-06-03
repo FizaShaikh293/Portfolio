@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { Shield } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
@@ -21,28 +20,9 @@ const experiences = [
 ];
 
 export default function WorkExperience() {
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.getAttribute('data-exp-index'));
-            setVisibleItems((prev) => prev.includes(idx) ? prev : [...prev, idx]);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    itemRefs.current.forEach((ref) => { if (ref) observer.observe(ref); });
-    return () => observer.disconnect();
-  }, []);
-
-  const colorMap: Record<string, { text: string; border: string; glow: string; dot: string }> = {
-    primary: { text: 'text-primary', border: 'border-primary/30', glow: 'neon-box-cyan', dot: 'bg-primary shadow-[0_0_10px_hsl(var(--primary))]' },
-    accent: { text: 'text-accent', border: 'border-accent/30', glow: 'neon-box-yellow', dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent))]' },
+  const colorMap: Record<string, { text: string; glow: string; dot: string }> = {
+    primary: { text: 'text-primary', glow: 'neon-box-cyan', dot: 'bg-primary shadow-[0_0_10px_hsl(var(--primary))]' },
+    accent: { text: 'text-accent', glow: 'neon-box-yellow', dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent))]' },
   };
 
   return (
@@ -50,28 +30,15 @@ export default function WorkExperience() {
       <SectionHeading label="Career" title="Work Experience" />
 
       <div className="relative">
-        {/* Timeline line */}
         <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-secondary" />
 
         <div className="space-y-12">
           {experiences.map((exp, i) => {
             const c = colorMap[exp.color];
-            const isVisible = visibleItems.includes(i);
             const Icon = exp.icon;
-
             return (
-              <div
-                key={exp.title + exp.company}
-                ref={(el) => { itemRefs.current[i] = el; }}
-                data-exp-index={i}
-                className={`relative pl-16 md:pl-20 transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-                }`}
-                style={{ transitionDelay: isVisible ? `${i * 200}ms` : '0ms' }}
-              >
-                {/* Timeline dot */}
+              <div key={exp.title + exp.company} className="relative pl-16 md:pl-20 animate-fade-up" style={{ animationDelay: `${i * 100}ms` }}>
                 <div className={`absolute left-4 md:left-6 top-2 w-4 h-4 rounded-full ${c.dot} z-10`} />
-
                 <div className={`glass-panel p-6 ${c.glow} hover:scale-[1.02] transition-transform duration-300`}>
                   <div className="flex items-start gap-3 mb-3">
                     <Icon className={`w-6 h-6 shrink-0 ${c.text}`} />
