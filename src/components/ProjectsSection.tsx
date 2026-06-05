@@ -171,7 +171,7 @@ export default function ProjectsSection() {
             <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
           </div>
           <p className="text-sm text-foreground/80 mt-4 leading-relaxed">
-            A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital forensics — each one a documented kill chain from recon to remediation.
+            A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital forensics. Each one a documented kill chain from recon to remediation.
           </p>
           <p className="text-[10px] text-primary mt-4 font-mono tracking-widest">VISIT SITE →</p>
         </a>
