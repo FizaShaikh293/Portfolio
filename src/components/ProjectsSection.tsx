@@ -7,7 +7,7 @@ const projects = [
     title: "Privacy-Preserving Blockchain Forensics",
     subtitle: "Master's Dissertation · Monero Anomaly Detection",
     icon: ShieldCheck,
-    tagline: 'Catching suspicious behaviour on a privacy coin — without ever de-anonymising a single user.',
+    tagline: 'Catching suspicious behaviour on a privacy coin without ever de-anonymising a single user.',
     desc: 'End-to-end forensics pipeline that extracts and analyses Monero transaction behaviour (timing, frequency, structural signals) via a locally synced node and unsupervised ML, without exposing any user-identifying data. Combines Isolation Forest and Autoencoders with SHAP for explainable anomaly detection, delivered as an interactive Streamlit dashboard for analysts.',
     metrics: [
       { label: 'Local node', value: 'Monero RPC' },
@@ -23,7 +23,7 @@ const projects = [
     title: 'AI-Powered Blockchain Mining Simulator',
     subtitle: 'Neural-guided Proof-of-Work Research',
     icon: Bot,
-    tagline: 'A neural net that learns to mine — fewer hashes, same security guarantees.',
+    tagline: 'A neural net that learns to mine: fewer hashes, same security guarantees.',
     desc: 'Real-time web application comparing traditional Proof-of-Work mining against a neural-network-driven approach. Demonstrates a measurable reduction in the computational steps needed to reach a valid hash, without compromising blockchain validation or decentralisation.',
     metrics: [
       { label: 'Compare', value: 'PoW vs AI' },
@@ -37,7 +37,7 @@ const projects = [
     title: 'Directory Traversal Attack Simulation',
     subtitle: 'Offensive Security · Web Exploitation',
     icon: FolderSearch,
-    tagline: 'Reading /etc/passwd through a URL — and writing the fix.',
+    tagline: 'Reading /etc/passwd through a URL, then writing the fix.',
     desc: 'Structured security testing to identify and exploit directory traversal vulnerabilities by manipulating URL parameters to access restricted server files. Documented input validation failures and effective security header configurations to support remediation guidance for developers.',
     metrics: [
       { label: 'Tooling', value: 'Burp Suite' },
