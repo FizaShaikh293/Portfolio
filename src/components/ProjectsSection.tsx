@@ -7,7 +7,7 @@ const projects = [
     title: "Privacy-Preserving Blockchain Forensics",
     subtitle: "Master's Dissertation · Monero Anomaly Detection",
     icon: ShieldCheck,
-    tagline: 'Catching suspicious behaviour on a privacy coin — without ever de-anonymising a single user.',
+    tagline: 'Catching suspicious behaviour on a privacy coin without ever de-anonymising a single user.',
     desc: 'End-to-end forensics pipeline that extracts and analyses Monero transaction behaviour (timing, frequency, structural signals) via a locally synced node and unsupervised ML, without exposing any user-identifying data. Combines Isolation Forest and Autoencoders with SHAP for explainable anomaly detection, delivered as an interactive Streamlit dashboard for analysts.',
     metrics: [
       { label: 'Local node', value: 'Monero RPC' },
@@ -23,7 +23,7 @@ const projects = [
     title: 'AI-Powered Blockchain Mining Simulator',
     subtitle: 'Neural-guided Proof-of-Work Research',
     icon: Bot,
-    tagline: 'A neural net that learns to mine — fewer hashes, same security guarantees.',
+    tagline: 'A neural net that learns to mine: fewer hashes, same security guarantees.',
     desc: 'Real-time web application comparing traditional Proof-of-Work mining against a neural-network-driven approach. Demonstrates a measurable reduction in the computational steps needed to reach a valid hash, without compromising blockchain validation or decentralisation.',
     metrics: [
       { label: 'Compare', value: 'PoW vs AI' },
@@ -37,7 +37,7 @@ const projects = [
     title: 'Directory Traversal Attack Simulation',
     subtitle: 'Offensive Security · Web Exploitation',
     icon: FolderSearch,
-    tagline: 'Reading /etc/passwd through a URL — and writing the fix.',
+    tagline: 'Reading /etc/passwd through a URL, then writing the fix.',
     desc: 'Structured security testing to identify and exploit directory traversal vulnerabilities by manipulating URL parameters to access restricted server files. Documented input validation failures and effective security header configurations to support remediation guidance for developers.',
     metrics: [
       { label: 'Tooling', value: 'Burp Suite' },
@@ -70,11 +70,11 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
       <SectionHeading label="Selected Work" title="Projects" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
+      <div className="flex flex-col gap-5 max-w-4xl mx-auto">
         {projects.map((p, i) => {
           const Icon = p.icon;
           const isExpanded = expanded === i;
-          const colSpan = p.featured ? 'lg:col-span-6' : 'lg:col-span-3';
+          const colSpan = '';
 
           return (
             <article
@@ -151,7 +151,7 @@ export default function ProjectsSection() {
           href="https://fizashaikh293.github.io/thm-writeups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="glass-panel p-6 md:p-7 group transition-all duration-500 hover:scale-[1.01] hover:-translate-y-1 neon-box-purple flex flex-col relative overflow-hidden lg:col-span-6 animate-fade-up"
+          className="glass-panel p-6 md:p-7 group transition-all duration-500 hover:scale-[1.01] hover:-translate-y-1 neon-box-purple flex flex-col relative overflow-hidden animate-fade-up"
         >
           <div className="pointer-events-none absolute -bottom-24 -left-24 w-56 h-56 rounded-full bg-gradient-to-tr from-secondary/25 via-primary/10 to-transparent blur-3xl" />
           <div className="flex items-start justify-between gap-4">
@@ -171,7 +171,7 @@ export default function ProjectsSection() {
             <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
           </div>
           <p className="text-sm text-foreground/80 mt-4 leading-relaxed">
-            A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital forensics — each one a documented kill chain from recon to remediation.
+            A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital forensics. Each one a documented kill chain from recon to remediation.
           </p>
           <p className="text-[10px] text-primary mt-4 font-mono tracking-widest">VISIT SITE →</p>
         </a>
