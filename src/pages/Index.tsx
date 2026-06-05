@@ -26,7 +26,7 @@ const Index = () => {
         </div>
         <AboutSection />
         <WorkExperience />
-        <EducationTimeline />
+        
         <TechStackSection />
         <CertificationsSection />
         <ProjectsSection />
