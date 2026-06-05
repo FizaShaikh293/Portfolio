@@ -70,11 +70,11 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
       <SectionHeading label="Selected Work" title="Projects" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
+      <div className="flex flex-col gap-5 max-w-4xl mx-auto">
         {projects.map((p, i) => {
           const Icon = p.icon;
           const isExpanded = expanded === i;
-          const colSpan = p.featured ? 'lg:col-span-6' : 'lg:col-span-3';
+          const colSpan = '';
 
           return (
             <article
