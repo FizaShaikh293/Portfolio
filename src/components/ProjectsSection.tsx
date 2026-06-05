@@ -151,7 +151,7 @@ export default function ProjectsSection() {
           href="https://fizashaikh293.github.io/thm-writeups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="glass-panel p-6 md:p-7 group transition-all duration-500 hover:scale-[1.01] hover:-translate-y-1 neon-box-purple flex flex-col relative overflow-hidden lg:col-span-6 animate-fade-up"
+          className="glass-panel p-6 md:p-7 group transition-all duration-500 hover:scale-[1.01] hover:-translate-y-1 neon-box-purple flex flex-col relative overflow-hidden animate-fade-up"
         >
           <div className="pointer-events-none absolute -bottom-24 -left-24 w-56 h-56 rounded-full bg-gradient-to-tr from-secondary/25 via-primary/10 to-transparent blur-3xl" />
           <div className="flex items-start justify-between gap-4">
