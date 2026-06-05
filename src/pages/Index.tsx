@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import WorkExperience from '@/components/WorkExperience';
-import EducationTimeline from '@/components/EducationTimeline';
+
 import TechStackSection from '@/components/TechStackSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import ProjectsSection from '@/components/ProjectsSection';
