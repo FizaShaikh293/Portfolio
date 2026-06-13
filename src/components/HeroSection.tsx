@@ -39,16 +39,9 @@ export default function HeroSection() {
           FIZA SHAIKH
         </h1>
 
-        <p
-          className={`text-sm md:text-base text-muted-foreground hover-text-glow mb-10 mt-4 cursor-default transition-all duration-700 delay-300 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
-          Security Expert · Blockchain Builder · Problem Solver
-        </p>
 
         <div
-          className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-500 ${
+          className={`flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 transition-all duration-700 delay-500 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
