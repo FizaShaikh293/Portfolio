@@ -33,7 +33,7 @@ export default function CertificationsSection() {
                   {cert.name}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {cert.issuer}{cert.year ? ` · ${cert.year}` : ''}
+                  {cert.issuer}
                 </p>
               </div>
             </div>
