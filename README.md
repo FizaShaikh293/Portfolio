@@ -19,5 +19,7 @@ I created this portfolio to practice frontend development and to have a place wh
 If you want to run this project on your machine:
 
 ```bash
+git clone https://github.com/FizaShaikh293/fizashaikh.git
+cd fizashaikh
 npm install
 npm run dev
