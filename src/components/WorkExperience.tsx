@@ -3,18 +3,28 @@ import SectionHeading from './SectionHeading';
 
 const experiences = [
   {
-    title: 'IT Security Support Analyst',
-    company: 'Teleperformance',
+    title: 'SOC Analyst L1',
+    company: 'Teleperformance (TP)',
     location: 'Mumbai, India',
-    period: 'Jul 2023 – Aug 2024',
+    period: 'May 2023 – Dec 2024',
     icon: Shield,
     color: 'primary',
     highlights: [
-      "Monitored live security events across the enterprise using SIEM tooling, resolving an average of 30+ alerts per shift and reducing the team's open queue by 40% within the first quarter through consistent triage and accurate severity classification.",
-      'Identified a recurring pattern of failed authentication attempts across 3 client accounts that manual review had missed; escalated as a coordinated credential stuffing attempt which was blocked before any data was accessed.',
-      'Ran monthly vulnerability scans across client infrastructure, documented findings in structured reports and tracked remediation progress, bringing the critical patch compliance rate from 67% to 91% over 6 months in collaboration with the infrastructure team.',
-      'Built internal documentation covering 12 common incident types, cutting average analyst resolution time for those scenarios by approximately 20 minutes per ticket by giving junior team members a reliable reference rather than escalating every edge case.',
-      'Skills applied: Threat & Vulnerability Management, Incident Response, SIEM, Security Monitoring and Log Analysis.',
+      'Triaged 30+ live security alerts per shift using enterprise SIEM tooling, cutting the team open queue by 40% in the first quarter through consistent severity classification and rapid resolution.',
+      'Identified a coordinated credential-stuffing campaign across 3 client accounts that had bypassed manual review; escalated proactively and blocked the attack before any data was accessed.',
+      'Authored internal runbooks covering 12 common incident types, cutting average analyst resolution time by approximately 20 minutes per ticket and reducing escalations from junior analysts.',
+    ],
+  },
+  {
+    title: 'IT Security Analyst',
+    company: 'Teleperformance (TP)',
+    location: 'Mumbai, India',
+    period: 'Jul 2022 – Apr 2023',
+    icon: Shield,
+    color: 'accent',
+    highlights: [
+      'Executed monthly vulnerability scans across client infrastructure, tracked remediation progress and raised critical patch compliance from 67% to 91% over 6 months.',
+      'Supported SIEM alert monitoring, log analysis and incident documentation, building the foundation that led to promotion to SOC Analyst L1 within the year.',
     ],
   },
 ];
