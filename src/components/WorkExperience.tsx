@@ -1,38 +1,51 @@
-import { Shield } from 'lucide-react';
+import { Shield, ChevronUp } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
-const experiences = [
+const companies = [
   {
-    title: 'SOC Analyst L1',
     company: 'Teleperformance (TP)',
     location: 'Mumbai, India',
-    period: 'May 2023 – Dec 2024',
+    totalPeriod: 'Jul 2022 – Dec 2024',
     icon: Shield,
-    color: 'primary',
-    highlights: [
-      'Triaged 30+ live security alerts per shift using enterprise SIEM tooling, cutting the team open queue by 40% in the first quarter through consistent severity classification and rapid resolution.',
-      'Identified a coordinated credential-stuffing campaign across 3 client accounts that had bypassed manual review; escalated proactively and blocked the attack before any data was accessed.',
-      'Authored internal runbooks covering 12 common incident types, cutting average analyst resolution time by approximately 20 minutes per ticket and reducing escalations from junior analysts.',
-    ],
-  },
-  {
-    title: 'IT Security Analyst',
-    company: 'Teleperformance (TP)',
-    location: 'Mumbai, India',
-    period: 'Jul 2022 – Apr 2023',
-    icon: Shield,
-    color: 'accent',
-    highlights: [
-      'Executed monthly vulnerability scans across client infrastructure, tracked remediation progress and raised critical patch compliance from 67% to 91% over 6 months.',
-      'Supported SIEM alert monitoring, log analysis and incident documentation, building the foundation that led to promotion to SOC Analyst L1 within the year.',
+    roles: [
+      {
+        title: 'SOC Analyst L1',
+        period: 'May 2023 – Dec 2024',
+        promotion: 'Promoted from IT Security Analyst',
+        color: 'primary',
+        highlights: [
+          "Triaged 30+ live security alerts per shift using enterprise SIEM tooling, cutting the team's open queue by 40% in the first quarter through consistent severity classification and rapid resolution.",
+          'Identified a coordinated credential-stuffing campaign across 3 client accounts that had bypassed manual review; escalated proactively and blocked the attack before any data was accessed.',
+          'Authored internal runbooks covering 12 common incident types, cutting average analyst resolution time by approximately 20 minutes per ticket and reducing escalations from junior analysts.',
+        ],
+      },
+      {
+        title: 'IT Security Analyst',
+        period: 'Jul 2022 – Apr 2023',
+        color: 'accent',
+        highlights: [
+          'Executed monthly vulnerability scans across client infrastructure, tracked remediation progress and raised critical patch compliance from 67% to 91% over 6 months.',
+          'Supported SIEM alert monitoring, log analysis and incident documentation, building the foundation that led to promotion to SOC Analyst L1 within the year.',
+        ],
+      },
     ],
   },
 ];
 
 export default function WorkExperience() {
-  const colorMap: Record<string, { text: string; glow: string; dot: string }> = {
-    primary: { text: 'text-primary', glow: 'neon-box-cyan', dot: 'bg-primary shadow-[0_0_10px_hsl(var(--primary))]' },
-    accent: { text: 'text-accent', glow: 'neon-box-yellow', dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent))]' },
+  const colorMap: Record<string, { text: string; glow: string; dot: string; subtle: string }> = {
+    primary: {
+      text: 'text-primary',
+      glow: 'neon-box-cyan',
+      dot: 'bg-primary shadow-[0_0_10px_hsl(var(--primary))]',
+      subtle: 'bg-primary/10',
+    },
+    accent: {
+      text: 'text-accent',
+      glow: 'neon-box-yellow',
+      dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent))]',
+      subtle: 'bg-accent/10',
+    },
   };
 
   return (
@@ -43,29 +56,74 @@ export default function WorkExperience() {
         <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-secondary" />
 
         <div className="space-y-12">
-          {experiences.map((exp, i) => {
-            const c = colorMap[exp.color];
-            const Icon = exp.icon;
+          {companies.map((company, i) => {
+            const Icon = company.icon;
             return (
-              <div key={exp.title + exp.company} className="relative pl-16 md:pl-20 animate-fade-up" style={{ animationDelay: `${i * 100}ms` }}>
-                <div className={`absolute left-4 md:left-6 top-2 w-4 h-4 rounded-full ${c.dot} z-10`} />
-                <div className={`glass-panel p-6 ${c.glow} hover:scale-[1.02] transition-transform duration-300`}>
-                  <div className="flex items-start gap-3 mb-3">
-                    <Icon className={`w-6 h-6 shrink-0 ${c.text}`} />
-                    <div>
-                      <h3 className="font-display text-base font-bold text-foreground hover-text-pop cursor-default">{exp.title}</h3>
-                      <p className={`text-sm font-mono ${c.text}`}>{exp.company} | {exp.location}</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">{exp.period}</p>
+              <div
+                key={company.company}
+                className="relative pl-16 md:pl-20 animate-fade-up"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="absolute left-4 md:left-6 top-3 w-4 h-4 rounded-full bg-primary shadow-[0_0_14px_hsl(var(--primary))] z-10" />
+
+                <div className="glass-panel p-6 md:p-8 neon-box-cyan hover:scale-[1.01] transition-transform duration-300">
+                  {/* Company header */}
+                  <div className="flex items-start gap-4 mb-8 pb-6 border-b border-border/40">
+                    <div className="p-3 rounded-xl bg-primary/10">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-display text-lg font-bold text-foreground hover-text-pop cursor-default">
+                        {company.company}
+                      </h3>
+                      <p className="text-sm font-mono text-muted-foreground">
+                        {company.location} | {company.totalPeriod}
+                      </p>
                     </div>
                   </div>
-                  <ul className="space-y-2 mt-4">
-                    {exp.highlights.map((h, j) => (
-                      <li key={j} className="text-xs text-muted-foreground leading-relaxed flex gap-2">
-                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${c.dot}`} />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
+
+                  {/* Roles within the company */}
+                  <div className="relative space-y-10 pl-1">
+                    {company.roles.map((role, j) => {
+                      const c = colorMap[role.color];
+                      return (
+                        <div key={role.title} className="relative">
+                          {j > 0 && (
+                            <div className="absolute -left-1 md:left-0 -top-10 bottom-0 w-px bg-gradient-to-b from-transparent via-accent/50 to-transparent" />
+                          )}
+
+                          <div className="flex items-start gap-3 mb-4">
+                            <div className={`mt-1.5 w-2 h-2 rounded-full ${c.dot} shrink-0`} />
+                            <div className="flex-1 min-w-0">
+                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                                <h4 className={`font-display text-base font-bold ${c.text} hover-text-pop cursor-default`}>
+                                  {role.title}
+                                </h4>
+                                <span className="text-xs font-mono text-muted-foreground whitespace-nowrap">
+                                  {role.period}
+                                </span>
+                              </div>
+                              {role.promotion && (
+                                <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase text-accent bg-accent/10 border border-accent/20">
+                                  <ChevronUp className="w-3 h-3" />
+                                  {role.promotion}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          <ul className="space-y-2.5">
+                            {role.highlights.map((h, k) => (
+                              <li key={k} className="text-sm text-muted-foreground leading-relaxed flex gap-3">
+                                <span className={`mt-2 w-1 h-1 rounded-full shrink-0 ${c.dot}`} />
+                                {h}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             );
@@ -75,3 +133,4 @@ export default function WorkExperience() {
     </section>
   );
 }
+
