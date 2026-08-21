@@ -1,21 +1,22 @@
 import { useState } from 'react';
-import { Cpu, FolderSearch, Bot, ShieldCheck, Search, ExternalLink, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Cpu, FolderSearch, Bot, ShieldCheck, Search, ExternalLink, ArrowUpRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
+import ArchitectureCover from './ArchitectureCover';
 
 const projects = [
   {
-    title: "Privacy-Preserving Blockchain Forensics",
+    title: 'Privacy-Preserving Blockchain Forensics',
     subtitle: "Master's Dissertation · Monero Anomaly Detection",
     icon: ShieldCheck,
     tagline: 'Catching suspicious behaviour on a privacy coin without ever de-anonymising a single user.',
     desc: 'End-to-end forensics pipeline that extracts and analyses Monero transaction behaviour (timing, frequency, structural signals) via a locally synced node and unsupervised ML, without exposing any user-identifying data. Combines Isolation Forest and Autoencoders with SHAP for explainable anomaly detection, delivered as an interactive Streamlit dashboard for analysts.',
-    metrics: [
-      { label: 'Local node', value: 'Monero RPC' },
-      { label: 'Models', value: 'IF + Autoencoder' },
-      { label: 'Explainability', value: 'SHAP' },
+    architecture: [
+      { label: 'Source', items: ['Monero node', 'RPC'] },
+      { label: 'Pipeline', items: ['Python', 'Pandas', 'Feature eng.'] },
+      { label: 'Models', items: ['Isolation Forest', 'Autoencoder'] },
+      { label: 'Insight', items: ['SHAP', 'Streamlit'] },
     ],
     tech: ['Python', 'Monero RPC', 'Isolation Forest', 'Autoencoders', 'SHAP', 'Streamlit'],
-    glow: 'neon-box-cyan',
     accent: 'text-primary',
     featured: true,
   },
@@ -25,12 +26,12 @@ const projects = [
     icon: Bot,
     tagline: 'A neural net that learns to mine: fewer hashes, same security guarantees.',
     desc: 'Real-time web application comparing traditional Proof-of-Work mining against a neural-network-driven approach. Demonstrates a measurable reduction in the computational steps needed to reach a valid hash, without compromising blockchain validation or decentralisation.',
-    metrics: [
-      { label: 'Compare', value: 'PoW vs AI' },
-      { label: 'Live', value: 'Streamlit UI' },
+    architecture: [
+      { label: 'Chain layer', items: ['Block builder', 'SHA-256 PoW'] },
+      { label: 'AI layer', items: ['TensorFlow', 'Keras'] },
+      { label: 'Interface', items: ['Streamlit', 'Live metrics'] },
     ],
     tech: ['Python', 'TensorFlow', 'Keras', 'Streamlit'],
-    glow: 'neon-box-purple',
     accent: 'text-secondary',
   },
   {
@@ -39,13 +40,13 @@ const projects = [
     icon: FolderSearch,
     tagline: 'Reading /etc/passwd through a URL, then writing the fix.',
     desc: 'Structured security testing to identify and exploit directory traversal vulnerabilities by manipulating URL parameters to access restricted server files. Documented input validation failures and effective security header configurations to support remediation guidance for developers.',
-    metrics: [
-      { label: 'Tooling', value: 'Burp Suite' },
-      { label: 'Lab', value: 'PortSwigger' },
+    architecture: [
+      { label: 'Target', items: ['PortSwigger lab', 'Linux host'] },
+      { label: 'Attack', items: ['Burp Suite', 'Payload fuzzing'] },
+      { label: 'Fix', items: ['Input validation', 'Security headers'] },
     ],
     tech: ['Burp Suite', 'PortSwigger', 'Linux', 'Security'],
-    glow: 'neon-box-yellow',
-    accent: 'text-accent',
+    accent: 'text-primary',
   },
   {
     title: 'AI Car Game on Unity 3D',
@@ -53,13 +54,13 @@ const projects = [
     icon: Cpu,
     tagline: 'Opponents that actually drive like opponents.',
     desc: 'Interactive 3D car racing game built in Unity featuring AI-controlled opponents with pathfinding, obstacle avoidance, and dynamic difficulty scaling for realistic, replayable gameplay.',
-    metrics: [
-      { label: 'Engine', value: 'Unity 3D' },
-      { label: 'Lang', value: 'C#' },
+    architecture: [
+      { label: 'Engine', items: ['Unity 3D', 'Physics'] },
+      { label: 'Logic', items: ['C#', 'NavMesh pathfinding'] },
+      { label: 'Gameplay', items: ['Obstacle avoidance', 'Difficulty scaling'] },
     ],
     tech: ['Unity', 'C#', 'AI', '3D'],
-    glow: 'neon-box-cyan',
-    accent: 'text-primary',
+    accent: 'text-secondary',
   },
   {
     title: 'Log Detective',
@@ -67,15 +68,16 @@ const projects = [
     icon: Search,
     tagline: 'Turn noisy logs into clear incident signals.',
     desc: 'A practical cybersecurity log-analysis engine that parses system and application logs to surface suspicious activity, repeated failed logins, brute-force patterns, and anomalous IP behaviour. Built with Python, Pandas and regex-driven detection, it automates the repetitive parts of SOC investigation and produces actionable security insights.',
-    metrics: [
-      { label: 'Parsing', value: 'Regex' },
-      { label: 'Analysis', value: 'Pandas' },
-      { label: 'Deploy', value: 'Vercel' },
+    architecture: [
+      { label: 'Ingest', items: ['Raw auth/app logs'] },
+      { label: 'Parse', items: ['Python', 'Regex'] },
+      { label: 'Detect', items: ['Pandas', 'Brute-force rules'] },
+      { label: 'Deploy', items: ['Vercel'] },
     ],
     tech: ['Python', 'Regular Expressions', 'Pandas', 'Log Analysis', 'SOC', 'Vercel'],
-    glow: 'neon-box-purple',
-    accent: 'text-secondary',
+    accent: 'text-primary',
     link: 'https://log-detective.vercel.app/',
+    linkLabel: 'Open live app',
   },
 ];
 
@@ -86,66 +88,60 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
       <SectionHeading label="Selected Work" title="Projects" />
 
-      <div className="flex flex-col gap-5 max-w-4xl mx-auto">
+      <div className="flex flex-col gap-4 max-w-4xl mx-auto">
         {projects.map((p, i) => {
           const Icon = p.icon;
           const isExpanded = expanded === i;
-          const colSpan = '';
 
           return (
             <article
               key={p.title}
               onClick={() => setExpanded(isExpanded ? null : i)}
-              className={`glass-panel p-6 md:p-7 cursor-pointer transition-all duration-500 hover:scale-[1.01] hover:-translate-y-1 group relative overflow-hidden ${colSpan} ${isExpanded ? p.glow : ''} animate-fade-up`}
-              style={{ animationDelay: `${i * 90}ms` }}
+              className={`group relative overflow-hidden rounded-2xl border bg-white/[0.02] p-6 md:p-7 cursor-pointer transition-all duration-500 hover:-translate-y-1 animate-fade-up ${
+                isExpanded ? 'border-primary/25 bg-white/[0.035]' : 'border-white/[0.07] hover:border-white/15'
+              }`}
+              style={{ animationDelay: `${i * 80}ms` }}
             >
-              {/* gradient corner glow */}
-              <div className="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-
-              {p.featured && (
-                <div className="inline-flex items-center gap-1.5 mb-4 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-medium tracking-widest uppercase text-primary">
-                  <Sparkles className="w-3 h-3" />
-                  Featured
-                </div>
-              )}
-
-              <div className="flex items-start justify-between gap-4 mb-3">
+              <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex items-start gap-4 min-w-0">
-                  <div className={`shrink-0 w-11 h-11 rounded-xl border border-white/10 bg-white/[0.04] flex items-center justify-center ${p.accent}`}>
-                    <Icon className="w-5 h-5" />
+                  <div className={`shrink-0 w-10 h-10 rounded-xl border border-white/[0.08] bg-white/[0.03] flex items-center justify-center ${p.accent}`}>
+                    <Icon className="w-4.5 h-4.5" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-display text-lg md:text-xl font-semibold text-foreground hover-text-pop cursor-default leading-tight">
-                      {p.title}
-                    </h3>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground leading-tight">
+                        {p.title}
+                      </h3>
+                      {p.featured && (
+                        <span className="rounded-full border border-primary/25 px-2 py-0.5 text-[9px] uppercase tracking-[0.18em] text-primary">
+                          Featured
+                        </span>
+                      )}
+                    </div>
                     <p className="text-[11px] font-mono text-muted-foreground mt-1 tracking-wide uppercase">
                       {p.subtitle}
                     </p>
                   </div>
                 </div>
-                <ArrowUpRight className={`w-5 h-5 shrink-0 text-muted-foreground transition-all duration-300 ${isExpanded ? 'rotate-45 text-primary' : 'group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5'}`} />
+                <ArrowUpRight
+                  className={`w-5 h-5 shrink-0 transition-all duration-300 ${
+                    isExpanded ? 'rotate-45 text-primary' : 'text-muted-foreground group-hover:text-primary'
+                  }`}
+                />
               </div>
 
-              <p className="text-sm text-foreground/80 italic leading-snug mb-3">
-                "{p.tagline}"
-              </p>
+              {/* Architecture cover */}
+              <ArchitectureCover stages={p.architecture} accent={p.accent} />
 
-              <div className={`grid transition-all duration-500 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'}`}>
+              <p className="text-sm text-muted-foreground italic leading-snug mt-4">{p.tagline}</p>
+
+              <div className={`grid transition-all duration-500 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
                 <div className="overflow-hidden">
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {p.metrics.map((m) => (
-                      <div key={m.label} className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5">
-                        <div className="text-[9px] uppercase tracking-widest text-muted-foreground">{m.label}</div>
-                        <div className={`text-xs font-mono ${p.accent}`}>{m.value}</div>
-                      </div>
-                    ))}
-                  </div>
-
                   <div className="flex flex-wrap gap-1.5">
                     {p.tech.map((t) => (
-                      <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-muted text-primary border border-primary/20">
+                      <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-white/[0.08] text-muted-foreground">
                         {t}
                       </span>
                     ))}
@@ -157,20 +153,14 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-2 mt-4 text-[10px] font-mono tracking-widest text-secondary hover:text-primary transition-colors"
+                      className="inline-flex items-center gap-2 mt-4 text-[11px] font-mono tracking-widest text-primary hover:opacity-80 transition-opacity"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      PLAY GAME →
+                      {p.linkLabel ?? 'Visit'}
                     </a>
                   )}
                 </div>
               </div>
-
-              {!isExpanded && (
-                <p className="text-[10px] text-muted-foreground mt-3 font-mono tracking-wider">
-                  Click to expand →
-                </p>
-              )}
             </article>
           );
         })}
@@ -180,29 +170,27 @@ export default function ProjectsSection() {
           href="https://fizashaikh293.github.io/thm-writeups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="glass-panel p-6 md:p-7 group transition-all duration-500 hover:scale-[1.01] hover:-translate-y-1 neon-box-purple flex flex-col relative overflow-hidden animate-fade-up"
+          className="group rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 md:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/15 animate-fade-up"
         >
-          <div className="pointer-events-none absolute -bottom-24 -left-24 w-56 h-56 rounded-full bg-gradient-to-tr from-secondary/25 via-primary/10 to-transparent blur-3xl" />
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.04] flex items-center justify-center text-secondary">
-                <ShieldCheck className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl border border-white/[0.08] bg-white/[0.03] flex items-center justify-center text-secondary">
+                <ShieldCheck className="w-4.5 h-4.5" />
               </div>
               <div>
-                <h3 className="font-display text-lg md:text-xl font-semibold text-foreground hover-text-pop cursor-default">
-                  TryHackMe Writeups
-                </h3>
+                <h3 className="font-display text-lg md:text-xl font-semibold text-foreground">TryHackMe Writeups</h3>
                 <p className="text-[11px] font-mono text-muted-foreground mt-1 tracking-wide uppercase">
                   Live · Hands-on Lab Notes
                 </p>
               </div>
             </div>
-            <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+            <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
           </div>
-          <p className="text-sm text-foreground/80 mt-4 leading-relaxed">
-            A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital forensics. Each one a documented kill chain from recon to remediation.
+          <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+            A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital
+            forensics. Each one a documented kill chain from recon to remediation.
           </p>
-          <p className="text-[10px] text-primary mt-4 font-mono tracking-widest">VISIT SITE →</p>
+          <p className="text-[11px] text-primary mt-4 font-mono tracking-widest">VISIT SITE →</p>
         </a>
       </div>
     </section>

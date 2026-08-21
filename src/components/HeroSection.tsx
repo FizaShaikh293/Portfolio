@@ -53,12 +53,6 @@ export default function HeroSection() {
             <Download className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
             Download CV
           </a>
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-foreground border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 hover:-translate-y-0.5"
-          >
-            View My Work
-          </a>
         </div>
       </div>
 
