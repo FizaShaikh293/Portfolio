@@ -150,6 +150,19 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
+
+                  {p.link && (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 mt-4 text-[10px] font-mono tracking-widest text-secondary hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      PLAY GAME →
+                    </a>
+                  )}
                 </div>
               </div>
 
