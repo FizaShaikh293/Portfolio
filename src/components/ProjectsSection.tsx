@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Cpu, FolderSearch, Bot, ShieldCheck, ExternalLink, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Cpu, FolderSearch, Bot, ShieldCheck, Search, ExternalLink, Sparkles, ArrowUpRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const projects = [
