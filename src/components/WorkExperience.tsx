@@ -9,7 +9,7 @@ const companies = [
     icon: Shield,
     roles: [
       {
-        title: 'SOC Analyst L1',
+        title: 'Junior SOC Analyst',
         period: 'May 2023 – Dec 2024',
         promotion: 'Promoted from IT Security Analyst',
         color: 'primary',
@@ -25,7 +25,7 @@ const companies = [
         color: 'accent',
         highlights: [
           'Executed monthly vulnerability scans across client infrastructure, tracked remediation progress and raised critical patch compliance from 67% to 91% over 6 months.',
-          'Supported SIEM alert monitoring, log analysis and incident documentation, building the foundation that led to promotion to SOC Analyst L1 within the year.',
+          'Supported SIEM alert monitoring, log analysis and incident documentation, building the foundation that led to promotion to Junior SOC Analyst within the year.',
         ],
       },
     ],
