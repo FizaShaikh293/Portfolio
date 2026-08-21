@@ -61,6 +61,22 @@ const projects = [
     glow: 'neon-box-cyan',
     accent: 'text-primary',
   },
+  {
+    title: 'Log Detective',
+    subtitle: 'SOC Log Analysis · Live on Vercel',
+    icon: Search,
+    tagline: 'Turn noisy logs into clear incident signals.',
+    desc: 'A practical cybersecurity log-analysis engine that parses system and application logs to surface suspicious activity, repeated failed logins, brute-force patterns, and anomalous IP behaviour. Built with Python, Pandas and regex-driven detection, it automates the repetitive parts of SOC investigation and produces actionable security insights.',
+    metrics: [
+      { label: 'Parsing', value: 'Regex' },
+      { label: 'Analysis', value: 'Pandas' },
+      { label: 'Deploy', value: 'Vercel' },
+    ],
+    tech: ['Python', 'Regular Expressions', 'Pandas', 'Log Analysis', 'SOC', 'Vercel'],
+    glow: 'neon-box-purple',
+    accent: 'text-secondary',
+    link: 'https://log-detective.vercel.app/',
+  },
 ];
 
 export default function ProjectsSection() {
