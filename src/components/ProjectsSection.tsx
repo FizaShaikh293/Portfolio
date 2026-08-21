@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Cpu, FolderSearch, Bot, ShieldCheck, ExternalLink, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Cpu, FolderSearch, Bot, ShieldCheck, Search, ExternalLink, Sparkles, ArrowUpRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const projects = [
@@ -60,6 +60,22 @@ const projects = [
     tech: ['Unity', 'C#', 'AI', '3D'],
     glow: 'neon-box-cyan',
     accent: 'text-primary',
+  },
+  {
+    title: 'Log Detective',
+    subtitle: 'SOC Log Analysis · Live on Vercel',
+    icon: Search,
+    tagline: 'Turn noisy logs into clear incident signals.',
+    desc: 'A practical cybersecurity log-analysis engine that parses system and application logs to surface suspicious activity, repeated failed logins, brute-force patterns, and anomalous IP behaviour. Built with Python, Pandas and regex-driven detection, it automates the repetitive parts of SOC investigation and produces actionable security insights.',
+    metrics: [
+      { label: 'Parsing', value: 'Regex' },
+      { label: 'Analysis', value: 'Pandas' },
+      { label: 'Deploy', value: 'Vercel' },
+    ],
+    tech: ['Python', 'Regular Expressions', 'Pandas', 'Log Analysis', 'SOC', 'Vercel'],
+    glow: 'neon-box-purple',
+    accent: 'text-secondary',
+    link: 'https://log-detective.vercel.app/',
   },
 ];
 
@@ -134,6 +150,19 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
+
+                  {p.link && (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 mt-4 text-[10px] font-mono tracking-widest text-secondary hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      PLAY GAME →
+                    </a>
+                  )}
                 </div>
               </div>
 
