@@ -34,11 +34,10 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="glass-panel p-6 md:p-8 flex flex-col gap-4">
       <div className="grid sm:grid-cols-2 gap-4">
-        <input name="name" required placeholder="Your name" className={field} />
-        <input name="email" type="email" required placeholder="Email address" className={field} />
+        <input name="name" required maxLength={100} placeholder="Your name" className={field} />
+        <input name="email" type="email" required maxLength={150} placeholder="Your email" className={field} />
       </div>
-      <input name="subject" placeholder="Subject (optional)" className={field} />
-      <textarea name="message" required rows={5} placeholder="Tell me about the role, project or idea…" className={`${field} resize-none`} />
+      <textarea name="message" required rows={5} maxLength={2000} placeholder="Your message" className={`${field} resize-none`} />
 
       <button
         type="submit"
