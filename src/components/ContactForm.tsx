@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { Send, Loader2, CheckCircle2 } from 'lucide-react';
+import { z } from 'zod';
 
 const ENDPOINT = 'https://formsubmit.co/ajax/shaikh.fiza13558@gmail.com';
+
+const schema = z.object({
+  name: z.string().trim().min(2, 'Please enter your name').max(100, 'Name is too long'),
+  email: z.string().trim().email('Please enter a valid email').max(150, 'Email is too long'),
+  message: z.string().trim().min(10, 'Message must be at least 10 characters').max(2000, 'Message is too long'),
+});
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -10,14 +17,20 @@ export default function ContactForm() {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const raw = Object.fromEntries(new FormData(form).entries());
+    const parsed = schema.safeParse(raw);
+    if (!parsed.success) {
+      setStatus('error');
+      setError(parsed.error.errors[0].message);
+      return;
+    }
     setStatus('sending');
     setError('');
     try {
       const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...data, _subject: `Portfolio message from ${data.name}` }),
+        body: JSON.stringify({ ...parsed.data, _subject: `Portfolio message from ${parsed.data.name}` }),
       });
       if (!res.ok) throw new Error('Request failed');
       setStatus('sent');
