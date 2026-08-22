@@ -355,3 +355,14 @@
 @keyframes loader-spin {
   to { transform: rotate(360deg); }
 }
+
+/* Architecture cover flowing connector */
+@keyframes arch-flow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.arch-flow {
+  animation: arch-flow 2.6s ease-in-out infinite;
+}
