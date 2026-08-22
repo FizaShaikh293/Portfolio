@@ -120,13 +120,25 @@
     text-shadow: 0 0 24px hsl(var(--secondary) / 0.45);
   }
   .neon-box-cyan {
-    box-shadow: var(--shadow-glow-blue);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.10), var(--shadow-soft);
+    transition: box-shadow 0.4s ease;
+  }
+  .neon-box-cyan:hover {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.22), 0 16px 44px -18px hsl(var(--primary) / 0.35);
   }
   .neon-box-purple {
-    box-shadow: var(--shadow-glow-purple);
+    box-shadow: 0 0 0 1px hsl(var(--secondary) / 0.10), var(--shadow-soft);
+    transition: box-shadow 0.4s ease;
+  }
+  .neon-box-purple:hover {
+    box-shadow: 0 0 0 1px hsl(var(--secondary) / 0.22), 0 16px 44px -18px hsl(var(--secondary) / 0.35);
   }
   .neon-box-yellow {
-    box-shadow: 0 0 0 1px hsl(var(--silver) / 0.18), 0 8px 40px -8px hsl(var(--silver) / 0.25);
+    box-shadow: 0 0 0 1px hsl(var(--silver) / 0.10), var(--shadow-soft);
+    transition: box-shadow 0.4s ease;
+  }
+  .neon-box-yellow:hover {
+    box-shadow: 0 0 0 1px hsl(var(--silver) / 0.22), 0 16px 44px -18px hsl(var(--silver) / 0.25);
   }
 
   .hover-lift {
