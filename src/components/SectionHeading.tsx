@@ -8,13 +8,12 @@ export default function SectionHeading({ label, title, className = '' }: Section
   return (
     <div className={`flex flex-col items-center text-center mb-14 ${className}`}>
       {label && (
-        <span className="mb-3 rounded-full border border-border bg-muted/40 px-3.5 py-1 text-[10px] font-medium tracking-[0.22em] uppercase text-muted-foreground backdrop-blur-md">
+        <span className="mb-3 text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
           {label}
         </span>
       )}
-      <h2 className="font-display text-3xl md:text-4xl font-bold text-gradient hover-text-pop cursor-default">
-        {title}
-      </h2>
+      <h2 className="text-3xl md:text-5xl text-foreground">{title}</h2>
+      <span className="mt-4 h-px w-16 bg-foreground/25" />
     </div>
   );
 }
