@@ -25,22 +25,20 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-background/70 backdrop-blur-xl border-b border-border shadow-[0_4px_30px_-12px_hsl(240_30%_2%/0.8)]'
-          : 'bg-transparent'
+        scrolled ? 'bg-background/85 backdrop-blur-sm border-b border-border' : 'bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-display text-base font-semibold tracking-tight text-gradient hover-text-pop">
+        <a href="#hero" className="text-lg tracking-tight text-foreground ink-underline">
           Fiza Shaikh
         </a>
 
         <div className="hidden md:flex items-center gap-7">
           {links.map(({ label, href }) => (
-          <a
+            <a
               key={label}
               href={href}
-              className="relative text-[13px] font-medium text-muted-foreground hover:text-foreground hover-text-glow transition-all duration-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              className="text-[11px] font-mono uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground transition-colors duration-300 ink-underline"
             >
               {label}
             </a>
@@ -48,10 +46,10 @@ export default function Navbar() {
           <a
             href={CV_URL}
             download
-            className="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-primary-foreground bg-gradient-to-r from-primary to-secondary shadow-[0_8px_24px_-8px_hsl(var(--primary)/0.6)] transition-all duration-300 hover:shadow-[0_10px_32px_-6px_hsl(var(--primary)/0.8)] hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 border border-foreground/25 px-4 py-2 text-[11px] font-mono uppercase tracking-[0.14em] text-foreground transition-all duration-300 hover:bg-foreground hover:text-background"
           >
-            <Download className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
-            Download CV
+            <Download className="w-3.5 h-3.5" />
+            CV
           </a>
         </div>
 
@@ -71,7 +69,7 @@ export default function Navbar() {
               key={label}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground transition-colors"
             >
               {label}
             </a>
@@ -80,7 +78,7 @@ export default function Navbar() {
             href={CV_URL}
             download
             onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-primary-foreground bg-gradient-to-r from-primary to-secondary"
+            className="inline-flex items-center justify-center gap-2 border border-foreground/25 px-4 py-2.5 text-xs font-mono uppercase tracking-[0.14em]"
           >
             <Download className="w-4 h-4" />
             Download CV
