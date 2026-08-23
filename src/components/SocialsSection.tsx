@@ -15,14 +15,14 @@ export default function SocialsSection() {
 
       <ContactForm />
 
-      <div className="flex flex-wrap justify-center gap-3 mt-8">
+      <div className="flex flex-wrap justify-center gap-6 mt-10">
         {socials.map(({ icon: Icon, label, href }) => (
           <a
             key={label}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-4 py-2 text-xs text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:text-foreground hover:border-primary/30"
+            className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground transition-colors duration-300 hover:text-foreground ink-underline"
           >
             <Icon className="w-4 h-4" />
             {label}
@@ -30,11 +30,12 @@ export default function SocialsSection() {
         ))}
       </div>
 
-      <div className="text-center mt-20">
-        <p className="font-display text-3xl md:text-4xl font-semibold text-gradient cursor-default mb-2">
-          Thank You
+      <div className="text-center mt-24">
+        <p className="text-4xl md:text-5xl italic text-foreground mb-3">Thank You</p>
+        <span className="mx-auto block h-px w-16 bg-foreground/25" />
+        <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+          Thanks for scrolling through my world
         </p>
-        <p className="text-sm text-muted-foreground">Thanks for scrolling through my world.</p>
       </div>
     </section>
   );
