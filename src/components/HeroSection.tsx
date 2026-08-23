@@ -24,7 +24,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col items-center">
         <span
-          className={`inline-block mb-6 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase text-muted-foreground backdrop-blur-md transition-all duration-700 ${
+          className={`inline-block mb-6 rounded-full border border-border bg-muted/40 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase text-muted-foreground backdrop-blur-md transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >

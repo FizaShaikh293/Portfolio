@@ -22,7 +22,7 @@ export default function SocialsSection() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 text-xs text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:text-foreground hover:border-primary/30"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-4 py-2 text-xs text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:text-foreground hover:border-primary/30"
           >
             <Icon className="w-4 h-4" />
             {label}

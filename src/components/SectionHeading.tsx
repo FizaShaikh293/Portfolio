@@ -8,7 +8,7 @@ export default function SectionHeading({ label, title, className = '' }: Section
   return (
     <div className={`flex flex-col items-center text-center mb-14 ${className}`}>
       {label && (
-        <span className="mb-3 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-[10px] font-medium tracking-[0.22em] uppercase text-muted-foreground backdrop-blur-md">
+        <span className="mb-3 rounded-full border border-border bg-muted/40 px-3.5 py-1 text-[10px] font-medium tracking-[0.22em] uppercase text-muted-foreground backdrop-blur-md">
           {label}
         </span>
       )}

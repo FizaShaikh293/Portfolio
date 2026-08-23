@@ -18,7 +18,7 @@ export default function AboutSection() {
           <div className="shrink-0">
             <div className="relative group">
               <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-primary/40 to-secondary/40 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
-              <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_-20px_hsl(240_30%_2%/0.9)]">
+              <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border border-border shadow-[0_20px_60px_-20px_hsl(240_30%_2%/0.9)]">
                 <img
                   src={profilePhoto}
                   alt="Fiza Shaikh"
@@ -45,7 +45,7 @@ export default function AboutSection() {
               {focus.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground/80 transition-all duration-300 hover:border-primary/40 hover:text-foreground hover-text-glow cursor-default"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-4 py-2 text-sm text-foreground/80 transition-all duration-300 hover:border-primary/40 hover:text-foreground hover-text-glow cursor-default"
                 >
                   <Icon className="w-4 h-4 text-primary" />
                   {label}

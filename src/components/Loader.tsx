@@ -22,7 +22,7 @@ export default function Loader() {
       }`}
     >
       <div className="relative w-16 h-16">
-        <div className="absolute inset-0 rounded-full border-2 border-white/10" />
+        <div className="absolute inset-0 rounded-full border-2 border-border" />
         <div
           className="absolute inset-0 rounded-full border-2 border-transparent border-t-primary border-r-secondary"
           style={{ animation: 'loader-spin 0.9s linear infinite' }}

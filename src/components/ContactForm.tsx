@@ -42,7 +42,7 @@ export default function ContactForm() {
   };
 
   const field =
-    'w-full rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-primary/40 focus:bg-white/[0.04] focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.08)]';
+    'w-full rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-primary/40 focus:bg-muted/40 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.08)]';
 
   return (
     <form onSubmit={onSubmit} className="glass-panel p-6 md:p-8 flex flex-col gap-4">
