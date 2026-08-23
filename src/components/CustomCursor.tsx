@@ -7,23 +7,18 @@ export default function CustomCursor() {
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    const move = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
-    };
+    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
     const down = () => setClicking(true);
     const up = () => setClicking(false);
-
     const checkHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isHoverable = target.closest('a, button, [role="button"], input, textarea, select, .glass-panel');
-      setHovering(!!isHoverable);
+      setHovering(!!target.closest('a, button, [role="button"], input, textarea, select'));
     };
 
     window.addEventListener('mousemove', move);
     window.addEventListener('mousemove', checkHover);
     window.addEventListener('mousedown', down);
     window.addEventListener('mouseup', up);
-
     return () => {
       window.removeEventListener('mousemove', move);
       window.removeEventListener('mousemove', checkHover);
@@ -36,8 +31,8 @@ export default function CustomCursor() {
     let raf: number;
     const follow = () => {
       setTrail((prev) => ({
-        x: prev.x + (pos.x - prev.x) * 0.15,
-        y: prev.y + (pos.y - prev.y) * 0.15,
+        x: prev.x + (pos.x - prev.x) * 0.16,
+        y: prev.y + (pos.y - prev.y) * 0.16,
       }));
       raf = requestAnimationFrame(follow);
     };
@@ -47,37 +42,26 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Main cursor dot */}
       <div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
-          transform: `translate(${pos.x - 4}px, ${pos.y - 4}px) scale(${clicking ? 0.6 : hovering ? 1.6 : 1})`,
-          transition: 'transform 0.15s ease-out',
+          transform: `translate(${pos.x - 3}px, ${pos.y - 3}px) scale(${clicking ? 0.6 : hovering ? 1.5 : 1})`,
+          transition: 'transform 0.12s ease-out',
         }}
       >
-        <div
-          className="w-2 h-2 rounded-full bg-primary"
-          style={{
-            boxShadow: '0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.4)',
-          }}
-        />
+        <div className="w-1.5 h-1.5 rounded-full bg-foreground" />
       </div>
 
-      {/* Trail ring */}
       <div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         style={{
-          transform: `translate(${trail.x - 18}px, ${trail.y - 18}px) scale(${clicking ? 0.7 : hovering ? 1.6 : 1})`,
+          transform: `translate(${trail.x - 16}px, ${trail.y - 16}px) scale(${clicking ? 0.7 : hovering ? 1.4 : 1})`,
           transition: 'transform 0.2s ease-out',
         }}
       >
         <div
-          className="w-9 h-9 rounded-full border"
-          style={{
-            borderColor: hovering ? 'hsl(var(--primary) / 0.7)' : 'hsl(var(--silver) / 0.4)',
-            boxShadow: '0 0 18px hsl(var(--primary) / 0.15)',
-            transition: 'border-color 0.2s ease-out',
-          }}
+          className="w-8 h-8 rounded-full border"
+          style={{ borderColor: hovering ? 'hsl(var(--primary) / 0.6)' : 'hsl(var(--foreground) / 0.25)' }}
         />
       </div>
     </>

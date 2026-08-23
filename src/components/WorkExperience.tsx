@@ -36,14 +36,14 @@ export default function WorkExperience() {
   const colorMap: Record<string, { text: string; glow: string; dot: string; subtle: string }> = {
     primary: {
       text: 'text-primary',
-      glow: 'neon-box-cyan',
-      dot: 'bg-primary shadow-[0_0_10px_hsl(var(--primary))]',
+      glow: '',
+      dot: 'bg-primary ',
       subtle: 'bg-primary/10',
     },
     accent: {
       text: 'text-accent',
-      glow: 'neon-box-yellow',
-      dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent))]',
+      glow: '',
+      dot: 'bg-accent ',
       subtle: 'bg-accent/10',
     },
   };
@@ -64,9 +64,9 @@ export default function WorkExperience() {
                 className="relative pl-16 md:pl-20 animate-fade-up"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="absolute left-4 md:left-6 top-3 w-4 h-4 rounded-full bg-primary shadow-[0_0_14px_hsl(var(--primary))] z-10" />
+                <div className="absolute left-4 md:left-6 top-3 w-4 h-4 rounded-full bg-primary  z-10" />
 
-                <div className="glass-panel p-6 md:p-8 neon-box-cyan hover:scale-[1.01] transition-transform duration-300">
+                <div className="paper p-6 md:p-8  hover:scale-[1.01] transition-transform duration-300">
                   {/* Company header */}
                   <div className="flex items-start gap-4 mb-8 pb-6 border-b border-border/40">
                     <div className="p-3 rounded-xl bg-primary/10">

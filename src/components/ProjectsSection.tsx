@@ -97,14 +97,14 @@ export default function ProjectsSection() {
             <article
               key={p.title}
               onClick={() => setExpanded(isExpanded ? null : i)}
-              className={`group relative overflow-hidden rounded-2xl border bg-white/[0.02] p-6 md:p-7 cursor-pointer transition-all duration-500 hover:-translate-y-1 animate-fade-up ${
-                isExpanded ? 'border-primary/25 bg-white/[0.035]' : 'border-white/[0.07] hover:border-white/15'
+              className={`group relative overflow-hidden rounded-2xl border bg-muted/40 p-6 md:p-7 cursor-pointer transition-all duration-500 hover:-translate-y-1 animate-fade-up ${
+                isExpanded ? 'border-primary/25 bg-muted/40' : 'border-border hover:border-border'
               }`}
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex items-start gap-4 min-w-0">
-                  <div className={`shrink-0 w-10 h-10 rounded-xl border border-white/[0.08] bg-white/[0.03] flex items-center justify-center ${p.accent}`}>
+                  <div className={`shrink-0 w-10 h-10 rounded-xl border border-border bg-muted/40 flex items-center justify-center ${p.accent}`}>
                     <Icon className="w-4.5 h-4.5" />
                   </div>
                   <div className="min-w-0">
@@ -141,7 +141,7 @@ export default function ProjectsSection() {
 
                   <div className="flex flex-wrap gap-1.5">
                     {p.tech.map((t) => (
-                      <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-white/[0.08] text-muted-foreground">
+                      <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-border text-muted-foreground">
                         {t}
                       </span>
                     ))}
@@ -170,11 +170,11 @@ export default function ProjectsSection() {
           href="https://fizashaikh293.github.io/thm-writeups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 md:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/15 animate-fade-up"
+          className="group rounded-2xl border border-border bg-muted/40 p-6 md:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-border animate-fade-up"
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl border border-white/[0.08] bg-white/[0.03] flex items-center justify-center text-secondary">
+              <div className="w-10 h-10 rounded-xl border border-border bg-muted/40 flex items-center justify-center text-secondary">
                 <ShieldCheck className="w-4.5 h-4.5" />
               </div>
               <div>

@@ -36,13 +36,13 @@ export default function EducationTimeline() {
         <div className="space-y-8">
           {education.map((item, i) => {
             const colorText = item.color === 'primary' ? 'text-primary' : item.color === 'secondary' ? 'text-secondary' : 'text-accent';
-            const glow = item.color === 'primary' ? 'neon-box-cyan' : item.color === 'secondary' ? 'neon-box-purple' : 'neon-box-yellow';
+            const glow = item.color === 'primary' ? '' : item.color === 'secondary' ? '' : '';
             return (
               <div key={i} className="relative pl-16 animate-fade-up" style={{ animationDelay: `${i * 120}ms` }}>
                 <div className={`absolute left-3 top-2 w-6 h-6 rounded-full border-2 ${item.color === 'primary' ? 'border-primary' : item.color === 'secondary' ? 'border-secondary' : 'border-accent'} bg-background flex items-center justify-center z-10`}>
                   <GraduationCap className={`w-3 h-3 ${colorText}`} />
                 </div>
-                <div className={`glass-panel p-6 ${glow} hover:scale-[1.02] transition-transform duration-300`}>
+                <div className={`paper p-6 ${glow} hover:scale-[1.02] transition-transform duration-300`}>
                   {item.year && (
                     <span className={`text-xs font-mono ${colorText} mb-2 block`}>{item.year}</span>
                   )}

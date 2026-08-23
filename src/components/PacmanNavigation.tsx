@@ -114,7 +114,7 @@ export default function PacmanNavigation() {
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   isEaten
                     ? isActive
-                      ? 'bg-primary scale-125 shadow-[0_0_12px_hsl(var(--primary))]'
+                      ? 'bg-primary scale-125 '
                       : 'bg-silver/40 scale-75'
                     : 'bg-primary/50 animate-pulse-glow'
                 }`}

@@ -13,24 +13,24 @@ export default function AboutSection() {
     <section id="about" className="py-24 px-4 max-w-5xl mx-auto">
       <SectionHeading label="Who I Am" title="About Me" />
 
-      <div className="glass-panel p-8 md:p-12">
+      <div className="paper p-8 md:p-12">
         <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
           <div className="shrink-0">
-            <div className="relative group">
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-primary/40 to-secondary/40 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
-              <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_-20px_hsl(240_30%_2%/0.9)]">
-                <img
-                  src={profilePhoto}
-                  alt="Fiza Shaikh"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+            <div className="relative w-44 h-52 md:w-52 md:h-64 border border-border bg-background p-2 shadow-[var(--shadow-paper)] rotate-[-1.5deg]">
+              <img
+                src={profilePhoto}
+                alt="Fiza Shaikh"
+                loading="lazy"
+                className="w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-700 hover:grayscale-0"
+              />
             </div>
+            <p className="mt-3 text-center text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+              Donegal, Ireland
+            </p>
           </div>
 
           <div className="flex-1">
-            <p className="text-foreground/90 text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-base md:text-lg leading-relaxed text-foreground/90 mb-6">
               Hi! I'm Fiza, a girl who couldn't pick between cybersecurity or blockchain so I did both.
               I started with a Bachelors in IT, then worked for more than a year as an IT Security Analyst,
               and eventually landed in Ireland, where I completed my MSc in Blockchain Technologies at ATU Donegal.
@@ -41,13 +41,13 @@ export default function AboutSection() {
               Currently based in Donegal, open to roles across Ireland.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {focus.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground/80 transition-all duration-300 hover:border-primary/40 hover:text-foreground hover-text-glow cursor-default"
+                  className="inline-flex items-center gap-2 border border-border px-3 py-1.5 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground transition-colors duration-300 hover:text-foreground hover:border-foreground/30 cursor-default"
                 >
-                  <Icon className="w-4 h-4 text-primary" />
+                  <Icon className="w-3.5 h-3.5" />
                   {label}
                 </div>
               ))}

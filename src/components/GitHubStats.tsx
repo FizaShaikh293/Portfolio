@@ -67,7 +67,7 @@ export default function GitHubStats() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {stats.map(({ icon: Icon, label, value, suffix, color }) => (
-          <div key={label} className="glass-panel p-6 text-center neon-box-cyan">
+          <div key={label} className="paper p-6 text-center ">
             <Icon className={`w-8 h-8 mx-auto mb-2 ${color}`} />
             <div className={`font-display text-3xl font-bold ${color}`}>
               <AnimatedNumber target={value} suffix={suffix} />
@@ -77,7 +77,7 @@ export default function GitHubStats() {
         ))}
       </div>
 
-      <div className="glass-panel p-6 neon-box-purple">
+      <div className="paper p-6 ">
         <h3 className="font-display text-sm font-semibold text-foreground mb-4">Top Languages</h3>
         <div className="space-y-3">
           {languages.map((lang) => (
