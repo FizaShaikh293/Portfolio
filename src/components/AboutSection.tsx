@@ -13,7 +13,7 @@ export default function AboutSection() {
     <section id="about" className="py-24 px-4 max-w-5xl mx-auto">
       <SectionHeading label="Who I Am" title="About Me" />
 
-      <div className="glass-panel p-8 md:p-12">
+      <div className="paper p-8 md:p-12">
         <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
           <div className="shrink-0">
             <div className="relative group">

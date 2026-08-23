@@ -35,9 +35,9 @@ const techCategories = [
 
 export default function TechStackSection() {
   const colorMap: Record<string, { text: string; border: string; bg: string; glow: string }> = {
-    primary: { text: 'text-primary', border: 'border-primary/30', bg: 'bg-primary/10', glow: 'neon-box-cyan' },
-    secondary: { text: 'text-secondary', border: 'border-secondary/30', bg: 'bg-secondary/10', glow: 'neon-box-purple' },
-    accent: { text: 'text-accent', border: 'border-accent/30', bg: 'bg-accent/10', glow: 'neon-box-yellow' },
+    primary: { text: 'text-primary', border: 'border-primary/30', bg: 'bg-primary/10', glow: '' },
+    secondary: { text: 'text-secondary', border: 'border-secondary/30', bg: 'bg-secondary/10', glow: '' },
+    accent: { text: 'text-accent', border: 'border-accent/30', bg: 'bg-accent/10', glow: '' },
   };
 
   return (
@@ -50,7 +50,7 @@ export default function TechStackSection() {
           return (
             <div
               key={cat.title}
-              className={`glass-panel p-5 hover:scale-[1.03] transition-transform duration-300 group ${c.glow} animate-fade-up`}
+              className={`paper p-5 hover:scale-[1.03] transition-transform duration-300 group ${c.glow} animate-fade-up`}
               style={{ animationDelay: `${catIdx * 80}ms` }}
             >
               <h3 className={`font-display text-xs font-bold ${c.text} hover-text-pop cursor-default mb-4 tracking-wider uppercase`}>

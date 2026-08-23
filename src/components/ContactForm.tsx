@@ -42,10 +42,10 @@ export default function ContactForm() {
   };
 
   const field =
-    'w-full rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-primary/40 focus:bg-muted/40 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.08)]';
+    'w-full rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-primary/40 focus:bg-muted/40 focus:';
 
   return (
-    <form onSubmit={onSubmit} className="glass-panel p-6 md:p-8 flex flex-col gap-4">
+    <form onSubmit={onSubmit} className="paper p-6 md:p-8 flex flex-col gap-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <input name="name" required maxLength={100} placeholder="Your name" className={field} />
         <input name="email" type="email" required maxLength={150} placeholder="Your email" className={field} />

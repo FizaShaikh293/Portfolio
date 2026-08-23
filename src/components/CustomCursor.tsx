@@ -15,7 +15,7 @@ export default function CustomCursor() {
 
     const checkHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isHoverable = target.closest('a, button, [role="button"], input, textarea, select, .glass-panel');
+      const isHoverable = target.closest('a, button, [role="button"], input, textarea, select, .paper');
       setHovering(!!isHoverable);
     };
 

@@ -13,7 +13,7 @@ const certs = [
   { name: 'Introduction to Cloud Identity', issuer: 'Google Cloud Security', year: '' },
 ];
 
-const colors = ['neon-box-cyan', 'neon-box-purple', 'neon-box-yellow'];
+const colors = ['', '', ''];
 
 export default function CertificationsSection() {
   return (
@@ -23,11 +23,11 @@ export default function CertificationsSection() {
         {certs.map((cert, i) => (
           <div
             key={cert.name}
-            className={`glass-panel p-5 group transition-all duration-500 cursor-default hover:scale-[1.04] hover:-translate-y-1 ${colors[i % 3]} animate-fade-up`}
+            className={`paper p-5 group transition-all duration-500 cursor-default hover:scale-[1.04] hover:-translate-y-1 ${colors[i % 3]} animate-fade-up`}
             style={{ animationDelay: `${(i % 6) * 70}ms` }}
           >
             <div className="flex items-start gap-3">
-              <Award className="w-6 h-6 shrink-0 text-muted-foreground group-hover:text-primary group-hover:scale-125 group-hover:drop-shadow-[0_0_10px_hsl(var(--primary)/0.7)] transition-all duration-300" />
+              <Award className="w-6 h-6 shrink-0 text-muted-foreground group-hover:text-primary group-hover:scale-125 group-hover:drop- transition-all duration-300" />
               <div>
                 <h3 className="font-display text-sm font-semibold text-foreground hover-text-pop cursor-default group-hover:text-primary transition-colors">
                   {cert.name}

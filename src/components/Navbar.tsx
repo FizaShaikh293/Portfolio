@@ -65,7 +65,7 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden glass-panel mx-4 mb-2 p-5 flex flex-col gap-4 animate-fade-in">
+        <div className="md:hidden paper mx-4 mb-2 p-5 flex flex-col gap-4 animate-fade-in">
           {links.map(({ label, href }) => (
             <a
               key={label}
