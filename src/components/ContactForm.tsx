@@ -42,11 +42,11 @@ export default function ContactForm() {
   };
 
   const field =
-    'w-full rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all duration-300 focus:border-primary/40 focus:bg-muted/40 focus:';
+    'w-full border-0 border-b border-border bg-transparent px-0 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors duration-300 focus:border-foreground';
 
   return (
-    <form onSubmit={onSubmit} className="paper p-6 md:p-8 flex flex-col gap-4">
-      <div className="grid sm:grid-cols-2 gap-4">
+    <form onSubmit={onSubmit} className="paper p-6 md:p-10 flex flex-col gap-6">
+      <div className="grid sm:grid-cols-2 gap-6">
         <input name="name" required maxLength={100} placeholder="Your name" className={field} />
         <input name="email" type="email" required maxLength={150} placeholder="Your email" className={field} />
       </div>
@@ -55,7 +55,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-medium text-primary-foreground bg-gradient-to-r from-primary to-secondary transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_-10px_hsl(var(--primary)/0.7)] disabled:opacity-60 disabled:translate-y-0"
+        className="group inline-flex items-center justify-center gap-2 self-start border border-foreground/25 px-6 py-3 text-xs font-mono uppercase tracking-[0.18em] text-foreground transition-all duration-300 hover:bg-foreground hover:text-background disabled:opacity-60"
       >
         {status === 'sending' ? (
           <Loader2 className="w-4 h-4 animate-spin" />
@@ -68,9 +68,9 @@ export default function ContactForm() {
       </button>
 
       {status === 'sent' && (
-        <p className="text-xs text-primary text-center animate-fade-in">Thanks — I'll get back to you soon.</p>
+        <p className="text-xs text-primary animate-fade-in">Thanks — I'll get back to you soon.</p>
       )}
-      {status === 'error' && <p className="text-xs text-destructive text-center">{error}</p>}
+      {status === 'error' && <p className="text-xs text-destructive">{error}</p>}
     </form>
   );
 }
