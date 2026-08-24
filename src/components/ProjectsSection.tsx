@@ -99,7 +99,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-xl md:text-2xl text-foreground ink-underline"
+                      className="font-display text-xl md:text-2xl text-foreground ink-underline"
                     >
                       {p.title}
                     </a>
