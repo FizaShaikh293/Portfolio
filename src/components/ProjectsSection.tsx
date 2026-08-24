@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Cpu, FolderSearch, Bot, ShieldCheck, Search, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import ArchitectureCover from './ArchitectureCover';
+
+const GITHUB = 'https://github.com/FizaShaikh293';
 
 const projects = [
   {
     title: 'Privacy-Preserving Blockchain Forensics',
     subtitle: "Master's Dissertation · Monero Anomaly Detection",
-    icon: ShieldCheck,
     tagline: 'Catching suspicious behaviour on a privacy coin without ever de-anonymising a single user.',
     desc: 'End-to-end forensics pipeline that extracts and analyses Monero transaction behaviour (timing, frequency, structural signals) via a locally synced node and unsupervised ML, without exposing any user-identifying data. Combines Isolation Forest and Autoencoders with SHAP for explainable anomaly detection, delivered as an interactive Streamlit dashboard for analysts.',
     architecture: [
@@ -17,13 +18,11 @@ const projects = [
       { label: 'Insight', items: ['SHAP', 'Streamlit'] },
     ],
     tech: ['Python', 'Monero RPC', 'Isolation Forest', 'Autoencoders', 'SHAP', 'Streamlit'],
-    accent: 'text-primary',
     featured: true,
   },
   {
     title: 'AI-Powered Blockchain Mining Simulator',
     subtitle: 'Neural-guided Proof-of-Work Research',
-    icon: Bot,
     tagline: 'A neural net that learns to mine: fewer hashes, same security guarantees.',
     desc: 'Real-time web application comparing traditional Proof-of-Work mining against a neural-network-driven approach. Demonstrates a measurable reduction in the computational steps needed to reach a valid hash, without compromising blockchain validation or decentralisation.',
     architecture: [
@@ -32,12 +31,10 @@ const projects = [
       { label: 'Interface', items: ['Streamlit', 'Live metrics'] },
     ],
     tech: ['Python', 'TensorFlow', 'Keras', 'Streamlit'],
-    accent: 'text-secondary',
   },
   {
     title: 'Directory Traversal Attack Simulation',
     subtitle: 'Offensive Security · Web Exploitation',
-    icon: FolderSearch,
     tagline: 'Reading /etc/passwd through a URL, then writing the fix.',
     desc: 'Structured security testing to identify and exploit directory traversal vulnerabilities by manipulating URL parameters to access restricted server files. Documented input validation failures and effective security header configurations to support remediation guidance for developers.',
     architecture: [
@@ -46,12 +43,10 @@ const projects = [
       { label: 'Fix', items: ['Input validation', 'Security headers'] },
     ],
     tech: ['Burp Suite', 'PortSwigger', 'Linux', 'Security'],
-    accent: 'text-primary',
   },
   {
     title: 'AI Car Game on Unity 3D',
     subtitle: 'Game AI · Pathfinding & Difficulty Scaling',
-    icon: Cpu,
     tagline: 'Opponents that actually drive like opponents.',
     desc: 'Interactive 3D car racing game built in Unity featuring AI-controlled opponents with pathfinding, obstacle avoidance, and dynamic difficulty scaling for realistic, replayable gameplay.',
     architecture: [
@@ -60,12 +55,10 @@ const projects = [
       { label: 'Gameplay', items: ['Obstacle avoidance', 'Difficulty scaling'] },
     ],
     tech: ['Unity', 'C#', 'AI', '3D'],
-    accent: 'text-secondary',
   },
   {
     title: 'Log Detective',
     subtitle: 'SOC Log Analysis · Live on Vercel',
-    icon: Search,
     tagline: 'Turn noisy logs into clear incident signals.',
     desc: 'A practical cybersecurity log-analysis engine that parses system and application logs to surface suspicious activity, repeated failed logins, brute-force patterns, and anomalous IP behaviour. Built with Python, Pandas and regex-driven detection, it automates the repetitive parts of SOC investigation and produces actionable security insights.',
     architecture: [
@@ -75,7 +68,6 @@ const projects = [
       { label: 'Deploy', items: ['Vercel'] },
     ],
     tech: ['Python', 'Regular Expressions', 'Pandas', 'Log Analysis', 'SOC', 'Vercel'],
-    accent: 'text-primary',
     link: 'https://log-detective.vercel.app/',
     linkLabel: 'Open live app',
   },
@@ -85,63 +77,62 @@ export default function ProjectsSection() {
   const [expanded, setExpanded] = useState<number | null>(0);
 
   return (
-    <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-4 max-w-4xl mx-auto">
       <SectionHeading label="Selected Work" title="Projects" />
 
-      <div className="flex flex-col gap-4 max-w-4xl mx-auto">
+      <div className="flex flex-col gap-5">
         {projects.map((p, i) => {
-          const Icon = p.icon;
           const isExpanded = expanded === i;
 
           return (
             <article
               key={p.title}
               onClick={() => setExpanded(isExpanded ? null : i)}
-              className={`group relative overflow-hidden rounded-2xl border bg-muted/40 p-6 md:p-7 cursor-pointer transition-all duration-500 hover:-translate-y-1 animate-fade-up ${
-                isExpanded ? 'border-primary/25 bg-muted/40' : 'border-border hover:border-border'
-              }`}
-              style={{ animationDelay: `${i * 80}ms` }}
+              className="paper paper-lifted p-6 md:p-8 cursor-pointer animate-fade-up"
+              style={{ animationDelay: `${i * 70}ms` }}
             >
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="flex items-start gap-4 min-w-0">
-                  <div className={`shrink-0 w-10 h-10 rounded-xl border border-border bg-muted/40 flex items-center justify-center ${p.accent}`}>
-                    <Icon className="w-4.5 h-4.5" />
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="flex items-baseline gap-3 flex-wrap">
+                    <a
+                      href={GITHUB}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-xl md:text-2xl text-foreground ink-underline"
+                    >
+                      {p.title}
+                    </a>
+                    {p.featured && (
+                      <span className="border border-foreground/20 px-2 py-0.5 text-[9px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                        Featured
+                      </span>
+                    )}
                   </div>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground leading-tight">
-                        {p.title}
-                      </h3>
-                      {p.featured && (
-                        <span className="rounded-full border border-primary/25 px-2 py-0.5 text-[9px] uppercase tracking-[0.18em] text-primary">
-                          Featured
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-[11px] font-mono text-muted-foreground mt-1 tracking-wide uppercase">
-                      {p.subtitle}
-                    </p>
-                  </div>
+                  <p className="mt-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                    {p.subtitle}
+                  </p>
                 </div>
                 <ArrowUpRight
-                  className={`w-5 h-5 shrink-0 transition-all duration-300 ${
-                    isExpanded ? 'rotate-45 text-primary' : 'text-muted-foreground group-hover:text-primary'
+                  className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform duration-300 ${
+                    isExpanded ? 'rotate-45' : ''
                   }`}
                 />
               </div>
 
-              {/* Architecture cover */}
-              <ArchitectureCover stages={p.architecture} accent={p.accent} />
+              <div className="mt-5">
+                <ArchitectureCover stages={p.architecture} accent="text-foreground" />
+              </div>
 
-              <p className="text-sm text-muted-foreground italic leading-snug mt-4">{p.tagline}</p>
+              <p className="mt-5 text-sm italic leading-relaxed text-foreground/75">{p.tagline}</p>
 
-              <div className={`grid transition-all duration-500 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
+              <div className={`grid transition-all duration-500 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'}`}>
                 <div className="overflow-hidden">
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
                     {p.tech.map((t) => (
-                      <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-border text-muted-foreground">
+                      <span key={t} className="text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
                         {t}
                       </span>
                     ))}
@@ -153,7 +144,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-2 mt-4 text-[11px] font-mono tracking-widest text-primary hover:opacity-80 transition-opacity"
+                      className="mt-6 inline-flex items-center gap-2 border border-foreground/25 px-4 py-2 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       {p.linkLabel ?? 'Visit'}
@@ -165,32 +156,28 @@ export default function ProjectsSection() {
           );
         })}
 
-        {/* TryHackMe Writeups external link card */}
         <a
           href="https://fizashaikh293.github.io/thm-writeups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-2xl border border-border bg-muted/40 p-6 md:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-border animate-fade-up"
+          className="paper paper-lifted p-6 md:p-8 animate-fade-up"
         >
           <div className="flex items-start justify-between gap-4">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl border border-border bg-muted/40 flex items-center justify-center text-secondary">
-                <ShieldCheck className="w-4.5 h-4.5" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg md:text-xl font-semibold text-foreground">TryHackMe Writeups</h3>
-                <p className="text-[11px] font-mono text-muted-foreground mt-1 tracking-wide uppercase">
-                  Live · Hands-on Lab Notes
-                </p>
-              </div>
+            <div>
+              <h3 className="text-xl md:text-2xl text-foreground">TryHackMe Writeups</h3>
+              <p className="mt-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                Live · Hands-on Lab Notes
+              </p>
             </div>
-            <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+            <ExternalLink className="w-5 h-5 shrink-0 text-muted-foreground" />
           </div>
-          <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
             A growing collection of hands-on TryHackMe room writeups covering offensive security, networking, and digital
             forensics. Each one a documented kill chain from recon to remediation.
           </p>
-          <p className="text-[11px] text-primary mt-4 font-mono tracking-widest">VISIT SITE →</p>
+          <span className="mt-6 inline-block text-[11px] font-mono uppercase tracking-[0.18em] text-foreground ink-underline">
+            Visit site
+          </span>
         </a>
       </div>
     </section>
