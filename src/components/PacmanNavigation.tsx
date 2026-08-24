@@ -4,19 +4,16 @@ const sections = [
   { id: 'hero', label: 'Home', y: 0 },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Work' },
-  { id: 'education', label: 'Edu' },
   { id: 'techstack', label: 'Tech' },
   { id: 'certs', label: 'Certs' },
   { id: 'projects', label: 'Projects' },
   { id: 'socials', label: 'Connect' },
 ];
 
-// Classic Pac-Man ghost colors
+// Ink-drawn companions
 const ghosts = [
-  { color: '#FF0000', name: 'Blinky', offset: -60 },
-  { color: '#FFB8FF', name: 'Pinky', offset: -110 },
-  { color: '#00FFFF', name: 'Inky', offset: -160 },
-  { color: '#FFB852', name: 'Clyde', offset: -210 },
+  { color: 'hsl(var(--foreground) / 0.55)', name: 'Blinky', offset: -60 },
+  { color: 'hsl(var(--foreground) / 0.35)', name: 'Pinky', offset: -110 },
 ];
 
 export default function PacmanNavigation() {
@@ -67,7 +64,7 @@ export default function PacmanNavigation() {
       {/* Track */}
       <div className="relative" style={{ height: `${trackHeight + 40}px` }}>
         {/* Vertical line */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-primary/10" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-border" />
 
         {/* Pac-Man */}
         <div
@@ -84,7 +81,7 @@ export default function PacmanNavigation() {
             <div
               key={ghost.name}
               className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-500 ease-out"
-              style={{ top: `${ghostY + 20}px`, opacity: scrollProgress > 0.02 ? 0.8 : 0 }}
+              style={{ top: `${ghostY + 20}px`, opacity: scrollProgress > 0.02 ? 0.75 : 0 }}
             >
               <div className="ghost-character" style={{ '--ghost-color': ghost.color } as React.CSSProperties}>
                 <div className="ghost-eyes">
@@ -111,17 +108,17 @@ export default function PacmanNavigation() {
               title={section.label}
             >
               <div
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   isEaten
                     ? isActive
-                      ? 'bg-primary scale-125 '
-                      : 'bg-silver/40 scale-75'
-                    : 'bg-primary/50 animate-pulse-glow'
+                      ? 'bg-foreground scale-110'
+                      : 'bg-foreground/25 scale-75'
+                    : 'bg-foreground/40'
                 }`}
               />
               <span
-                className={`absolute right-6 text-[10px] font-medium tracking-wide whitespace-nowrap transition-all duration-200 ${
-                  isActive ? 'text-primary opacity-100' : 'text-muted-foreground opacity-0 group-hover:opacity-100'
+                className={`absolute right-6 text-[10px] font-mono uppercase tracking-[0.16em] whitespace-nowrap transition-all duration-200 ${
+                  isActive ? 'text-foreground opacity-100' : 'text-muted-foreground opacity-0 group-hover:opacity-100'
                 }`}
               >
                 {section.label}
