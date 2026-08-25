@@ -10,11 +10,14 @@ const sections = [
   { id: 'socials', label: 'Connect' },
 ];
 
-// Ink-drawn companions
+// Classic arcade companions
 const ghosts = [
-  { color: 'hsl(var(--foreground) / 0.55)', name: 'Blinky', offset: -60 },
-  { color: 'hsl(var(--foreground) / 0.35)', name: 'Pinky', offset: -110 },
+  { color: 'hsl(0 72% 52%)', name: 'Blinky', offset: -60 },
+  { color: 'hsl(325 75% 70%)', name: 'Pinky', offset: -110 },
+  { color: 'hsl(188 70% 52%)', name: 'Inky', offset: -160 },
+  { color: 'hsl(28 88% 55%)', name: 'Clyde', offset: -210 },
 ];
+
 
 export default function PacmanNavigation() {
   const [activeSection, setActiveSection] = useState(0);
@@ -111,11 +114,12 @@ export default function PacmanNavigation() {
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   isEaten
                     ? isActive
-                      ? 'bg-foreground scale-110'
-                      : 'bg-foreground/25 scale-75'
-                    : 'bg-foreground/40'
+                      ? 'bg-[hsl(45_96%_52%)] scale-125 shadow-[0_0_0_2px_hsl(45_96%_52%/0.25)]'
+                      : 'bg-foreground/20 scale-75'
+                    : 'bg-[hsl(45_80%_45%)]/70'
                 }`}
               />
+
               <span
                 className={`absolute right-6 text-[10px] font-mono uppercase tracking-[0.16em] whitespace-nowrap transition-all duration-200 ${
                   isActive ? 'text-foreground opacity-100' : 'text-muted-foreground opacity-0 group-hover:opacity-100'
