@@ -15,27 +15,32 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-3xl mx-auto">
         <div
           className={`paper relative px-8 py-14 md:px-16 md:py-20 text-center transition-all duration-700 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            visible ? 'opacity-100 translate-y-0 paper-crunch' : 'opacity-0 translate-y-6'
           }`}
         >
           <span className="absolute left-8 top-6 text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
             Portfolio · 2026
           </span>
 
-          <p className="mb-5 text-[10px] font-mono uppercase tracking-[0.32em] text-muted-foreground">
+          <span className="absolute right-6 top-8 hidden md:block text-lg font-hand text-primary rotate-[6deg]">
+            hello there!
+          </span>
+
+          <p className="mb-5 text-lg font-hand ink-blue rotate-[-1deg]">
             Cybersecurity · Blockchain · AI
           </p>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl leading-[0.95] mb-6">
-            Fiza Shaikh
+            Fiza <span className="marker">Shaikh</span>
           </h1>
 
-          <div className="mx-auto mb-7 h-px w-24 bg-foreground/25" />
+          <div className="mx-auto mb-7 h-[2px] w-24 bg-primary/40 rounded-full" />
 
           <p className="mx-auto max-w-md text-sm md:text-base leading-relaxed text-muted-foreground">
             Security analyst and blockchain builder. I break things carefully,
             then write down exactly how to fix them.
           </p>
+
 
           <a
             href={CV_URL}
