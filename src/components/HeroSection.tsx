@@ -11,35 +11,34 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-[86vh] flex flex-col items-center justify-center px-4 py-24 overflow-hidden">
       <div className="relative z-10 w-full max-w-3xl mx-auto">
         <div
-          className={`paper relative px-8 py-14 md:px-16 md:py-20 text-center transition-all duration-700 ${
-            visible ? 'opacity-100 translate-y-0 paper-crunch' : 'opacity-0 translate-y-6'
+          className={`relative px-6 py-10 md:px-14 md:py-16 text-center transition-all duration-700 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <span className="absolute left-8 top-6 text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
-            Portfolio · 2026
-          </span>
-
-          <span className="absolute right-6 top-8 hidden md:block text-lg font-hand text-primary rotate-[6deg]">
-            hello there!
-          </span>
-
-          <p className="mb-5 text-lg font-hand ink-blue rotate-[-1deg]">
-            Cybersecurity · Blockchain · AI
+          <p className="mb-6 text-[10px] font-mono uppercase tracking-[0.34em] text-muted-foreground">
+            Portfolio · Volume One · 2026
           </p>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl leading-[0.95] mb-6">
-            Fiza <span className="marker">Shaikh</span>
+            Fiza Shaikh
           </h1>
 
-          <div className="mx-auto mb-7 h-[2px] w-24 bg-primary/40 rounded-full" />
+          <div className="mx-auto mb-7 flex items-center justify-center gap-3">
+            <span className="h-px w-12 bg-foreground/25" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
+              Cybersecurity · Blockchain · AI
+            </span>
+            <span className="h-px w-12 bg-foreground/25" />
+          </div>
 
           <p className="mx-auto max-w-md text-sm md:text-base leading-relaxed text-muted-foreground">
             Security analyst and blockchain builder. I break things carefully,
             then write down exactly how to fix them.
           </p>
+
 
 
           <a
