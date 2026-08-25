@@ -258,9 +258,9 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: hsl(var(--foreground));
+  background: hsl(45 96% 52%);
   position: relative;
-  box-shadow: none;
+  box-shadow: 0 0 0 1px hsl(38 60% 40% / 0.35);
   animation: pacman-chomp-down 0.45s ease-in-out infinite;
 }
 
@@ -273,7 +273,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: hsl(var(--card));
+  background: hsl(30 30% 15%);
 }
 
 @keyframes pacman-chomp {
@@ -407,4 +407,62 @@
   0% { opacity: 0; transform: perspective(1000px) rotateX(12deg) scale(0.965) translateY(24px); filter: blur(1px); }
   55% { transform: perspective(1000px) rotateX(-2deg) scale(1.006) translateY(-3px); filter: blur(0); }
   100% { opacity: 1; transform: perspective(1000px) rotateX(0) scale(1) translateY(0); }
+}
+
+/* --- Bound book --- */
+.book-shell {
+  position: relative;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow:
+    0 2px 4px hsl(30 20% 20% / 0.07),
+    0 30px 60px -40px hsl(30 20% 20% / 0.6),
+    inset 0 0 60px hsl(34 25% 60% / 0.10);
+}
+/* Spine shading down the left edge of the page */
+.book-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 46px;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    hsl(30 18% 30% / 0.16),
+    hsl(30 18% 30% / 0.05) 40%,
+    transparent 78%,
+    hsl(0 0% 100% / 0.5)
+  );
+}
+/* Stacked page edges on the right */
+.book-shell::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  right: -7px;
+  width: 7px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to right,
+    hsl(38 24% 88%) 0 2px,
+    hsl(34 16% 78%) 2px 3px
+  );
+  border-radius: 0 2px 2px 0;
+  box-shadow: 1px 0 3px hsl(30 20% 20% / 0.18);
+}
+/* Red margin rule, like a ruled notebook page */
+.book-margin {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 58px;
+  width: 1px;
+  background: hsl(var(--primary) / 0.22);
+  pointer-events: none;
+}
+.folio {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
 }

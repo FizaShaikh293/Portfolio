@@ -24,9 +24,10 @@ export default function AboutSection() {
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
-            <p className="mt-4 text-center text-lg font-hand text-primary/80 rotate-[-2deg]">
+            <p className="mt-4 text-center text-[10px] font-mono uppercase tracking-[0.24em] text-muted-foreground">
               Donegal, Ireland
             </p>
+
           </div>
 
 

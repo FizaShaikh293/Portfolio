@@ -11,6 +11,15 @@ import PacmanNavigation from '@/components/PacmanNavigation';
 import Loader from '@/components/Loader';
 import Reveal from '@/components/Reveal';
 
+const chapters = [
+  { n: 'I', title: 'About', node: <AboutSection /> },
+  { n: 'II', title: 'Experience', node: <WorkExperience /> },
+  { n: 'III', title: 'Tech Stack', node: <TechStackSection /> },
+  { n: 'IV', title: 'Certifications', node: <CertificationsSection /> },
+  { n: 'V', title: 'Projects', node: <ProjectsSection /> },
+  { n: 'VI', title: 'Contact', node: <SocialsSection /> },
+];
+
 const Index = () => {
   return (
     <div className="relative min-h-screen cursor-none">
@@ -18,16 +27,26 @@ const Index = () => {
       <CustomCursor />
       <PacmanNavigation />
       <Navbar />
-      <main className="relative z-10">
-        <div id="hero">
-          <HeroSection />
+      <main className="relative z-10 px-3 sm:px-6 lg:px-10 pb-16">
+        <div className="book-shell relative mx-auto max-w-6xl">
+          <span className="book-margin hidden md:block" />
+
+          <div id="hero">
+            <HeroSection />
+          </div>
+
+          {chapters.map((c, i) => (
+            <Reveal key={c.title} from={i % 2 === 0 ? 'left' : 'right'}>
+              <div className="relative border-t border-border/70">
+                <p className="pt-10 text-center text-[10px] font-mono uppercase tracking-[0.34em] text-muted-foreground">
+                  Chapter {c.n}
+                </p>
+                {c.node}
+                <p className="folio pb-8 text-center text-sm">{i + 2}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-        <Reveal from="left"><AboutSection /></Reveal>
-        <Reveal from="right"><WorkExperience /></Reveal>
-        <Reveal from="left"><TechStackSection /></Reveal>
-        <Reveal from="right"><CertificationsSection /></Reveal>
-        <Reveal from="left"><ProjectsSection /></Reveal>
-        <Reveal from="up"><SocialsSection /></Reveal>
       </main>
     </div>
   );
