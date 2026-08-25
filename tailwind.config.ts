@@ -15,7 +15,9 @@ export default {
         display: ["Instrument Serif", "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
+        hand: ["Caveat", "Segoe Script", "cursive"],
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
