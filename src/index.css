@@ -381,3 +381,30 @@
 .arch-flow {
   animation: arch-flow 3.2s ease-in-out infinite;
 }
+
+/* --- Handwritten paper accents --- */
+@layer utilities {
+  .font-hand { font-family: 'Caveat', 'Segoe Script', cursive; }
+
+  /* Highlighter marker swipe */
+  .marker {
+    background-image: linear-gradient(hsl(var(--highlight) / 0.55), hsl(var(--highlight) / 0.55));
+    background-repeat: no-repeat;
+    background-size: 100% 42%;
+    background-position: 0 78%;
+  }
+
+  .ink-blue { color: hsl(var(--ink-blue)); }
+  .ink-green { color: hsl(var(--ink-green)); }
+
+  /* Sheet dealt onto the desk */
+  .paper-crunch {
+    animation: paper-crunch 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes paper-crunch {
+  0% { opacity: 0; transform: perspective(1000px) rotateX(12deg) scale(0.965) translateY(24px); filter: blur(1px); }
+  55% { transform: perspective(1000px) rotateX(-2deg) scale(1.006) translateY(-3px); filter: blur(0); }
+  100% { opacity: 1; transform: perspective(1000px) rotateX(0) scale(1) translateY(0); }
+}
