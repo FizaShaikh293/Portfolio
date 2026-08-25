@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,8 +20,12 @@
     --secondary-foreground: 40 40% 98%;
     --muted: 38 22% 91%;
     --muted-foreground: 30 6% 40%;
-    --accent: 200 30% 42%;
+    --accent: 205 55% 40%;
     --accent-foreground: 40 40% 98%;
+    --highlight: 48 90% 72%;
+    --ink-blue: 220 55% 38%;
+    --ink-green: 150 35% 34%;
+
     --destructive: 0 65% 45%;
     --destructive-foreground: 40 40% 98%;
     --border: 34 15% 82%;
@@ -376,4 +380,31 @@
 
 .arch-flow {
   animation: arch-flow 3.2s ease-in-out infinite;
+}
+
+/* --- Handwritten paper accents --- */
+@layer utilities {
+  .font-hand { font-family: 'Caveat', 'Segoe Script', cursive; }
+
+  /* Highlighter marker swipe */
+  .marker {
+    background-image: linear-gradient(hsl(var(--highlight) / 0.55), hsl(var(--highlight) / 0.55));
+    background-repeat: no-repeat;
+    background-size: 100% 42%;
+    background-position: 0 78%;
+  }
+
+  .ink-blue { color: hsl(var(--ink-blue)); }
+  .ink-green { color: hsl(var(--ink-green)); }
+
+  /* Sheet dealt onto the desk */
+  .paper-crunch {
+    animation: paper-crunch 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes paper-crunch {
+  0% { opacity: 0; transform: perspective(1000px) rotateX(12deg) scale(0.965) translateY(24px); filter: blur(1px); }
+  55% { transform: perspective(1000px) rotateX(-2deg) scale(1.006) translateY(-3px); filter: blur(0); }
+  100% { opacity: 1; transform: perspective(1000px) rotateX(0) scale(1) translateY(0); }
 }

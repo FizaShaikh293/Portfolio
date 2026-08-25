@@ -16,18 +16,19 @@ export default function AboutSection() {
       <div className="paper p-8 md:p-12">
         <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
           <div className="shrink-0">
-            <div className="relative w-44 h-52 md:w-52 md:h-64 border border-border bg-background p-2 shadow-[var(--shadow-paper)] rotate-[-1.5deg]">
+            <div className="relative w-44 h-52 md:w-52 md:h-64 border border-border bg-background p-2 shadow-[var(--shadow-paper)] rotate-[-1.5deg] transition-transform duration-500 hover:rotate-0 tape">
               <img
                 src={profilePhoto}
                 alt="Fiza Shaikh"
                 loading="lazy"
-                className="w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-700 hover:grayscale-0"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
-            <p className="mt-3 text-center text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+            <p className="mt-4 text-center text-lg font-hand text-primary/80 rotate-[-2deg]">
               Donegal, Ireland
             </p>
           </div>
+
 
           <div className="flex-1">
             <p className="text-base md:text-lg leading-relaxed text-foreground/90 mb-6">
