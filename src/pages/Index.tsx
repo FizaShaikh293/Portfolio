@@ -9,6 +9,7 @@ import SocialsSection from '@/components/SocialsSection';
 import CustomCursor from '@/components/CustomCursor';
 import PacmanNavigation from '@/components/PacmanNavigation';
 import Loader from '@/components/Loader';
+import Reveal from '@/components/Reveal';
 
 const Index = () => {
   return (
@@ -21,12 +22,12 @@ const Index = () => {
         <div id="hero">
           <HeroSection />
         </div>
-        <AboutSection />
-        <WorkExperience />
-        <TechStackSection />
-        <CertificationsSection />
-        <ProjectsSection />
-        <SocialsSection />
+        <Reveal from="left"><AboutSection /></Reveal>
+        <Reveal from="right"><WorkExperience /></Reveal>
+        <Reveal from="left"><TechStackSection /></Reveal>
+        <Reveal from="right"><CertificationsSection /></Reveal>
+        <Reveal from="left"><ProjectsSection /></Reveal>
+        <Reveal from="up"><SocialsSection /></Reveal>
       </main>
     </div>
   );
