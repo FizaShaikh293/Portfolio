@@ -41,22 +41,20 @@ export default function AboutSection() {
           <p className="mb-6 border-l-2 border-primary/60 pl-4 text-sm italic text-muted-foreground font-display">
             Currently based in Donegal, open to roles across Ireland.
           </p>
-
-
-            <div className="flex flex-wrap gap-2">
-              {focus.map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="inline-flex items-center gap-2 border border-border px-3 py-1.5 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground transition-colors duration-300 hover:text-foreground hover:border-foreground/30 cursor-default"
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  {label}
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2">
+            {focus.map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="inline-flex items-center gap-2 border border-border bg-card px-3 py-1.5 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground transition-all duration-300 hover:text-primary hover:border-primary/50 cursor-default"
+              >
+                <Icon className="w-3.5 h-3.5 ink-teal" />
+                {label}
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
+
   );
 }
