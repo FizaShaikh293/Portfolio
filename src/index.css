@@ -467,3 +467,95 @@
   font-style: italic;
   color: hsl(var(--muted-foreground));
 }
+
+/* --- Editorial personality layer --- */
+@layer utilities {
+  /* Big serif opening letter for the first paragraph of a chapter */
+  .drop-cap::first-letter {
+    float: left;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 3.6em;
+    line-height: 0.82;
+    padding: 0.06em 0.12em 0 0;
+    color: hsl(var(--primary));
+  }
+
+  /* Handwritten margin annotation */
+  .marginalia {
+    font-family: 'Caveat', cursive;
+    font-size: 1.12rem;
+    line-height: 1.25;
+    color: hsl(var(--ink-blue));
+    transform: rotate(-2.2deg);
+  }
+
+  /* Rubber-stamp badge */
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.7rem;
+    border: 1.5px solid hsl(var(--primary) / 0.55);
+    border-radius: 2px;
+    color: hsl(var(--primary));
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+    opacity: 0.9;
+  }
+  .stamp::before,
+  .stamp::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* Chapter tab sticking out of the page edge */
+  .chapter-tab {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.35rem 0.9rem 0.35rem 0.85rem;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+    border-left: 3px solid hsl(var(--primary));
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 1px 2px hsl(30 20% 20% / 0.08);
+  }
+
+  /* Thin ruled leader dots, like a table of contents */
+  .leader {
+    background-image: radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 6px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+  }
+
+  .ink-teal { color: hsl(var(--accent)); }
+  .ink-rust { color: hsl(var(--primary)); }
+
+  /* Slow ink-bleed underline on the nameplate */
+  .rule-flourish::after {
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 0.9rem auto 0;
+    width: 0;
+    background: hsl(var(--primary) / 0.7);
+    animation: rule-draw 1.4s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@keyframes rule-draw {
+  to { width: 8rem; }
+}
+
+@keyframes ink-in {
+  from { opacity: 0; filter: blur(6px); transform: translateY(10px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+.animate-ink-in { animation: ink-in 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
