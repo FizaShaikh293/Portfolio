@@ -6,41 +6,42 @@
 
 @layer base {
   :root {
-    /* Paper theme: warm off-white stock, graphite ink, red editorial accent */
-    --background: 40 30% 96%;
-    --foreground: 30 8% 12%;
-    --card: 40 40% 98%;
-    --card-foreground: 30 8% 12%;
-    --popover: 40 40% 98%;
-    --popover-foreground: 30 8% 12%;
+    /* Field-notebook theme: warm stock, deep ink, terracotta + teal marginalia */
+    --background: 38 36% 95%;
+    --foreground: 220 16% 14%;
+    --card: 40 44% 98%;
+    --card-foreground: 220 16% 14%;
+    --popover: 40 44% 98%;
+    --popover-foreground: 220 16% 14%;
 
-    --primary: 8 62% 44%;
-    --primary-foreground: 40 40% 98%;
-    --secondary: 30 8% 20%;
-    --secondary-foreground: 40 40% 98%;
-    --muted: 38 22% 91%;
-    --muted-foreground: 30 6% 40%;
-    --accent: 205 55% 40%;
-    --accent-foreground: 40 40% 98%;
-    --highlight: 48 90% 72%;
+    --primary: 14 68% 47%;
+    --primary-foreground: 40 44% 98%;
+    --secondary: 220 16% 20%;
+    --secondary-foreground: 40 44% 98%;
+    --muted: 38 26% 90%;
+    --muted-foreground: 220 8% 38%;
+    --accent: 186 44% 30%;
+    --accent-foreground: 40 44% 98%;
+    --highlight: 44 92% 66%;
     --ink-blue: 220 55% 38%;
-    --ink-green: 150 35% 34%;
+    --ink-green: 158 38% 30%;
 
     --destructive: 0 65% 45%;
     --destructive-foreground: 40 40% 98%;
-    --border: 34 15% 82%;
-    --input: 34 15% 82%;
-    --ring: 8 62% 44%;
+    --border: 34 16% 80%;
+    --input: 34 16% 80%;
+    --ring: 14 68% 47%;
     --radius: 0.25rem;
 
     /* Aliases kept for legacy usage */
-    --neon-cyan: 200 30% 42%;
-    --neon-purple: 30 8% 20%;
-    --neon-yellow: 8 62% 44%;
+    --neon-cyan: 186 44% 30%;
+    --neon-purple: 220 16% 20%;
+    --neon-yellow: 14 68% 47%;
     --silver: 30 6% 55%;
 
-    --ink: 30 8% 12%;
+    --ink: 220 16% 14%;
     --paper-line: 34 18% 78%;
+
 
     --gradient-primary: linear-gradient(135deg, hsl(30 8% 12%), hsl(30 8% 30%));
     --gradient-text: linear-gradient(135deg, hsl(30 8% 12%), hsl(30 8% 12%));
