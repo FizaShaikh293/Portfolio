@@ -38,14 +38,24 @@ const Index = () => {
           {chapters.map((c, i) => (
             <Reveal key={c.title} from={i % 2 === 0 ? 'left' : 'right'}>
               <div className="relative border-t border-border/70">
-                <p className="pt-10 text-center text-[10px] font-mono uppercase tracking-[0.34em] text-muted-foreground">
-                  Chapter {c.n}
-                </p>
+                <div className="pt-10 pl-4 sm:pl-8 md:pl-16">
+                  <span className="chapter-tab">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary">
+                      Chapter {c.n}
+                    </span>
+                    <span className="font-display text-sm text-foreground">{c.title}</span>
+                  </span>
+                </div>
                 {c.node}
-                <p className="folio pb-8 text-center text-sm">{i + 2}</p>
+                <div className="flex items-center justify-center gap-3 pb-8">
+                  <span className="h-px w-10 bg-border" />
+                  <p className="folio text-sm">{i + 2}</p>
+                  <span className="h-px w-10 bg-border" />
+                </div>
               </div>
             </Reveal>
           ))}
+
         </div>
       </main>
     </div>
