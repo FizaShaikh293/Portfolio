@@ -49,7 +49,7 @@ export default function CustomCursor() {
           transition: 'transform 0.12s ease-out',
         }}
       >
-        <div className="w-1.5 h-1.5 rounded-full bg-foreground" />
+        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
       </div>
 
       <div
