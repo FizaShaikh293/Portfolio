@@ -15,12 +15,12 @@ export default function AboutSection() {
 
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <div className="shrink-0 mx-auto md:mx-0">
-          <div className="relative w-44 h-52 md:w-52 md:h-64 border border-border bg-card p-2 shadow-[var(--shadow-paper)] rotate-[-1.5deg] transition-transform duration-500 hover:rotate-0 tape">
+          <div className="relative w-44 h-52 md:w-52 md:h-64 border border-border bg-card p-2 rounded-3xl shadow-[var(--shadow-paper)] rotate-[-2deg] transition-transform duration-500 hover:rotate-0 tape">
             <img
               src={profilePhoto}
               alt="Fiza Shaikh"
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+              className="w-full h-full object-cover rounded-2xl transition-transform duration-700 hover:scale-[1.02]"
             />
           </div>
           <p className="mt-4 text-center text-[10px] font-mono uppercase tracking-[0.24em] text-muted-foreground">
@@ -45,9 +45,9 @@ export default function AboutSection() {
             {focus.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="inline-flex items-center gap-2 border border-border bg-card px-3 py-1.5 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground transition-all duration-300 hover:text-primary hover:border-primary/50 cursor-default"
+                className="chip hover-wiggle cursor-default"
               >
-                <Icon className="w-3.5 h-3.5 ink-teal" />
+                <Icon className="w-3.5 h-3.5 text-accent" />
                 {label}
               </div>
             ))}

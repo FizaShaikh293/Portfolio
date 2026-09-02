@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Instrument Serif", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
+        sans: ["Quicksand", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
         hand: ["Caveat", "Segoe Script", "cursive"],
       },
