@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Quicksand:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,60 +6,60 @@
 
 @layer base {
   :root {
-    /* Minimal scrapbook theme: warm cream, kraft, terracotta + sage */
-    --background: 40 42% 94%;
-    --foreground: 28 24% 20%;
-    --card: 42 55% 97.5%;
-    --card-foreground: 28 24% 20%;
-    --popover: 42 55% 97.5%;
-    --popover-foreground: 28 24% 20%;
+    /* Sleek minimal: crisp off-white, near-black ink, one electric blue accent */
+    --background: 220 20% 98%;
+    --foreground: 225 15% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 15% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 15% 10%;
 
-    --primary: 12 58% 50%;
-    --primary-foreground: 40 55% 97%;
-    --secondary: 44 38% 89%;
-    --secondary-foreground: 30 25% 30%;
-    --muted: 40 30% 90%;
-    --muted-foreground: 30 12% 42%;
-    --accent: 150 26% 52%;
-    --accent-foreground: 40 55% 97%;
+    --primary: 222 89% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 225 12% 28%;
+    --muted: 220 14% 95%;
+    --muted-foreground: 225 8% 45%;
+    --accent: 222 89% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --highlight: 48 92% 74%;
-    --ink-blue: 205 42% 44%;
-    --ink-green: 150 30% 42%;
+    --highlight: 222 89% 92%;
+    --ink-blue: 222 89% 55%;
+    --ink-green: 160 60% 38%;
     --peach: 24 80% 70%;
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 40 55% 97%;
-    --border: 36 22% 80%;
-    --input: 36 22% 80%;
-    --ring: 12 58% 50%;
-    --radius: 0.5rem;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 89%;
+    --input: 220 13% 89%;
+    --ring: 222 89% 55%;
+    --radius: 0.75rem;
 
     /* Aliases kept for legacy usage */
-    --neon-cyan: 205 42% 44%;
-    --neon-purple: 12 58% 50%;
-    --neon-yellow: 12 58% 50%;
-    --silver: 30 12% 46%;
+    --neon-cyan: 222 89% 55%;
+    --neon-purple: 222 89% 55%;
+    --neon-yellow: 222 89% 55%;
+    --silver: 225 8% 45%;
 
-    --ink: 28 24% 20%;
-    --paper-line: 36 22% 82%;
+    --ink: 225 15% 10%;
+    --paper-line: 220 13% 91%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(12 58% 50%), hsl(24 70% 58%));
-    --gradient-text: linear-gradient(135deg, hsl(12 58% 50%), hsl(150 30% 42%));
+    --gradient-primary: linear-gradient(135deg, hsl(222 89% 55%), hsl(250 80% 62%));
+    --gradient-text: linear-gradient(135deg, hsl(222 89% 55%), hsl(250 80% 62%));
     --gradient-glow: none;
     --gradient-mesh: none;
 
-    --shadow-soft: 0 2px 8px hsl(30 30% 40% / 0.08), 0 16px 32px -22px hsl(28 30% 35% / 0.3);
-    --shadow-paper: 0 1px 2px hsl(30 30% 40% / 0.08), 0 14px 30px -20px hsl(28 35% 35% / 0.32);
+    --shadow-soft: 0 1px 2px hsl(225 20% 20% / 0.05), 0 12px 32px -18px hsl(225 25% 25% / 0.18);
+    --shadow-paper: 0 1px 2px hsl(225 20% 20% / 0.05), 0 16px 40px -24px hsl(225 25% 25% / 0.16);
 
-    --sidebar-background: 40 42% 94%;
-    --sidebar-foreground: 28 24% 20%;
-    --sidebar-primary: 12 58% 50%;
-    --sidebar-primary-foreground: 40 55% 97%;
-    --sidebar-accent: 40 30% 90%;
-    --sidebar-accent-foreground: 28 24% 20%;
-    --sidebar-border: 36 22% 80%;
-    --sidebar-ring: 12 58% 50%;
+    --sidebar-background: 220 20% 98%;
+    --sidebar-foreground: 225 15% 10%;
+    --sidebar-primary: 222 89% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 95%;
+    --sidebar-accent-foreground: 225 15% 10%;
+    --sidebar-border: 220 13% 89%;
+    --sidebar-ring: 222 89% 55%;
   }
 }
 
@@ -69,11 +69,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Quicksand', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     position: relative;
   }
-  /* Scrapbook desk backdrop: faint kraft washes + graph-paper grid */
+  /* Sleek backdrop: barely-there cool wash, no texture */
   body::before {
     content: '';
     position: fixed;
@@ -81,26 +81,14 @@
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(480px 480px at 10% 6%, hsl(38 60% 84% / 0.5), transparent 70%),
-      radial-gradient(560px 560px at 90% 16%, hsl(150 25% 85% / 0.4), transparent 70%),
-      radial-gradient(520px 520px at 82% 88%, hsl(16 55% 86% / 0.4), transparent 70%);
+      radial-gradient(720px 480px at 85% -10%, hsl(222 89% 55% / 0.05), transparent 70%),
+      radial-gradient(640px 480px at 0% 110%, hsl(250 80% 62% / 0.04), transparent 70%);
   }
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.35;
-    background-image:
-      linear-gradient(hsl(36 25% 78% / 0.35) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(36 25% 78% / 0.35) 1px, transparent 1px);
-    background-size: 26px 26px;
-  }
+  body::after { content: none; }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
   html {
     scroll-behavior: smooth;
@@ -450,30 +438,19 @@
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* --- Big soft content shell --- */
+/* --- Clean content shell --- */
 .book-shell {
   position: relative;
-  background: hsl(var(--card) / 0.92);
-  border: 1px solid hsl(var(--border));
-  border-radius: 2rem;
-  box-shadow:
-    0 2px 6px hsl(335 40% 40% / 0.05),
-    0 40px 80px -48px hsl(335 60% 55% / 0.35);
-  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
-.book-shell::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 10px;
-  pointer-events: none;
-  background: linear-gradient(to bottom, hsl(var(--primary) / 0.4), hsl(var(--accent) / 0.4), hsl(48 80% 60% / 0.35));
-}
+.book-shell::before { content: none; }
 .book-shell::after { content: none; }
 .book-margin { display: none; }
 .folio {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'IBM Plex Mono', monospace;
   color: hsl(var(--muted-foreground));
 }
 
