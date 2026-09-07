@@ -6,60 +6,60 @@
 
 @layer base {
   :root {
-    /* Soft candy theme: blush cream, plum ink, rose pink + lavender + mint */
-    --background: 340 50% 96.5%;
-    --foreground: 335 26% 22%;
-    --card: 0 0% 100%;
-    --card-foreground: 335 26% 22%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 335 26% 22%;
+    /* Minimal scrapbook theme: warm cream, kraft, terracotta + sage */
+    --background: 40 42% 94%;
+    --foreground: 28 24% 20%;
+    --card: 42 55% 97.5%;
+    --card-foreground: 28 24% 20%;
+    --popover: 42 55% 97.5%;
+    --popover-foreground: 28 24% 20%;
 
-    --primary: 335 72% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 268 65% 93%;
-    --secondary-foreground: 268 45% 38%;
-    --muted: 340 35% 93%;
-    --muted-foreground: 335 12% 46%;
-    --accent: 268 60% 68%;
-    --accent-foreground: 0 0% 100%;
+    --primary: 12 58% 50%;
+    --primary-foreground: 40 55% 97%;
+    --secondary: 44 38% 89%;
+    --secondary-foreground: 30 25% 30%;
+    --muted: 40 30% 90%;
+    --muted-foreground: 30 12% 42%;
+    --accent: 150 26% 52%;
+    --accent-foreground: 40 55% 97%;
 
-    --highlight: 45 100% 78%;
-    --ink-blue: 210 75% 58%;
-    --ink-green: 158 48% 45%;
-    --peach: 22 95% 72%;
+    --highlight: 48 92% 74%;
+    --ink-blue: 205 42% 44%;
+    --ink-green: 150 30% 42%;
+    --peach: 24 80% 70%;
 
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 335 30% 88%;
-    --input: 335 30% 88%;
-    --ring: 335 72% 60%;
-    --radius: 1.1rem;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 55% 97%;
+    --border: 36 22% 80%;
+    --input: 36 22% 80%;
+    --ring: 12 58% 50%;
+    --radius: 0.5rem;
 
     /* Aliases kept for legacy usage */
-    --neon-cyan: 188 70% 52%;
-    --neon-purple: 268 60% 68%;
-    --neon-yellow: 335 72% 60%;
-    --silver: 335 12% 60%;
+    --neon-cyan: 205 42% 44%;
+    --neon-purple: 12 58% 50%;
+    --neon-yellow: 12 58% 50%;
+    --silver: 30 12% 46%;
 
-    --ink: 335 26% 22%;
-    --paper-line: 335 30% 90%;
+    --ink: 28 24% 20%;
+    --paper-line: 36 22% 82%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(335 72% 60%), hsl(268 60% 68%));
-    --gradient-text: linear-gradient(135deg, hsl(335 72% 60%), hsl(268 60% 68%));
+    --gradient-primary: linear-gradient(135deg, hsl(12 58% 50%), hsl(24 70% 58%));
+    --gradient-text: linear-gradient(135deg, hsl(12 58% 50%), hsl(150 30% 42%));
     --gradient-glow: none;
     --gradient-mesh: none;
 
-    --shadow-soft: 0 2px 10px hsl(335 60% 60% / 0.08), 0 18px 40px -24px hsl(335 60% 55% / 0.25);
-    --shadow-paper: 0 1px 3px hsl(335 40% 40% / 0.06), 0 16px 36px -22px hsl(335 55% 55% / 0.28);
+    --shadow-soft: 0 2px 8px hsl(30 30% 40% / 0.08), 0 16px 32px -22px hsl(28 30% 35% / 0.3);
+    --shadow-paper: 0 1px 2px hsl(30 30% 40% / 0.08), 0 14px 30px -20px hsl(28 35% 35% / 0.32);
 
-    --sidebar-background: 340 50% 96.5%;
-    --sidebar-foreground: 335 26% 22%;
-    --sidebar-primary: 335 72% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 340 35% 93%;
-    --sidebar-accent-foreground: 335 26% 22%;
-    --sidebar-border: 335 30% 88%;
-    --sidebar-ring: 335 72% 60%;
+    --sidebar-background: 40 42% 94%;
+    --sidebar-foreground: 28 24% 20%;
+    --sidebar-primary: 12 58% 50%;
+    --sidebar-primary-foreground: 40 55% 97%;
+    --sidebar-accent: 40 30% 90%;
+    --sidebar-accent-foreground: 28 24% 20%;
+    --sidebar-border: 36 22% 80%;
+    --sidebar-ring: 12 58% 50%;
   }
 }
 
@@ -73,7 +73,7 @@
     -webkit-font-smoothing: antialiased;
     position: relative;
   }
-  /* Dreamy pastel backdrop: soft blobs + sprinkle dots */
+  /* Scrapbook desk backdrop: faint kraft washes + graph-paper grid */
   body::before {
     content: '';
     position: fixed;
@@ -81,10 +81,9 @@
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(420px 420px at 12% 8%, hsl(335 85% 80% / 0.35), transparent 70%),
-      radial-gradient(520px 520px at 88% 18%, hsl(268 70% 82% / 0.35), transparent 70%),
-      radial-gradient(480px 480px at 80% 85%, hsl(158 55% 80% / 0.30), transparent 70%),
-      radial-gradient(400px 400px at 8% 80%, hsl(45 95% 82% / 0.30), transparent 70%);
+      radial-gradient(480px 480px at 10% 6%, hsl(38 60% 84% / 0.5), transparent 70%),
+      radial-gradient(560px 560px at 90% 16%, hsl(150 25% 85% / 0.4), transparent 70%),
+      radial-gradient(520px 520px at 82% 88%, hsl(16 55% 86% / 0.4), transparent 70%);
   }
   body::after {
     content: '';
@@ -92,9 +91,11 @@
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.5;
-    background-image: radial-gradient(hsl(335 40% 60% / 0.10) 1px, transparent 1.4px);
-    background-size: 22px 22px;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(hsl(36 25% 78% / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(36 25% 78% / 0.35) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Fraunces', Georgia, serif;
@@ -176,9 +177,9 @@
     height: 22px;
     transform: translateX(-50%) rotate(-3deg);
     border-radius: 2px;
-    background: hsl(268 70% 85% / 0.75);
-    border-left: 1px dashed hsl(268 45% 65% / 0.6);
-    border-right: 1px dashed hsl(268 45% 65% / 0.6);
+    background: hsl(150 26% 72% / 0.7);
+    border-left: 1px dashed hsl(150 25% 45% / 0.55);
+    border-right: 1px dashed hsl(150 25% 45% / 0.55);
   }
 
   .text-gradient,
@@ -466,7 +467,7 @@
   inset: 0 auto 0 0;
   width: 10px;
   pointer-events: none;
-  background: linear-gradient(to bottom, hsl(var(--primary) / 0.35), hsl(var(--accent) / 0.35), hsl(158 48% 55% / 0.3), hsl(45 95% 65% / 0.3));
+  background: linear-gradient(to bottom, hsl(var(--primary) / 0.4), hsl(var(--accent) / 0.4), hsl(48 80% 60% / 0.35));
 }
 .book-shell::after { content: none; }
 .book-margin { display: none; }
