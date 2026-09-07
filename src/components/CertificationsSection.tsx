@@ -1,7 +1,7 @@
 import SectionHeading from './SectionHeading';
 
 const certs = [
-  { name: 'Microsoft Certified: Security Operations Analyst Associate', issuer: 'Microsoft', tags: ['Threat & Vulnerability Mgmt', 'Microsoft Defender'] },
+  { name: 'Microsoft Certified: Security Operations Analyst Associate (SC-200)', issuer: 'Microsoft', tags: ['Threat & Vulnerability Mgmt', 'Microsoft Defender'] },
   { name: 'Certified Online Fraud Prevention Specialist (COFPS)', issuer: 'Hack & Fix', tags: ['Fraud Prevention'] },
   { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', tags: ['ISO 27001'] },
   { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco Networking Academy', tags: ['Cybersecurity', 'Vulnerability Assessment'] },
