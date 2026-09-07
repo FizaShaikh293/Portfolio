@@ -73,7 +73,7 @@
     -webkit-font-smoothing: antialiased;
     position: relative;
   }
-  /* Dreamy pastel backdrop: soft blobs + sprinkle dots */
+  /* Scrapbook desk backdrop: faint kraft washes + graph-paper grid */
   body::before {
     content: '';
     position: fixed;
@@ -81,10 +81,9 @@
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(420px 420px at 12% 8%, hsl(335 85% 80% / 0.35), transparent 70%),
-      radial-gradient(520px 520px at 88% 18%, hsl(268 70% 82% / 0.35), transparent 70%),
-      radial-gradient(480px 480px at 80% 85%, hsl(158 55% 80% / 0.30), transparent 70%),
-      radial-gradient(400px 400px at 8% 80%, hsl(45 95% 82% / 0.30), transparent 70%);
+      radial-gradient(480px 480px at 10% 6%, hsl(38 60% 84% / 0.5), transparent 70%),
+      radial-gradient(560px 560px at 90% 16%, hsl(150 25% 85% / 0.4), transparent 70%),
+      radial-gradient(520px 520px at 82% 88%, hsl(16 55% 86% / 0.4), transparent 70%);
   }
   body::after {
     content: '';
@@ -92,9 +91,11 @@
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.5;
-    background-image: radial-gradient(hsl(335 40% 60% / 0.10) 1px, transparent 1.4px);
-    background-size: 22px 22px;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(hsl(36 25% 78% / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(36 25% 78% / 0.35) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Fraunces', Georgia, serif;
@@ -176,9 +177,9 @@
     height: 22px;
     transform: translateX(-50%) rotate(-3deg);
     border-radius: 2px;
-    background: hsl(268 70% 85% / 0.75);
-    border-left: 1px dashed hsl(268 45% 65% / 0.6);
-    border-right: 1px dashed hsl(268 45% 65% / 0.6);
+    background: hsl(150 26% 72% / 0.7);
+    border-left: 1px dashed hsl(150 25% 45% / 0.55);
+    border-right: 1px dashed hsl(150 25% 45% / 0.55);
   }
 
   .text-gradient,
@@ -466,7 +467,7 @@
   inset: 0 auto 0 0;
   width: 10px;
   pointer-events: none;
-  background: linear-gradient(to bottom, hsl(var(--primary) / 0.35), hsl(var(--accent) / 0.35), hsl(158 48% 55% / 0.3), hsl(45 95% 65% / 0.3));
+  background: linear-gradient(to bottom, hsl(var(--primary) / 0.4), hsl(var(--accent) / 0.4), hsl(48 80% 60% / 0.35));
 }
 .book-shell::after { content: none; }
 .book-margin { display: none; }
