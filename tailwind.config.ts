@@ -12,10 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "Inter", "sans-serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "DM Sans", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
-        hand: ["Caveat", "Segoe Script", "cursive"],
+        hand: ["DM Sans", "system-ui", "sans-serif"],
       },
 
       colors: {
