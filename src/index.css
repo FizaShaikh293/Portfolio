@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,60 +6,60 @@
 
 @layer base {
   :root {
-    /* Sleek minimal: crisp off-white, near-black ink, one electric blue accent */
-    --background: 220 20% 98%;
-    --foreground: 225 15% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 225 15% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 225 15% 10%;
+    /* Editorial magazine: warm charcoal ink, sand paper, rust accent */
+    --background: 40 25% 92%;
+    --foreground: 30 8% 12%;
+    --card: 40 33% 96%;
+    --card-foreground: 30 8% 12%;
+    --popover: 40 33% 96%;
+    --popover-foreground: 30 8% 12%;
 
-    --primary: 222 89% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 94%;
-    --secondary-foreground: 225 12% 28%;
-    --muted: 220 14% 95%;
-    --muted-foreground: 225 8% 45%;
-    --accent: 222 89% 55%;
-    --accent-foreground: 0 0% 100%;
+    --primary: 17 62% 44%;
+    --primary-foreground: 40 33% 96%;
+    --secondary: 38 20% 87%;
+    --secondary-foreground: 30 8% 20%;
+    --muted: 38 18% 88%;
+    --muted-foreground: 30 6% 40%;
+    --accent: 17 62% 44%;
+    --accent-foreground: 40 33% 96%;
 
-    --highlight: 222 89% 92%;
-    --ink-blue: 222 89% 55%;
-    --ink-green: 160 60% 38%;
-    --peach: 24 80% 70%;
+    --highlight: 17 62% 86%;
+    --ink-blue: 17 62% 44%;
+    --ink-green: 150 20% 34%;
+    --peach: 24 55% 66%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 89%;
-    --input: 220 13% 89%;
-    --ring: 222 89% 55%;
-    --radius: 0.75rem;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 40 33% 96%;
+    --border: 34 16% 80%;
+    --input: 34 16% 80%;
+    --ring: 17 62% 44%;
+    --radius: 0.25rem;
 
     /* Aliases kept for legacy usage */
-    --neon-cyan: 222 89% 55%;
-    --neon-purple: 222 89% 55%;
-    --neon-yellow: 222 89% 55%;
-    --silver: 225 8% 45%;
+    --neon-cyan: 17 62% 44%;
+    --neon-purple: 17 62% 44%;
+    --neon-yellow: 17 62% 44%;
+    --silver: 30 6% 45%;
 
-    --ink: 225 15% 10%;
-    --paper-line: 220 13% 91%;
+    --ink: 30 8% 12%;
+    --paper-line: 34 16% 82%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(222 89% 55%), hsl(250 80% 62%));
-    --gradient-text: linear-gradient(135deg, hsl(222 89% 55%), hsl(250 80% 62%));
+    --gradient-primary: linear-gradient(135deg, hsl(17 62% 44%), hsl(24 55% 56%));
+    --gradient-text: linear-gradient(135deg, hsl(30 8% 12%), hsl(17 62% 44%));
     --gradient-glow: none;
     --gradient-mesh: none;
 
-    --shadow-soft: 0 1px 2px hsl(225 20% 20% / 0.05), 0 12px 32px -18px hsl(225 25% 25% / 0.18);
-    --shadow-paper: 0 1px 2px hsl(225 20% 20% / 0.05), 0 16px 40px -24px hsl(225 25% 25% / 0.16);
+    --shadow-soft: 0 1px 2px hsl(30 20% 20% / 0.06), 0 10px 28px -18px hsl(30 25% 20% / 0.22);
+    --shadow-paper: 0 1px 2px hsl(30 20% 20% / 0.06), 0 14px 34px -24px hsl(30 25% 20% / 0.2);
 
-    --sidebar-background: 220 20% 98%;
-    --sidebar-foreground: 225 15% 10%;
-    --sidebar-primary: 222 89% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 95%;
-    --sidebar-accent-foreground: 225 15% 10%;
-    --sidebar-border: 220 13% 89%;
-    --sidebar-ring: 222 89% 55%;
+    --sidebar-background: 40 25% 92%;
+    --sidebar-foreground: 30 8% 12%;
+    --sidebar-primary: 17 62% 44%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 38 18% 88%;
+    --sidebar-accent-foreground: 30 8% 12%;
+    --sidebar-border: 34 16% 80%;
+    --sidebar-ring: 17 62% 44%;
   }
 }
 
@@ -69,11 +69,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     position: relative;
   }
-  /* Sleek backdrop: barely-there cool wash, no texture */
+  /* Warm print stock */
   body::before {
     content: '';
     position: fixed;
@@ -81,21 +81,42 @@
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(720px 480px at 85% -10%, hsl(222 89% 55% / 0.05), transparent 70%),
-      radial-gradient(640px 480px at 0% 110%, hsl(250 80% 62% / 0.04), transparent 70%);
+      radial-gradient(900px 600px at 90% -10%, hsl(17 62% 44% / 0.07), transparent 70%),
+      radial-gradient(700px 500px at -5% 105%, hsl(30 25% 30% / 0.06), transparent 70%);
   }
   body::after { content: none; }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
   html {
     scroll-behavior: smooth;
   }
   ::selection {
-    background: hsl(var(--primary) / 0.22);
+    background: hsl(var(--primary) / 0.25);
     color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  /* Magazine rules and blocks */
+  .rule-thick { border-top: 3px solid hsl(var(--foreground)); }
+  .rule-thin { border-top: 1px solid hsl(var(--border)); }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+  }
+  .block-rust {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  .block-ink {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
   }
 }
 

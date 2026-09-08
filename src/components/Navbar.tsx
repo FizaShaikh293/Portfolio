@@ -29,8 +29,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-display italic text-xl tracking-tight text-foreground hover:text-primary transition-colors">
-          fiza shaikh <span className="text-primary not-italic">✿</span>
+        <a href="#hero" className="font-display uppercase text-lg tracking-tight text-foreground hover:text-primary transition-colors">
+          Fiza Shaikh
         </a>
 
         <div className="hidden md:flex items-center gap-7">
@@ -46,7 +46,7 @@ export default function Navbar() {
           <a
             href={CV_URL}
             download
-            className="group inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-[11px] font-mono uppercase tracking-[0.14em] text-primary-foreground transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-2 block-rust px-4 py-2 text-[11px] font-mono uppercase tracking-[0.16em] transition-opacity duration-300 hover:opacity-85"
           >
             <Download className="w-3.5 h-3.5" />
             CV
