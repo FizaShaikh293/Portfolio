@@ -21,22 +21,22 @@ const certs = [
 
 export default function CertificationsSection() {
   return (
-    <section id="certs" className="py-24 px-4 max-w-4xl mx-auto">
+    <section id="certs" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Credentials" title="Certifications" />
 
-      <div className="paper p-6 md:p-10">
+      <div className="paper bold-panel px-6 md:px-10">
         <ul>
           {certs.map((cert, i) => (
             <li
               key={cert.name + cert.issuer}
-              className="group flex items-baseline gap-4 py-4 border-b border-border last:border-b-0 animate-fade-up"
+              className="group flex items-start gap-4 md:gap-7 py-6 border-b-2 border-border last:border-b-0 animate-fade-up"
               style={{ animationDelay: `${i * 40}ms` }}
             >
-              <span className="text-[10px] font-mono text-muted-foreground w-6 shrink-0">
+               <span className="text-2xl md:text-4xl font-display leading-none text-primary w-10 md:w-16 shrink-0">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base md:text-lg text-foreground transition-colors duration-300 group-hover:text-primary">
+                 <h3 className="text-lg md:text-2xl leading-tight text-foreground transition-colors duration-300 group-hover:text-primary">
                   {cert.name}
                 </h3>
                 {cert.tags.length > 0 && (

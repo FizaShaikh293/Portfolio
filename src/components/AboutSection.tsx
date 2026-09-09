@@ -10,17 +10,17 @@ const focus = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-8 md:px-16 max-w-5xl mx-auto">
+    <section id="about" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Who I Am" title="About Me" />
 
       <div className="grid gap-10 md:grid-cols-12 items-start">
-        <div className="md:col-span-4">
-          <div className="relative border border-foreground/15 bg-card p-2 shadow-[var(--shadow-paper)]">
+        <div className="md:col-span-5">
+          <div className="relative border-[3px] border-foreground bg-card p-2 shadow-[var(--shadow-bold)]">
             <img
               src={profilePhoto}
               alt="Fiza Shaikh"
               loading="lazy"
-              className="w-full h-64 object-cover transition-transform duration-700 hover:scale-[1.02]"
+              className="w-full aspect-[4/5] object-cover transition-transform duration-700 hover:scale-[1.02]"
             />
           </div>
           <p className="mt-3 text-[10px] font-mono uppercase tracking-[0.24em] text-muted-foreground">
@@ -28,8 +28,8 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="md:col-span-8 md:border-l md:border-border md:pl-8">
-          <p className="text-base md:text-lg leading-relaxed text-foreground/90 mb-5 md:columns-2 md:gap-8">
+        <div className="md:col-span-7 md:border-l-[3px] md:border-foreground md:pl-10">
+          <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mb-7">
             Hi! I'm Fiza, a girl who couldn't pick between cybersecurity or blockchain so I did both.
             I started with a Bachelors in IT, then worked for more than a year as an IT Security Analyst,
             and eventually landed in Ireland, where I completed my MSc in Blockchain Technologies at ATU Donegal.
