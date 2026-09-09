@@ -29,19 +29,19 @@ const techCategories = [
 
 export default function TechStackSection() {
   return (
-    <section id="techstack" className="py-24 px-4 max-w-6xl mx-auto">
+    <section id="techstack" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Toolbox" title="Tech Stack" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {techCategories.map((cat, catIdx) => (
           <div
             key={cat.title}
-            className="paper paper-lifted p-5 animate-fade-up"
+            className="paper paper-lifted bold-panel p-6 min-h-48 animate-fade-up"
             style={{ animationDelay: `${catIdx * 70}ms` }}
           >
             <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-border">
-              <h3 className="text-lg text-foreground">{cat.title}</h3>
-              <span className="text-[10px] font-mono text-muted-foreground">
+              <h3 className="text-2xl leading-none text-foreground">{cat.title}</h3>
+              <span className="text-4xl font-display text-primary">
                 {String(catIdx + 1).padStart(2, '0')}
               </span>
             </div>

@@ -37,7 +37,8 @@ const Index = () => {
 
           {chapters.map((c, i) => (
             <Reveal key={c.title} from={i % 2 === 0 ? 'left' : 'right'}>
-              <div className="relative border-t border-border/70">
+              <div className={`chapter-band relative overflow-hidden border-t-[3px] border-foreground ${i % 2 === 1 ? 'chapter-band-tinted' : ''}`}>
+                <span className="chapter-number" aria-hidden="true">{c.n}</span>
                 {c.node}
               </div>
             </Reveal>

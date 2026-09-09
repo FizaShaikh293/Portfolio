@@ -10,7 +10,7 @@ const socials = [
 
 export default function SocialsSection() {
   return (
-    <section id="socials" className="py-24 px-4 max-w-3xl mx-auto">
+    <section id="socials" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Contact" title="Get In Touch" />
 
       <ContactForm />
@@ -31,8 +31,8 @@ export default function SocialsSection() {
       </div>
 
       <div className="text-center mt-24">
-        <p className="text-4xl md:text-5xl italic text-foreground mb-3">Thank You</p>
-        <span className="mx-auto block h-px w-16 bg-foreground/25" />
+        <p className="text-6xl md:text-9xl uppercase text-foreground mb-5">Thank You</p>
+        <span className="mx-auto block h-2 w-28 bg-primary" />
         <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
           Thanks for scrolling through my world
         </p>

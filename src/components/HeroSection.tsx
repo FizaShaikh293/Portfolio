@@ -20,14 +20,14 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative px-4 sm:px-8 md:px-12 pt-32 pb-20 overflow-hidden">
+    <section className="relative px-4 sm:px-8 md:px-12 pt-28 md:pt-36 pb-20 md:pb-28 overflow-hidden">
       <div
         className={`relative z-10 mx-auto w-full max-w-6xl transition-all duration-700 ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
         {/* Masthead line */}
-        <div className="flex items-center justify-between gap-4 pb-3 border-b-[3px] border-foreground">
+        <div className="flex items-center justify-between gap-4 pb-4 border-b-[6px] border-foreground">
           <span className="kicker">Portfolio — Issue No. 01</span>
           <span className="kicker hidden sm:inline text-muted-foreground">
             Donegal, Ireland
@@ -35,15 +35,15 @@ export default function HeroSection() {
         </div>
 
         {/* Big nameplate */}
-        <h1 className="mt-6 text-[15vw] md:text-[8.5rem] leading-[0.82] uppercase">
-          Fiza
-          <span className="block text-primary">Shaikh</span>
+        <h1 className="mt-7 text-[20vw] sm:text-[17vw] md:text-[10rem] lg:text-[12rem] leading-[0.72] uppercase">
+          <span className="block">Fiza</span>
+          <span className="block text-primary md:ml-[14%]">Shaikh</span>
         </h1>
 
-        <div className="mt-6 grid gap-8 md:grid-cols-12 border-t border-border pt-6">
+        <div className="mt-10 grid gap-8 md:grid-cols-12 border-t-[3px] border-foreground pt-7">
           {/* Standfirst */}
           <div className="md:col-span-7">
-            <p className="text-xl md:text-2xl leading-snug font-display text-foreground">
+            <p className="max-w-2xl text-2xl md:text-4xl leading-[1.05] font-display text-foreground">
               Security analyst &amp; blockchain builder — I break things carefully,
               then write down exactly how to fix them.
             </p>
@@ -71,7 +71,7 @@ export default function HeroSection() {
             <a
               href={CV_URL}
               download
-              className="group mt-8 inline-flex items-center gap-3 border-2 border-foreground px-6 py-3 text-[11px] font-mono uppercase tracking-[0.22em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background"
+              className="group mt-8 inline-flex items-center gap-3 block-ink border-2 border-foreground px-7 py-4 text-[11px] font-mono uppercase tracking-[0.22em] transition-colors duration-300 hover:bg-primary hover:border-primary"
             >
               <Download className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
               Download CV
@@ -79,7 +79,7 @@ export default function HeroSection() {
           </div>
 
           {/* Contents column */}
-          <div className="md:col-span-5 md:border-l md:border-border md:pl-8">
+          <div className="md:col-span-5 md:border-l-[3px] md:border-foreground md:pl-8">
             <p className="kicker mb-4">In this issue</p>
             <div className="flex flex-col">
               {contents.map(([n, t, href]) => (

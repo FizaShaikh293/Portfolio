@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,6 +49,7 @@
 
     --shadow-soft: 0 1px 2px hsl(30 20% 20% / 0.06), 0 10px 28px -18px hsl(30 25% 20% / 0.22);
     --shadow-paper: 0 1px 2px hsl(30 20% 20% / 0.06), 0 14px 34px -24px hsl(30 25% 20% / 0.2);
+    --shadow-bold: 12px 12px 0 hsl(var(--primary));
 
     --sidebar-background: 40 25% 92%;
     --sidebar-foreground: 30 8% 12%;
@@ -101,8 +100,8 @@
 
 @layer utilities {
   /* Magazine rules and blocks */
-  .rule-thick { border-top: 3px solid hsl(var(--foreground)); }
-  .rule-thin { border-top: 1px solid hsl(var(--border)); }
+  .rule-thick { border-top: 6px solid hsl(var(--foreground)); }
+  .rule-thin { border-top: 2px solid hsl(var(--border)); }
   .kicker {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -132,9 +131,13 @@
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   }
   .paper-lifted:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px hsl(335 40% 40% / 0.08), 0 24px 44px -24px hsl(335 60% 55% / 0.35);
-    border-color: hsl(var(--primary) / 0.45);
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 hsl(var(--primary));
+    border-color: hsl(var(--foreground));
+  }
+  .bold-panel {
+    border: 2px solid hsl(var(--foreground));
+    box-shadow: 6px 6px 0 hsl(var(--foreground) / 0.1);
   }
   /* Legacy aliases so older markup still looks right */
   .glass-panel,
@@ -473,6 +476,33 @@
 .folio {
   font-family: 'IBM Plex Mono', monospace;
   color: hsl(var(--muted-foreground));
+}
+
+.chapter-band-tinted {
+  background: hsl(var(--secondary) / 0.5);
+}
+
+.chapter-number {
+  position: absolute;
+  right: -0.04em;
+  top: -0.16em;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+  font-size: clamp(9rem, 24vw, 20rem);
+  font-weight: 700;
+  line-height: 1;
+  color: hsl(var(--foreground) / 0.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* --- Editorial personality layer --- */

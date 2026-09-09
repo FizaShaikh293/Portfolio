@@ -77,10 +77,10 @@ export default function ProjectsSection() {
   const [expanded, setExpanded] = useState<number | null>(0);
 
   return (
-    <section id="projects" className="py-24 px-4 max-w-4xl mx-auto">
+    <section id="projects" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Selected Work" title="Projects" />
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         {projects.map((p, i) => {
           const isExpanded = expanded === i;
 
@@ -88,7 +88,7 @@ export default function ProjectsSection() {
             <article
               key={p.title}
               onClick={() => setExpanded(isExpanded ? null : i)}
-              className="paper paper-lifted p-6 md:p-8 cursor-pointer animate-fade-up"
+              className="paper paper-lifted bold-panel p-6 md:p-10 cursor-pointer animate-fade-up"
               style={{ animationDelay: `${i * 70}ms` }}
             >
               <div className="flex items-start justify-between gap-4">
@@ -99,7 +99,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="font-display text-xl md:text-2xl text-foreground ink-underline"
+                      className="font-display text-2xl md:text-4xl leading-tight text-foreground ink-underline"
                     >
                       {p.title}
                     </a>
@@ -124,7 +124,7 @@ export default function ProjectsSection() {
                 <ArchitectureCover stages={p.architecture} accent="text-foreground" />
               </div>
 
-              <p className="mt-5 text-sm italic leading-relaxed text-foreground/75">{p.tagline}</p>
+              <p className="mt-6 border-l-[6px] border-primary pl-4 text-lg md:text-xl font-display leading-snug text-foreground">{p.tagline}</p>
 
               <div className={`grid transition-all duration-500 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'}`}>
                 <div className="overflow-hidden">
@@ -160,11 +160,11 @@ export default function ProjectsSection() {
           href="https://fizashaikh293.github.io/thm-writeups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="paper paper-lifted p-6 md:p-8 animate-fade-up"
+          className="paper paper-lifted bold-panel p-6 md:p-10 animate-fade-up"
         >
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h3 className="text-xl md:text-2xl text-foreground">TryHackMe Writeups</h3>
+              <h3 className="text-2xl md:text-4xl text-foreground">TryHackMe Writeups</h3>
               <p className="mt-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
                 Live · Hands-on Lab Notes
               </p>

@@ -31,13 +31,13 @@ const companies = [
 
 export default function WorkExperience() {
   return (
-    <section id="experience" className="py-24 px-4 max-w-3xl mx-auto">
+    <section id="experience" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Career" title="Work Experience" />
 
       {companies.map((company) => (
-        <div key={company.company} className="paper p-6 md:p-10 animate-fade-up">
-          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 pb-6 border-b border-border">
-            <h3 className="text-2xl text-foreground">{company.company}</h3>
+        <div key={company.company} className="paper bold-panel p-6 md:p-10 animate-fade-up">
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 pb-7 border-b-[3px] border-foreground">
+            <h3 className="text-3xl md:text-5xl text-foreground">{company.company}</h3>
             <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
               {company.location} · {company.totalPeriod}
             </p>
