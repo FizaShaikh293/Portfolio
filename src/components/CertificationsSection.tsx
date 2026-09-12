@@ -15,7 +15,7 @@ const certs = [
   { name: 'Blockchain Security', issuer: 'Infosec', tags: ['Blockchain'] },
   { name: 'Blockchain Basics', issuer: 'Coursera', tags: ['Smart Contracts', 'Blockchain'] },
   { name: 'Introduction to Cloud Identity', issuer: 'Google Cloud Security', tags: ['Cloud Security'] },
-  { name: 'Cybersecurity Professional', issuer: 'Google', tags: ['Cybersecurity'] },
+  { name: 'Google Cybersecurity Professional Certificate', issuer: 'Google', tags: ['Cybersecurity'] },
   { name: 'Ethical Hacking Essentials', issuer: 'EC-Council', tags: ['Ethical Hacking'] },
 ];
 

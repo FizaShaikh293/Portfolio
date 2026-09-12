@@ -2,15 +2,6 @@ import { useEffect, useState } from 'react';
 import { Download, MapPin, Shield, Boxes, Sparkles } from 'lucide-react';
 import { CV_URL } from './Navbar';
 
-const contents: [string, string, string][] = [
-  ['01', 'About', '#about'],
-  ['02', 'Experience', '#experience'],
-  ['03', 'Tech Stack', '#techstack'],
-  ['04', 'Certifications', '#certs'],
-  ['05', 'Projects', '#projects'],
-  ['06', 'Contact', '#socials'],
-];
-
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
 
@@ -28,7 +19,7 @@ export default function HeroSection() {
       >
         {/* Masthead line */}
         <div className="flex items-center justify-between gap-4 pb-4 border-b-[6px] border-foreground">
-          <span className="kicker">Portfolio — Issue No. 01</span>
+          <span className="kicker">Cybersecurity Portfolio</span>
           <span className="kicker hidden sm:inline text-muted-foreground">
             Donegal, Ireland
           </span>
@@ -40,15 +31,8 @@ export default function HeroSection() {
           <span className="block text-primary md:ml-[14%]">Shaikh</span>
         </h1>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-12 border-t-[3px] border-foreground pt-7">
-          {/* Standfirst */}
-          <div className="md:col-span-7">
-            <p className="max-w-2xl text-2xl md:text-4xl leading-[1.05] font-display text-foreground">
-              Security analyst &amp; blockchain builder — I break things carefully,
-              then write down exactly how to fix them.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-10 border-t-[3px] border-foreground pt-7">
+            <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-2 block-rust px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.2em]">
                 <Sparkles className="w-3 h-3" />
                 Open to work
@@ -76,25 +60,6 @@ export default function HeroSection() {
               <Download className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
               Download CV
             </a>
-          </div>
-
-          {/* Contents column */}
-          <div className="md:col-span-5 md:border-l-[3px] md:border-foreground md:pl-8">
-            <p className="kicker mb-4">In this issue</p>
-            <div className="flex flex-col">
-              {contents.map(([n, t, href]) => (
-                <a
-                  key={t}
-                  href={href}
-                  className="group flex items-baseline gap-3 border-b border-border py-2.5 text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary"
-                >
-                  <span className="text-primary w-6 shrink-0">{n}</span>
-                  <span className="flex-1 truncate">{t}</span>
-                  <span className="opacity-0 transition-opacity group-hover:opacity-100">→</span>
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

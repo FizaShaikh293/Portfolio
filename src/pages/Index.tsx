@@ -7,7 +7,6 @@ import CertificationsSection from '@/components/CertificationsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SocialsSection from '@/components/SocialsSection';
 import CustomCursor from '@/components/CustomCursor';
-import PacmanNavigation from '@/components/PacmanNavigation';
 import Loader from '@/components/Loader';
 import Reveal from '@/components/Reveal';
 
@@ -25,7 +24,6 @@ const Index = () => {
     <div className="relative min-h-screen cursor-none">
       <Loader />
       <CustomCursor />
-      <PacmanNavigation />
       <Navbar />
       <main className="relative z-10 px-3 sm:px-6 lg:px-10 pb-16">
         <div className="book-shell relative mx-auto max-w-6xl">

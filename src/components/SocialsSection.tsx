@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 const socials = [
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/fizashaikh293/' },
   { icon: Github, label: 'GitHub', href: 'https://github.com/FizaShaikh293' },
-  { icon: Mail, label: 'Email', href: 'mailto:shaikh.fiza13558@gmail.com' },
+  { icon: Mail, label: 'Email', href: 'mailto:fiza.sk293@gmail.com' },
 ];
 
 export default function SocialsSection() {
@@ -33,9 +33,6 @@ export default function SocialsSection() {
       <div className="text-center mt-24">
         <p className="text-6xl md:text-9xl uppercase text-foreground mb-5">Thank You</p>
         <span className="mx-auto block h-2 w-28 bg-primary" />
-        <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
-          Thanks for scrolling through my world
-        </p>
       </div>
     </section>
   );
