@@ -1,11 +1,11 @@
 import profilePhoto from '@/assets/profile-photo.png';
 import SectionHeading from './SectionHeading';
-import { Shield, Cpu, Boxes } from 'lucide-react';
+import { Shield, Search, Boxes } from 'lucide-react';
 
 const focus = [
-  { icon: Shield, label: 'Security Expert' },
-  { icon: Boxes, label: 'Blockchain & Web3' },
-  { icon: Cpu, label: 'AI & Machine Learning' },
+  { icon: Shield, label: 'Security Operations' },
+  { icon: Search, label: 'SIEM & Incident Response' },
+  { icon: Boxes, label: 'Blockchain Security' },
 ];
 
 export default function AboutSection() {
@@ -24,21 +24,20 @@ export default function AboutSection() {
             />
           </div>
           <p className="mt-3 text-[10px] font-mono uppercase tracking-[0.24em] text-muted-foreground">
-            Donegal, Ireland — MSc Blockchain, ATU '25
+            Ireland · MSc Blockchain Technologies, First Class Honours
           </p>
         </div>
 
         <div className="md:col-span-7 md:border-l-[3px] md:border-foreground md:pl-10">
           <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mb-7">
-            Hi! I'm Fiza, a girl who couldn't pick between cybersecurity or blockchain so I did both.
-            I started with a Bachelors in IT, then worked for more than a year as an IT Security Analyst,
-            and eventually landed in Ireland, where I completed my MSc in Blockchain Technologies at ATU Donegal.
-            I love diving deep into smart contract security, network defense, and decentralized systems.
-            I'm also deeply interested in AI and Machine Learning, exploring how intelligent systems can
-            enhance security and solve complex problems.
+            I&apos;m a Cybersecurity Analyst with more than two years of experience across SOC operations,
+            SIEM alert triage, vulnerability management, and identity investigations. I work with Splunk,
+            Microsoft Sentinel, Microsoft Defender, Azure AD, KQL, and ServiceNow to investigate activity,
+            document incidents, and support effective response.
           </p>
           <p className="mb-6 border-l-4 border-primary pl-4 text-lg font-display leading-snug text-foreground">
-            Currently based in Donegal, open to roles across Ireland.
+            My MSc in Blockchain Technologies &amp; Applications complements my security experience with
+            blockchain forensics, smart contract security, cryptography, and anomaly detection.
           </p>
           <div className="flex flex-wrap gap-2">
             {focus.map(({ icon: Icon, label }) => (

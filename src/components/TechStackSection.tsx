@@ -2,28 +2,28 @@ import SectionHeading from './SectionHeading';
 
 const techCategories = [
   {
-    title: 'Languages',
-    items: ['Python', 'JavaScript', 'Solidity', 'Rust', 'Java', 'C++', 'C#', 'PHP', 'R', 'XML'],
+    title: 'Security Operations',
+    items: ['Splunk', 'Microsoft Sentinel', 'SIEM Monitoring', 'Alert Triage', 'Incident Response', 'ServiceNow', 'Microsoft Defender', 'KQL'],
   },
   {
-    title: 'Security',
-    items: ['Burp Suite', 'Wireshark', 'Nmap', 'Metasploit', 'OWASP', 'Digital Forensics'],
+    title: 'Identity & Cloud',
+    items: ['Azure AD', 'Entra ID', 'IAM', 'Identity Governance', 'GCP Cloud Security'],
   },
   {
-    title: 'Blockchain',
-    items: ['Web3.js', 'Ethereum', 'Smart Contracts', 'DeFi', 'Hardhat', 'Truffle'],
+    title: 'Vulnerability & Network',
+    items: ['Vulnerability Management', 'Patch Management', 'IDS/IPS', 'Network Segmentation', 'DNS/DHCP', 'NAT', 'NAC'],
   },
   {
-    title: 'Frameworks & Tools',
-    items: ['React', 'Flask', 'FastAPI', 'ASP.NET', '.NET', 'Streamlit', 'MongoDB', 'MySQL', 'Hadoop', 'Hive'],
+    title: 'Security Analytics',
+    items: ['Digital Forensics', 'Python', 'SQL', 'Anomaly Detection', 'Machine Learning', 'Isolation Forest', 'Autoencoders', 'SHAP'],
   },
   {
-    title: 'Hardware & IoT',
-    items: ['Arduino', 'Raspberry Pi', 'ESP8266', 'Cisco', 'Packet Tracer', 'Proteus'],
+    title: 'Blockchain Security',
+    items: ['Blockchain Forensics', 'Smart Contract Security', 'Solidity', 'Cryptography', 'ISO 27001'],
   },
   {
-    title: 'Design & Other',
-    items: ['Unity', 'Figma', 'Canva', 'Framer', 'LaTeX', 'Android Studio', 'Visual Studio', 'NetBeans'],
+    title: 'Development',
+    items: ['React', 'JavaScript', 'Vite', 'Streamlit', 'Git', 'Vercel'],
   },
 ];
 

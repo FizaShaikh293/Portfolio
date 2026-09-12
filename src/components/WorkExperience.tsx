@@ -3,7 +3,7 @@ import SectionHeading from './SectionHeading';
 
 const companies = [
   {
-    company: 'Teleperformance (TP)',
+    company: 'Hewlett Packard (HP)',
     location: 'Mumbai, India',
     totalPeriod: 'Jul 2022 – Dec 2024',
     roles: [
@@ -12,17 +12,32 @@ const companies = [
         period: 'May 2023 – Dec 2024',
         promotion: 'Promoted from IT Security Analyst',
         highlights: [
-          "Triaged 30+ live security alerts per shift using enterprise SIEM tooling, cutting the team's open queue by 40% in the first quarter through consistent severity classification and rapid resolution.",
-          'Identified a coordinated credential-stuffing campaign across 3 client accounts that had bypassed manual review; escalated proactively and blocked the attack before any data was accessed.',
-          'Authored internal runbooks covering 12 common incident types, cutting average analyst resolution time by approximately 20 minutes per ticket and reducing escalations from junior analysts.',
+          'Triaged more than 30 Splunk security alerts per shift, identifying false positives and suspicious activity before escalating incidents through established SOC procedures.',
+          'Investigated Azure AD authentication and account anomalies by reviewing sign-in activity and security logs for suspicious access patterns.',
+          'Recorded investigations and escalations in ServiceNow, maintained clear shift-handover notes, and developed 12 incident-response runbooks for common alert types.',
         ],
       },
       {
         title: 'IT Security Analyst',
         period: 'Jul 2022 – Apr 2023',
         highlights: [
-          'Executed monthly vulnerability scans across client infrastructure, tracked remediation progress and raised critical patch compliance from 67% to 91% over 6 months.',
-          'Supported SIEM alert monitoring, log analysis and incident documentation, building the foundation that led to promotion to Junior SOC Analyst within the year.',
+          'Conducted monthly vulnerability scans across client infrastructure and tracked remediation actions through completion.',
+          'Improved patch compliance from 67% to 91% in six months while supporting SIEM monitoring, log analysis, incident documentation, and follow-up investigations.',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Tesco',
+    location: 'Ireland',
+    totalPeriod: 'Sep 2026 – Present',
+    roles: [
+      {
+        title: 'Customer Assistant',
+        period: 'Sep 2026 – Present',
+        highlights: [
+          'Support customers and day-to-day store operations in a fast-paced retail environment.',
+          'Work effectively within a team while managing competing priorities and maintaining high service standards.',
         ],
       },
     ],
@@ -34,6 +49,7 @@ export default function WorkExperience() {
     <section id="experience" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Career" title="Work Experience" />
 
+      <div className="space-y-5">
       {companies.map((company) => (
         <div key={company.company} className="paper bold-panel p-6 md:p-10 animate-fade-up">
           <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 pb-7 border-b-[3px] border-foreground">
@@ -76,6 +92,7 @@ export default function WorkExperience() {
           </div>
         </div>
       ))}
+      </div>
     </section>
   );
 }

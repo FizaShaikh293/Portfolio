@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Send, Loader2, CheckCircle2 } from 'lucide-react';
 import { z } from 'zod';
 
-const ENDPOINT = 'https://formsubmit.co/ajax/shaikh.fiza13558@gmail.com';
+const ENDPOINT = 'https://formsubmit.co/ajax/fiza.sk293@gmail.com';
 
 const schema = z.object({
   name: z.string().trim().min(2, 'Please enter your name').max(100, 'Name is too long'),
@@ -37,7 +37,7 @@ export default function ContactForm() {
       form.reset();
     } catch {
       setStatus('error');
-      setError('Something went wrong. You can email me directly at shaikh.fiza13558@gmail.com');
+      setError('Something went wrong. You can email me directly at fiza.sk293@gmail.com');
     }
   };
 

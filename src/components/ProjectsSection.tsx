@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Privacy-Preserving Blockchain Forensics',
     subtitle: "Master's Dissertation · Monero Anomaly Detection",
-    tagline: 'Catching suspicious behaviour on a privacy coin without ever de-anonymising a single user.',
+    summary: 'Privacy-preserving analysis of Monero transaction patterns using explainable anomaly detection.',
     desc: 'End-to-end forensics pipeline that extracts and analyses Monero transaction behaviour (timing, frequency, structural signals) via a locally synced node and unsupervised ML, without exposing any user-identifying data. Combines Isolation Forest and Autoencoders with SHAP for explainable anomaly detection, delivered as an interactive Streamlit dashboard for analysts.',
     architecture: [
       { label: 'Source', items: ['Monero node', 'RPC'] },
@@ -23,7 +23,7 @@ const projects = [
   {
     title: 'AI-Powered Blockchain Mining Simulator',
     subtitle: 'Neural-guided Proof-of-Work Research',
-    tagline: 'A neural net that learns to mine: fewer hashes, same security guarantees.',
+    summary: 'A real-time comparison of conventional Proof-of-Work mining and a neural-guided approach.',
     desc: 'Real-time web application comparing traditional Proof-of-Work mining against a neural-network-driven approach. Demonstrates a measurable reduction in the computational steps needed to reach a valid hash, without compromising blockchain validation or decentralisation.',
     architecture: [
       { label: 'Chain layer', items: ['Block builder', 'SHA-256 PoW'] },
@@ -35,7 +35,7 @@ const projects = [
   {
     title: 'Directory Traversal Attack Simulation',
     subtitle: 'Offensive Security · Web Exploitation',
-    tagline: 'Reading /etc/passwd through a URL, then writing the fix.',
+    summary: 'A controlled web-security exercise covering directory traversal testing and remediation.',
     desc: 'Structured security testing to identify and exploit directory traversal vulnerabilities by manipulating URL parameters to access restricted server files. Documented input validation failures and effective security header configurations to support remediation guidance for developers.',
     architecture: [
       { label: 'Target', items: ['PortSwigger lab', 'Linux host'] },
@@ -47,7 +47,7 @@ const projects = [
   {
     title: 'AI Car Game on Unity 3D',
     subtitle: 'Game AI · Pathfinding & Difficulty Scaling',
-    tagline: 'Opponents that actually drive like opponents.',
+    summary: 'A Unity racing game with AI pathfinding, obstacle avoidance, and adaptive difficulty.',
     desc: 'Interactive 3D car racing game built in Unity featuring AI-controlled opponents with pathfinding, obstacle avoidance, and dynamic difficulty scaling for realistic, replayable gameplay.',
     architecture: [
       { label: 'Engine', items: ['Unity 3D', 'Physics'] },
@@ -59,15 +59,15 @@ const projects = [
   {
     title: 'Log Detective',
     subtitle: 'SOC Log Analysis · Live on Vercel',
-    tagline: 'Turn noisy logs into clear incident signals.',
-    desc: 'A practical cybersecurity log-analysis engine that parses system and application logs to surface suspicious activity, repeated failed logins, brute-force patterns, and anomalous IP behaviour. Built with Python, Pandas and regex-driven detection, it automates the repetitive parts of SOC investigation and produces actionable security insights.',
+    summary: 'A browser-based SOC investigation game built around realistic security-log analysis.',
+    desc: 'Players analyse simulated logs, classify events, and earn XP for accurate threat detection. Scenarios cover brute-force attacks, phishing, suspicious PowerShell activity, rogue administrator accounts, ransomware indicators, and legitimate behaviour to strengthen true-positive and false-positive judgement.',
     architecture: [
-      { label: 'Ingest', items: ['Raw auth/app logs'] },
-      { label: 'Parse', items: ['Python', 'Regex'] },
-      { label: 'Detect', items: ['Pandas', 'Brute-force rules'] },
+      { label: 'Scenarios', items: ['SOC event logs'] },
+      { label: 'Interface', items: ['React', 'JavaScript'] },
+      { label: 'Build', items: ['Vite', 'XP system'] },
       { label: 'Deploy', items: ['Vercel'] },
     ],
-    tech: ['Python', 'Regular Expressions', 'Pandas', 'Log Analysis', 'SOC', 'Vercel'],
+    tech: ['React', 'JavaScript', 'Vite', 'SOC Investigation', 'Log Analysis', 'Vercel'],
     link: 'https://log-detective.vercel.app/',
     linkLabel: 'Open live app',
   },
@@ -124,7 +124,7 @@ export default function ProjectsSection() {
                 <ArchitectureCover stages={p.architecture} accent="text-foreground" />
               </div>
 
-              <p className="mt-6 border-l-[6px] border-primary pl-4 text-lg md:text-xl font-display leading-snug text-foreground">{p.tagline}</p>
+              <p className="mt-6 text-sm md:text-base leading-relaxed text-muted-foreground">{p.summary}</p>
 
               <div className={`grid transition-all duration-500 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'}`}>
                 <div className="overflow-hidden">
