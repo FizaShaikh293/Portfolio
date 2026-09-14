@@ -1,16 +1,13 @@
-import { ChevronUp } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const companies = [
   {
     company: 'Hewlett Packard (HP)',
-    location: 'Mumbai, India',
     totalPeriod: 'Jul 2022 – Dec 2024',
     roles: [
       {
         title: 'Junior SOC Analyst',
         period: 'May 2023 – Dec 2024',
-        promotion: 'Promoted from IT Security Analyst',
         highlights: [
           'Triaged more than 30 Splunk security alerts per shift, identifying false positives and suspicious activity before escalating incidents through established SOC procedures.',
           'Investigated Azure AD authentication and account anomalies by reviewing sign-in activity and security logs for suspicious access patterns.',
@@ -23,21 +20,6 @@ const companies = [
         highlights: [
           'Conducted monthly vulnerability scans across client infrastructure and tracked remediation actions through completion.',
           'Improved patch compliance from 67% to 91% in six months while supporting SIEM monitoring, log analysis, incident documentation, and follow-up investigations.',
-        ],
-      },
-    ],
-  },
-  {
-    company: 'Tesco',
-    location: 'Ireland',
-    totalPeriod: 'Sep 2026 – Present',
-    roles: [
-      {
-        title: 'Customer Assistant',
-        period: 'Sep 2026 – Present',
-        highlights: [
-          'Support customers and day-to-day store operations in a fast-paced retail environment.',
-          'Work effectively within a team while managing competing priorities and maintaining high service standards.',
         ],
       },
     ],
@@ -55,7 +37,7 @@ export default function WorkExperience() {
           <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 pb-7 border-b-[3px] border-foreground">
             <h3 className="text-3xl md:text-5xl text-foreground">{company.company}</h3>
             <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-              {company.location} · {company.totalPeriod}
+              {company.totalPeriod}
             </p>
           </div>
 
@@ -71,13 +53,6 @@ export default function WorkExperience() {
                     {role.period}
                   </span>
                 </div>
-
-                {role.promotion && (
-                  <span className="mt-2 inline-flex items-center gap-1.5 border border-foreground/20 px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-                    <ChevronUp className="w-3 h-3" />
-                    {role.promotion}
-                  </span>
-                )}
 
                 <ul className="mt-4 space-y-3">
                   {role.highlights.map((h, k) => (

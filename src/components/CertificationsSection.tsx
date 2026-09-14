@@ -1,22 +1,22 @@
 import SectionHeading from './SectionHeading';
 
 const certs = [
-  { name: 'Microsoft Certified: Security Operations Analyst Associate (SC-200)', issuer: 'Microsoft', tags: ['Threat & Vulnerability Mgmt', 'Microsoft Defender'] },
-  { name: 'Certified Online Fraud Prevention Specialist (COFPS)', issuer: 'Hack & Fix', tags: ['Fraud Prevention'] },
-  { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', tags: ['ISO 27001'] },
-  { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco Networking Academy', tags: ['Cybersecurity', 'Vulnerability Assessment'] },
-  { name: 'Introduction to Digital Forensics', issuer: 'Security Blue Team', tags: ['Digital Forensics'] },
-  { name: 'Encryption and Cryptography Essentials', issuer: 'IBM', tags: ['Cryptography'] },
+  { name: 'Microsoft Certified: Security Operations Analyst Associate (SC-200)', issuer: 'Microsoft', year: '2026', tags: ['Threat & Vulnerability Mgmt', 'Microsoft Defender'] },
+  { name: 'Certified Online Fraud Prevention Specialist (COFPS)', issuer: 'Hack & Fix', year: '2026', tags: ['Fraud Prevention'] },
+  { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', year: '2026', tags: ['ISO 27001'] },
+  { name: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco Networking Academy', year: '2026', tags: ['Cybersecurity', 'Vulnerability Assessment'] },
+  { name: 'Introduction to Digital Forensics', issuer: 'Security Blue Team', year: '2026', tags: ['Digital Forensics'] },
+  { name: 'Encryption and Cryptography Essentials', issuer: 'IBM', year: '2025', tags: ['Cryptography'] },
   { name: 'Solidity Advanced: Secure Smart Contracts & DApp Development', issuer: 'Packt', tags: ['Smart Contracts'] },
   { name: 'Information Security Fundamentals', issuer: 'EC-Council', tags: [] },
   { name: 'Decentralized Finance (DeFi) Infrastructure', issuer: 'Duke University', tags: ['DeFi'] },
   { name: 'Web3 and Blockchain Fundamentals', issuer: 'INSEAD', tags: ['Web3'] },
-  { name: 'Introduction to Cybersecurity Essentials', issuer: 'IBM', tags: ['Cybersecurity'] },
+  { name: 'Introduction to Cybersecurity Essentials', issuer: 'IBM', year: '2025', tags: ['Cybersecurity'] },
   { name: 'Blockchain Security', issuer: 'Infosec', tags: ['Blockchain'] },
   { name: 'Blockchain Basics', issuer: 'Coursera', tags: ['Smart Contracts', 'Blockchain'] },
-  { name: 'Introduction to Cloud Identity', issuer: 'Google Cloud Security', tags: ['Cloud Security'] },
-  { name: 'Google Cybersecurity Professional Certificate', issuer: 'Google', tags: ['Cybersecurity'] },
-  { name: 'Ethical Hacking Essentials', issuer: 'EC-Council', tags: ['Ethical Hacking'] },
+  { name: 'Introduction to Cloud Identity', issuer: 'Google Cloud Security', year: '2025', tags: ['Cloud Security'] },
+  { name: 'Google Cybersecurity Professional Certificate', issuer: 'Google', year: '2025', tags: ['Cybersecurity'] },
+  { name: 'Ethical Hacking Essentials', issuer: 'EC-Council', year: '2023', tags: ['Ethical Hacking'] },
 ];
 
 export default function CertificationsSection() {
@@ -52,8 +52,9 @@ export default function CertificationsSection() {
                   </div>
                 )}
               </div>
-              <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground whitespace-nowrap hidden sm:block">
-                {cert.issuer}
+              <span className="text-right text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground whitespace-nowrap hidden sm:block">
+                <span className="block">{cert.issuer}</span>
+                {'year' in cert && cert.year && <span className="mt-1 block text-primary">{cert.year}</span>}
               </span>
             </li>
           ))}
