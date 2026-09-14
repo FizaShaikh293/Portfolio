@@ -30,9 +30,11 @@ export default function SocialsSection() {
         ))}
       </div>
 
-      <div className="text-center mt-24">
-        <p className="text-6xl md:text-9xl uppercase text-foreground mb-5">Thank You</p>
-        <span className="mx-auto block h-2 w-28 bg-primary" />
+      <div className="mt-24 border-t-[6px] border-foreground pt-8 overflow-hidden">
+        <p className="text-[20vw] sm:text-[17vw] md:text-[10rem] lg:text-[12rem] leading-[0.72] uppercase text-foreground">
+          <span className="block">Thank</span>
+          <span className="block text-primary md:ml-[14%]">You</span>
+        </p>
       </div>
     </section>
   );

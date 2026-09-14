@@ -17,21 +17,17 @@ export default function HeroSection() {
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        {/* Masthead line */}
-        <div className="flex items-center justify-between gap-4 pb-4 border-b-[6px] border-foreground">
-          <span className="kicker">Cybersecurity Portfolio</span>
-          <span className="kicker hidden sm:inline text-muted-foreground">
-            Donegal, Ireland
-          </span>
-        </div>
-
         {/* Big nameplate */}
-        <h1 className="mt-7 text-[20vw] sm:text-[17vw] md:text-[10rem] lg:text-[12rem] leading-[0.72] uppercase">
+        <h1 className="text-[20vw] sm:text-[17vw] md:text-[10rem] lg:text-[12rem] leading-[0.72] uppercase">
           <span className="block">Fiza</span>
           <span className="block text-primary md:ml-[14%]">Shaikh</span>
         </h1>
 
-        <div className="mt-10 border-t-[3px] border-foreground pt-7">
+        <p className="mt-8 border-t-[6px] border-foreground pt-4 text-sm sm:text-base font-mono uppercase tracking-[0.16em] text-foreground">
+          Cybersecurity Analyst · SOC Analyst · SIEM &amp; Incident Response
+        </p>
+
+        <div className="mt-7 border-t-[3px] border-foreground pt-7">
             <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-2 block-rust px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.2em]">
                 <Sparkles className="w-3 h-3" />
@@ -40,7 +36,7 @@ export default function HeroSection() {
               {[
                 { icon: Shield, label: 'Cybersecurity' },
                 { icon: Boxes, label: 'Blockchain' },
-                { icon: MapPin, label: 'Donegal, IE' },
+                { icon: MapPin, label: 'Ireland' },
               ].map(({ icon: Icon, label }) => (
                 <span
                   key={label}

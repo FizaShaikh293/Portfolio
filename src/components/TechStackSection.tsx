@@ -10,20 +10,12 @@ const techCategories = [
     items: ['Azure AD', 'Entra ID', 'IAM', 'Identity Governance', 'GCP Cloud Security'],
   },
   {
-    title: 'Vulnerability & Network',
-    items: ['Vulnerability Management', 'Patch Management', 'IDS/IPS', 'Network Segmentation', 'DNS/DHCP', 'NAT', 'NAC'],
-  },
-  {
     title: 'Security Analytics',
     items: ['Digital Forensics', 'Python', 'SQL', 'Anomaly Detection', 'Machine Learning', 'Isolation Forest', 'Autoencoders', 'SHAP'],
   },
   {
     title: 'Blockchain Security',
     items: ['Blockchain Forensics', 'Smart Contract Security', 'Solidity', 'Cryptography', 'ISO 27001'],
-  },
-  {
-    title: 'Development',
-    items: ['React', 'JavaScript', 'Vite', 'Streamlit', 'Git', 'Vercel'],
   },
 ];
 

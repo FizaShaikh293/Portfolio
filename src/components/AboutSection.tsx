@@ -35,10 +35,6 @@ export default function AboutSection() {
             Microsoft Sentinel, Microsoft Defender, Azure AD, KQL, and ServiceNow to investigate activity,
             document incidents, and support effective response.
           </p>
-          <p className="mb-6 border-l-4 border-primary pl-4 text-lg font-display leading-snug text-foreground">
-            My MSc in Blockchain Technologies &amp; Applications complements my security experience with
-            blockchain forensics, smart contract security, cryptography, and anomaly detection.
-          </p>
           <div className="flex flex-wrap gap-2">
             {focus.map(({ icon: Icon, label }) => (
               <div
