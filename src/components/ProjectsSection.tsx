@@ -71,6 +71,22 @@ const projects = [
     link: 'https://log-detective.vercel.app/',
     linkLabel: 'Open live app',
   },
+  {
+    title: 'SOC Monitoring Lab',
+    subtitle: 'Self-Hosted SIEM · Wazuh, Sysmon & Threat Hunting',
+    summary: 'A self-hosted detection lab with Wazuh as the SIEM, Sysmon endpoint telemetry, and documented investigations.',
+    desc: 'Built and configured a self-hosted SOC lab in VirtualBox: a Windows 11 monitored endpoint, a Kali Linux testing machine, and Wazuh as the central SIEM, connected over an isolated host-only network. Deployed Sysmon on the Windows endpoint to extend process, network, and file telemetry, integrated with the Wazuh agent for centralised log forwarding and correlation. Investigated Windows security events — including Event ID 5157 (Windows Filtering Platform blocked connections) and command-line activity — through Wazuh\'s Threat Hunting interface, documenting the full detection-to-investigation workflow.',
+    architecture: [
+      { label: 'Endpoint', items: ['Windows 11', 'Sysmon'] },
+      { label: 'Adversary', items: ['Kali Linux'] },
+      { label: 'Network', items: ['VirtualBox', 'Host-only net'] },
+      { label: 'SIEM', items: ['Wazuh agent', 'Threat Hunting'] },
+    ],
+    tech: ['Wazuh', 'Sysmon', 'Windows 11', 'Kali Linux', 'VirtualBox', 'Threat Hunting', 'Windows Event Logs'],
+    link: 'https://github.com/FizaShaikh293/SecurityandForensics-Projects/tree/main/soc-monitoring-lab',
+    linkLabel: 'View lab repo',
+    featured: true,
+  },
 ];
 
 export default function ProjectsSection() {
