@@ -75,15 +75,6 @@ export default function Navbar() {
               {label}
             </a>
           ))}
-          <a
-            href={CV_URL}
-            download
-            onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center justify-center gap-2 border border-foreground/25 px-4 py-2.5 text-xs font-mono uppercase tracking-[0.14em]"
-          >
-            <Download className="w-4 h-4" />
-            Download CV
-          </a>
         </div>
       )}
     </nav>
