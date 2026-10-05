@@ -129,19 +129,6 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
-
-                  {p.link && (
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="mt-6 inline-flex items-center gap-2 border border-foreground/25 px-4 py-2 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      {p.linkLabel ?? 'Visit'}
-                    </a>
-                  )}
                 </div>
               </div>
             </article>
