@@ -37,11 +37,11 @@ export default function TechStackSection() {
                 {String(catIdx + 1).padStart(2, '0')}
               </span>
             </div>
-            <div className="flex flex-wrap gap-x-3 gap-y-1.5">
+            <div className="flex flex-wrap gap-x-4 gap-y-2.5">
               {cat.items.map((item) => (
                 <span
                   key={item}
-                  className="text-[11px] font-mono text-muted-foreground transition-colors duration-300 hover:text-primary cursor-default"
+                  className="text-sm md:text-base font-mono text-foreground/85 transition-colors duration-300 hover:text-primary cursor-default"
                 >
                   {item}
                 </span>
