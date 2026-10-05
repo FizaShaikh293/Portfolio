@@ -7,6 +7,22 @@ const GITHUB = 'https://github.com/FizaShaikh293';
 
 const projects = [
   {
+    title: 'SOC Monitoring Lab',
+    subtitle: 'Self-Hosted SIEM · Wazuh, Sysmon & Threat Hunting',
+    summary: 'A self-hosted SOC environment built to practise monitoring, telemetry and investigations end to end.',
+    desc: 'Built and configured a self-hosted SOC lab in VirtualBox: a Windows 11 monitored endpoint, a Kali Linux testing machine, and Wazuh as the central SIEM, connected over an isolated host-only network. Deployed Sysmon on the Windows endpoint to extend process, network, and file telemetry, integrated with the Wazuh agent for centralised log forwarding and correlation. Investigated Windows security activity — including Event ID 5157 (Windows Filtering Platform blocked connections) and command-line activity — through Wazuh\'s Threat Hunting interface, reviewing individual events and the telemetry available for each. The full setup and investigation process is documented with screenshots on GitHub.',
+    architecture: [
+      { label: 'Endpoint', items: ['Windows 11', 'Sysmon'] },
+      { label: 'Adversary', items: ['Kali Linux'] },
+      { label: 'Network', items: ['VirtualBox', 'Host-only net'] },
+      { label: 'SIEM', items: ['Wazuh agent', 'Threat Hunting'] },
+    ],
+    tech: ['Wazuh', 'Sysmon', 'Windows 11', 'Kali Linux', 'VirtualBox', 'Threat Hunting', 'Windows Event Logs'],
+    link: 'https://github.com/FizaShaikh293/SecurityandForensics-Projects/tree/main/soc-monitoring-lab',
+    linkLabel: 'View lab repo',
+    featured: true,
+  },
+  {
     title: 'Privacy-Preserving Blockchain Forensics',
     subtitle: "Master's Dissertation · Monero Anomaly Detection",
     summary: 'Privacy-preserving analysis of Monero transaction patterns using explainable anomaly detection.',
@@ -21,18 +37,6 @@ const projects = [
     featured: true,
   },
   {
-    title: 'AI-Powered Blockchain Mining Simulator',
-    subtitle: 'Neural-guided Proof-of-Work Research',
-    summary: 'A real-time comparison of conventional Proof-of-Work mining and a neural-guided approach.',
-    desc: 'Real-time web application comparing traditional Proof-of-Work mining against a neural-network-driven approach. Demonstrates a measurable reduction in the computational steps needed to reach a valid hash, without compromising blockchain validation or decentralisation.',
-    architecture: [
-      { label: 'Chain layer', items: ['Block builder', 'SHA-256 PoW'] },
-      { label: 'AI layer', items: ['TensorFlow', 'Keras'] },
-      { label: 'Interface', items: ['Streamlit', 'Live metrics'] },
-    ],
-    tech: ['Python', 'TensorFlow', 'Keras', 'Streamlit'],
-  },
-  {
     title: 'Directory Traversal Attack Simulation',
     subtitle: 'Offensive Security · Web Exploitation',
     summary: 'A controlled web-security exercise covering directory traversal testing and remediation.',
@@ -43,18 +47,6 @@ const projects = [
       { label: 'Fix', items: ['Input validation', 'Security headers'] },
     ],
     tech: ['Burp Suite', 'PortSwigger', 'Linux', 'Security'],
-  },
-  {
-    title: 'AI Car Game on Unity 3D',
-    subtitle: 'Game AI · Pathfinding & Difficulty Scaling',
-    summary: 'A Unity racing game with AI pathfinding, obstacle avoidance, and adaptive difficulty.',
-    desc: 'Interactive 3D car racing game built in Unity featuring AI-controlled opponents with pathfinding, obstacle avoidance, and dynamic difficulty scaling for realistic, replayable gameplay.',
-    architecture: [
-      { label: 'Engine', items: ['Unity 3D', 'Physics'] },
-      { label: 'Logic', items: ['C#', 'NavMesh pathfinding'] },
-      { label: 'Gameplay', items: ['Obstacle avoidance', 'Difficulty scaling'] },
-    ],
-    tech: ['Unity', 'C#', 'AI', '3D'],
   },
   {
     title: 'Log Detective',
@@ -70,22 +62,6 @@ const projects = [
     tech: ['React', 'JavaScript', 'Vite', 'SOC Investigation', 'Log Analysis', 'Vercel'],
     link: 'https://log-detective.vercel.app/',
     linkLabel: 'Open live app',
-  },
-  {
-    title: 'SOC Monitoring Lab',
-    subtitle: 'Self-Hosted SIEM · Wazuh, Sysmon & Threat Hunting',
-    summary: 'A self-hosted detection lab with Wazuh as the SIEM, Sysmon endpoint telemetry, and documented investigations.',
-    desc: 'Built and configured a self-hosted SOC lab in VirtualBox: a Windows 11 monitored endpoint, a Kali Linux testing machine, and Wazuh as the central SIEM, connected over an isolated host-only network. Deployed Sysmon on the Windows endpoint to extend process, network, and file telemetry, integrated with the Wazuh agent for centralised log forwarding and correlation. Investigated Windows security events — including Event ID 5157 (Windows Filtering Platform blocked connections) and command-line activity — through Wazuh\'s Threat Hunting interface, documenting the full detection-to-investigation workflow.',
-    architecture: [
-      { label: 'Endpoint', items: ['Windows 11', 'Sysmon'] },
-      { label: 'Adversary', items: ['Kali Linux'] },
-      { label: 'Network', items: ['VirtualBox', 'Host-only net'] },
-      { label: 'SIEM', items: ['Wazuh agent', 'Threat Hunting'] },
-    ],
-    tech: ['Wazuh', 'Sysmon', 'Windows 11', 'Kali Linux', 'VirtualBox', 'Threat Hunting', 'Windows Event Logs'],
-    link: 'https://github.com/FizaShaikh293/SecurityandForensics-Projects/tree/main/soc-monitoring-lab',
-    linkLabel: 'View lab repo',
-    featured: true,
   },
 ];
 
@@ -111,7 +87,7 @@ export default function ProjectsSection() {
                 <div className="min-w-0">
                   <div className="flex items-baseline gap-3 flex-wrap">
                     <a
-                      href={GITHUB}
+                      href={p.link ?? GITHUB}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
