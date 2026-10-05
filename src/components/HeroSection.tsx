@@ -51,7 +51,7 @@ export default function HeroSection() {
             <a
               href={CV_URL}
               download
-              className="group mt-8 inline-flex items-center gap-3 block-ink border-2 border-foreground px-7 py-4 text-[11px] font-mono uppercase tracking-[0.22em] transition-colors duration-300 hover:bg-primary hover:border-primary"
+              className="group mt-8 mx-auto flex w-fit items-center gap-3 block-rust border-2 border-primary px-8 py-4 text-[11px] font-mono uppercase tracking-[0.22em] transition-colors duration-300 hover:bg-foreground hover:border-foreground"
             >
               <Download className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
               Download CV

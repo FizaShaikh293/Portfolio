@@ -24,24 +24,27 @@ export default function TechStackSection() {
     <section id="techstack" className="py-24 md:py-32 px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <SectionHeading label="Toolbox" title="Tech Stack" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {techCategories.map((cat, catIdx) => (
+      <div className="mt-12 border-t-[3px] border-foreground">
+        {techCategories.map((cat, idx) => (
           <div
             key={cat.title}
-            className="paper paper-lifted bold-panel p-6 min-h-48 animate-fade-up"
-            style={{ animationDelay: `${catIdx * 70}ms` }}
+            className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[260px_1fr] gap-x-12 gap-y-5 border-b border-border py-8 md:py-10 animate-fade-up"
+            style={{ animationDelay: `${idx * 70}ms` }}
           >
-            <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-border">
-              <h3 className="text-2xl leading-none text-foreground">{cat.title}</h3>
-              <span className="text-4xl font-display text-primary">
-                {String(catIdx + 1).padStart(2, '0')}
+            <div className="flex items-baseline gap-4">
+              <span className="text-[11px] font-mono tracking-[0.2em] text-primary">
+                {String(idx + 1).padStart(2, '0')}
               </span>
+              <h3 className="font-display text-xl md:text-2xl leading-tight text-foreground">
+                {cat.title}
+              </h3>
             </div>
-            <div className="flex flex-wrap gap-x-4 gap-y-2.5">
+
+            <div className="flex flex-wrap gap-2.5 md:pt-1">
               {cat.items.map((item) => (
                 <span
                   key={item}
-                  className="text-sm md:text-base font-mono text-foreground/85 transition-colors duration-300 hover:text-primary cursor-default"
+                  className="inline-flex items-center border border-foreground/25 px-3.5 py-2 text-xs md:text-sm font-mono text-foreground/85 transition-colors duration-300 hover:border-primary hover:text-primary cursor-default"
                 >
                   {item}
                 </span>

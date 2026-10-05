@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { label: 'About', href: '#about' },
@@ -43,14 +43,6 @@ export default function Navbar() {
               {label}
             </a>
           ))}
-          <a
-            href={CV_URL}
-            download
-            className="group inline-flex items-center gap-2 block-rust px-4 py-2 text-[11px] font-mono uppercase tracking-[0.16em] transition-opacity duration-300 hover:opacity-85"
-          >
-            <Download className="w-3.5 h-3.5" />
-            CV
-          </a>
           {links.slice(3).map(({ label, href }) => (
             <a
               key={label}
@@ -83,15 +75,6 @@ export default function Navbar() {
               {label}
             </a>
           ))}
-          <a
-            href={CV_URL}
-            download
-            onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center justify-center gap-2 border border-foreground/25 px-4 py-2.5 text-xs font-mono uppercase tracking-[0.14em]"
-          >
-            <Download className="w-4 h-4" />
-            Download CV
-          </a>
         </div>
       )}
     </nav>
