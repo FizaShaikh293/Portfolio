@@ -34,7 +34,7 @@ export default function Navbar() {
         </a>
 
         <div className="hidden md:flex items-center gap-7">
-          {links.map(({ label, href }) => (
+          {links.slice(0, 3).map(({ label, href }) => (
             <a
               key={label}
               href={href}
@@ -51,6 +51,15 @@ export default function Navbar() {
             <Download className="w-3.5 h-3.5" />
             CV
           </a>
+          {links.slice(3).map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              className="text-[11px] font-mono uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground transition-colors duration-300 ink-underline"
+            >
+              {label}
+            </a>
+          ))}
         </div>
 
         <button
