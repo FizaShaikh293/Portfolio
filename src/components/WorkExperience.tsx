@@ -2,24 +2,21 @@ import SectionHeading from './SectionHeading';
 
 const companies = [
   {
-    company: 'Hewlett Packard (HP)',
-    totalPeriod: 'Jul 2022 – Dec 2024',
+    company: 'Teleperformance',
+    client: 'Client: Hewlett Packard',
     roles: [
       {
         title: 'Junior SOC Analyst',
-        period: 'May 2023 – Dec 2024',
+        period: 'Jul 2022 – Dec 2024',
         highlights: [
-          'Triaged more than 30 Splunk security alerts per shift, identifying false positives and suspicious activity before escalating incidents through established SOC procedures.',
-          'Investigated Azure AD authentication and account anomalies by reviewing sign-in activity and security logs for suspicious access patterns.',
-          'Recorded investigations and escalations in ServiceNow, maintained clear shift-handover notes, and developed 12 incident-response runbooks for common alert types.',
-        ],
-      },
-      {
-        title: 'IT Security Analyst',
-        period: 'Jul 2022 – Apr 2023',
-        highlights: [
+          'Triaged 30+ Splunk security alerts per shift, separating false positives from genuine threats and escalating confirmed or high-risk activity to senior analysts in line with SOC procedures.',
+          'Investigated Azure AD / Entra ID sign-in anomalies, including brute-force patterns, unusual locations, and unfamiliar devices, escalating high-risk cases for further action such as account resets and access restrictions.',
+          'Referenced MITRE ATT&CK techniques (e.g., T1078 Valid Accounts) when documenting escalations to provide consistent context for senior analysts reviewing cases.',
+          'Documented findings, evidence, and escalations in ServiceNow, keeping case notes clear enough for seamless shift handovers.',
+          'Authored 12 incident-response runbooks covering common alert types, standardizing investigation and escalation steps across the SOC team.',
           'Conducted monthly vulnerability scans across client infrastructure and tracked remediation actions through completion.',
-          'Improved patch compliance from 67% to 91% in six months while supporting SIEM monitoring, log analysis, incident documentation, and follow-up investigations.',
+          'Improved patch compliance from 67% to 91% over six months through vulnerability tracking and remediation follow-up.',
+          'Monitored SIEM alerts and supported security log analysis, incident documentation and follow-up investigations.',
         ],
       },
     ],
@@ -37,7 +34,7 @@ export default function WorkExperience() {
           <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 pb-7 border-b-[3px] border-foreground">
             <h3 className="text-3xl md:text-5xl text-foreground">{company.company}</h3>
             <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-              {company.totalPeriod}
+              {company.client}
             </p>
           </div>
 
